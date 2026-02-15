@@ -1,0 +1,79 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<footer
+  id="contact"
+  class="w-full py-12 px-4 border-t border-gray-200 bg-white"
+  role="contentinfo"
+>
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">Cognitidata</h2>
+        <p class="text-gray-600">
+          Dubai-based AI engineering consultancy specializing in production-ready artificial intelligence solutions.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">Links</h2>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="/services"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="/portfolio"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a
+              href="/about"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="/contact"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">Connect</h2>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="mailto:shaheer@cognitidata.com"
+              class="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              <Icon name="tabler:mail" class="w-5 h-5" aria-hidden="true" />
+              <span>shaheer@cognitidata.com</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="/contact"
+              class="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              <Icon name="tabler:calendar" class="w-5 h-5" aria-hidden="true" />
+              <span>Book a Call</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-gray-200 text-center text-gray-600">
+      <p>&copy; {new Date().getFullYear()} Cognitidata. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

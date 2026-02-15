@@ -1,0 +1,87 @@
+---
+import ScrollReveal from "./ScrollReveal.tsx";
+import { Icon } from "astro-icon/components";
+---
+
+<section id="services" class="max-w-6xl mx-auto px-4 py-20">
+  <ScrollReveal client:idle delay={0.1}>
+    <h2 class="text-4xl font-bold text-gray-900 text-center mb-12">Services</h2>
+  </ScrollReveal>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <ScrollReveal client:idle delay={0.2} scale={true}>
+      <div
+        class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow h-full"
+      >
+        <div
+          class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
+        >
+          <Icon name="tabler:robot" class="w-6 h-6 text-gray-900" aria-hidden="true" />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Agentic AI Systems</h3>
+        <p class="text-gray-600">
+          Multi-agent workflows that think, plan, and execute tasks autonomously. From research automation to complex decision pipelines — we build AI that gets things done without constant human input.
+        </p>
+      </div>
+    </ScrollReveal>
+    <ScrollReveal client:idle delay={0.3} scale={true}>
+      <div
+        class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow h-full"
+      >
+        <div
+          class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
+        >
+          <Icon name="tabler:message-chatbot" class="w-6 h-6 text-gray-900" aria-hidden="true" />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">RAG & LLM Applications</h3>
+        <p class="text-gray-600">
+          Custom AI assistants and chatbots powered by your own data. Built with retrieval-augmented generation so your AI actually knows your business, not just the internet.
+        </p>
+      </div>
+    </ScrollReveal>
+    <ScrollReveal client:idle delay={0.4} scale={true}>
+      <div
+        class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow h-full"
+      >
+        <div
+          class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
+        >
+          <Icon name="tabler:cloud-upload" class="w-6 h-6 text-gray-900" aria-hidden="true" />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">MLOps & Deployment</h3>
+        <p class="text-gray-600">
+          We take your models and make them production-ready. Containerized with Docker, deployed on AWS or Fly.io, monitored, and built to scale.
+        </p>
+      </div>
+    </ScrollReveal>
+    <ScrollReveal client:idle delay={0.5} scale={true}>
+      <div
+        class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow h-full"
+      >
+        <div
+          class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
+        >
+          <Icon name="tabler:bulb" class="w-6 h-6 text-gray-900" aria-hidden="true" />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">AI Consulting</h3>
+        <p class="text-gray-600">
+          Not sure where AI fits in your business? We help you identify the highest-impact opportunities and build a practical roadmap to get there.
+        </p>
+      </div>
+    </ScrollReveal>
+    <ScrollReveal client:idle delay={0.6} scale={true}>
+      <div
+        class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow h-full"
+      >
+        <div
+          class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
+        >
+          <Icon name="tabler:arrows-shuffle" class="w-6 h-6 text-gray-900" aria-hidden="true" />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Workflow Automation (n8n)</h3>
+        <p class="text-gray-600">
+          End-to-end automation connecting your tools, data, and AI. Lead generation, outreach, data enrichment — automated and running while you focus on what matters.
+        </p>
+      </div>
+    </ScrollReveal>
+  </div>
+</section>

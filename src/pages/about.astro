@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ScrollReveal from "../components/ScrollReveal.tsx";
+import { SITE } from "../config/site.mjs";
+---
+
+<Layout
+  title={`About | ${SITE.title}`}
+  description="Cognitidata is a Dubai-based AI engineering consultancy specializing in production-ready artificial intelligence solutions."
+  canonicalURL={`${SITE.url}/about`}
+>
+  <Header />
+  <main id="main-content" role="main">
+    <section class="max-w-4xl mx-auto px-4 py-20">
+      <ScrollReveal client:idle>
+        <h1 class="text-5xl font-bold text-gray-900 mb-8">About Cognitidata</h1>
+      </ScrollReveal>
+
+      <div class="prose prose-lg max-w-none mb-16">
+        <ScrollReveal client:load delay={0.1}>
+          <p class="text-xl text-gray-600 mb-6">
+            Cognitidata is a Dubai-based AI engineering consultancy specializing in production-ready artificial intelligence solutions. We don't build prototypes — we build systems that are deployed, monitored, and designed to deliver real business value from day one.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal client:load delay={0.2}>
+          <p class="text-xl text-gray-600">
+            Founded by an AI Engineer with 5 years of hands-on experience across energy, education, and enterprise sectors, Cognitidata bridges the gap between cutting-edge AI capabilities and practical business outcomes.
+          </p>
+        </ScrollReveal>
+      </div>
+
+      <ScrollReveal client:load delay={0.3}>
+        <div class="border-t border-gray-200 pt-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">About the Founder</h2>
+          <div class="prose prose-lg max-w-none">
+            <p class="text-gray-600 mb-6">
+              Shaheer Ahmed is an AI Engineer based in Abu Dhabi with 5 years of experience building and deploying production ML and AI systems. Previously a Data Scientist at ENGIE Solutions Middle East, he now runs Cognitidata under a UAE freelancer license, helping businesses turn AI potential into working systems.
+            </p>
+            <p class="text-gray-600">
+              He has been featured as an AI expert on Dubai One TV, holds an AWS Certified AI Practitioner certification, and currently mentors developers through SuperDataScience — a platform serving over 1 million students worldwide.
+            </p>
+          </div>
+        </div>
+      </ScrollReveal>
+    </section>
+  </main>
+  <Footer />
+</Layout>
