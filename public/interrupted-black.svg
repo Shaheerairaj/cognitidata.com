@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="56" viewBox="0 0 280 56">
+  <!-- Dashed segment — the broken manual state -->
+  <line x1="2" y1="27" x2="18" y2="27" stroke="#111111" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3.5 3"/>
+  <!-- Gap — the moment of transformation (negative space) -->
+  <!-- Solid segment — the resolved automated state -->
+  <line x1="24" y1="27" x2="36" y2="27" stroke="#111111" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- Terminal dot — the output, the resolved state -->
+  <circle cx="36" cy="27" r="3.2" fill="#111111"/>
+  <!-- Wordmark -->
+  <text x="52"  y="24" font-family="Georgia,serif" font-size="17" font-weight="300" font-style="italic" fill="#111111">Cognitidata</text>
+  <text x="53"  y="40" font-family="Arial,sans-serif" font-size="8" font-weight="400" fill="#AAAAAA" letter-spacing="2.8">AI SOLUTIONS</text>
+</svg>

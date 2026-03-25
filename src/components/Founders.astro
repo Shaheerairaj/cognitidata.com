@@ -1,0 +1,60 @@
+---
+import ScrollReveal from "./ScrollReveal.tsx";
+
+const founders = [
+  {
+    name: "Shaheer Airaj Ahmed",
+    title: "AI Systems Expert",
+    photo: "/shaheer-headshot.jpg",
+    bio: "Shaheer brings deep technical expertise in designing and deploying AI automation systems across complex industries. With a background spanning energy, education, and enterprise, he translates ambitious ideas into production-ready systems that run without hand-holding.",
+  },
+  {
+    name: "Maya Naz",
+    title: "Marketing & Social Media Expert",
+    photo: "/sumayya-headshot.jpeg",
+    bio: "Maya leads the strategic and creative direction at Cognitidata. She combines a sharp understanding of digital audiences with a talent for building brand presence that resonates — turning technical capabilities into clear, compelling narratives for real businesses.",
+  },
+];
+---
+
+<section class="px-6" style="padding-top: 96px; padding-bottom: 96px; border-top: 1px solid var(--color-border);" aria-labelledby="founders-heading">
+  <div class="mx-auto" style="max-width: 1080px;">
+    <ScrollReveal client:idle>
+      <p class="eyebrow mb-5">Who we are</p>
+      <h2
+        id="founders-heading"
+        style="font-size: clamp(44px, 5.5vw, 72px); line-height: 1.1; color: var(--color-text); max-width: 640px;"
+      >
+        Built by two people who do the work
+      </h2>
+    </ScrollReveal>
+
+    <div class="grid md:grid-cols-2 mt-16" style="border-top: 1px solid var(--color-border);">
+      {founders.map((founder, i) => (
+        <ScrollReveal client:idle delay={i * 0.1}>
+          <div
+            class="pt-12 pb-12"
+            style={i === 1 ? "border-left: 1px solid var(--color-border); padding-left: 3rem;" : "padding-right: 3rem;"}
+          >
+            <!-- Photo -->
+            <div style="width: 100%; aspect-ratio: 3 / 4; max-width: 320px; margin-bottom: 2rem; overflow: hidden; border-radius: 8px;">
+              <img
+                src={founder.photo}
+                alt={founder.name}
+                style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;"
+              />
+            </div>
+
+            <h3 style="color: var(--color-text); margin-bottom: 0.35rem;">
+              {founder.name}
+            </h3>
+            <p class="eyebrow mb-6" style="margin-top: 0.25rem;">{founder.title}</p>
+            <p style="color: var(--color-body); max-width: 480px;">
+              {founder.bio}
+            </p>
+          </div>
+        </ScrollReveal>
+      ))}
+    </div>
+  </div>
+</section>

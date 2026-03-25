@@ -1,7 +1,94 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Accessibility: Skip to content link */
+/* ── Design Tokens ── */
+:root {
+  --color-bg: #F0F0F0;
+  --color-surface: #FFFFFF;
+  --color-text: #111111;
+  --color-body: #444444;
+  --color-muted: #777777;
+  --color-hint: #999999;
+  --color-border: #DCDCDC;
+  --color-btn-bg: #111111;
+  --color-btn-text: #F0F0F0;
+}
+
+/* ── Base ── */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  color: var(--color-body);
+  background-color: var(--color-bg);
+  font-size: 20px;
+  line-height: 1.75;
+}
+
+h1, h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+/* ── Eyebrow ── */
+.eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-hint);
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  padding: 12px 24px;
+  border-radius: 5px;
+  transition: opacity 200ms ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-ghost {
+  display: inline-block;
+  background: none;
+  border: none;
+  color: var(--color-hint);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  padding: 14px 0;
+  transition: color 200ms ease;
+}
+
+.btn-ghost:hover {
+  color: var(--color-text);
+}
+
+/* ── Accessibility: Skip to content link ── */
 .sr-only {
   position: absolute;
   width: 1px;

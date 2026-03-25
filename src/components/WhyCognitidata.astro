@@ -1,0 +1,61 @@
+---
+import ScrollReveal from "./ScrollReveal.tsx";
+
+const proofPoints = [
+  { value: "40+", label: "AI systems shipped" },
+  { value: "3.5 years", label: "UAE industry experience" },
+  { value: "100%", label: "You own everything. Always." },
+];
+---
+
+<section class="px-6" style="padding-top: 96px; padding-bottom: 96px;" aria-labelledby="why-heading">
+  <div class="mx-auto" style="max-width: 1080px;">
+    <div class="grid md:grid-cols-2 gap-16 md:gap-24">
+      <div>
+        <ScrollReveal client:idle>
+          <p class="eyebrow mb-5">Why us</p>
+          <h2
+            id="why-heading"
+            style="font-size: clamp(44px, 5.5vw, 72px); line-height: 1.1; color: var(--color-text);"
+          >
+            We're not an agency. We're the people who build what agencies promise.
+          </h2>
+        </ScrollReveal>
+      </div>
+
+      <div>
+        <ScrollReveal client:idle delay={0.1}>
+          <p style="font-size: 22px; line-height: 1.65; color: var(--color-body);">
+            Most AI automation consultancies sell strategy decks and vendor introductions. We build the actual systems. Tested, documented, and handed over to you completely.
+          </p>
+          <p class="mt-6" style="font-size: 22px; line-height: 1.65; color: var(--color-body);">
+            We're based in Dubai. We understand the market, the tools your clients use, and the pace things move at here. No timezone delays. No offshore handoffs.
+          </p>
+        </ScrollReveal>
+      </div>
+    </div>
+
+    <ScrollReveal client:idle delay={0.2}>
+      <div
+        class="grid grid-cols-3 mt-16 pt-12"
+        style="border-top: 1px solid var(--color-border);"
+      >
+        {proofPoints.map((point, i) => (
+          <div
+            class={i > 0 ? 'pl-8 md:pl-12' : ''}
+            style={i > 0 ? `border-left: 1px solid var(--color-border);` : ''}
+          >
+            <span
+              style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(40px, 5vw, 56px); line-height: 1; color: var(--color-text);"
+            >
+              {point.value}
+            </span>
+            <p class="mt-2" style="font-size: 17px; color: var(--color-muted);">
+              {point.label}
+            </p>
+          </div>
+        ))}
+      </div>
+    </ScrollReveal>
+  </div>
+</section>

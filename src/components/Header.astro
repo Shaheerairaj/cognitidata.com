@@ -1,90 +1,114 @@
 ---
-import { Icon } from "astro-icon/components";
+const currentPath = Astro.url.pathname;
 ---
 
 <header
-  class="w-full py-4 px-4 border-b border-gray-200 bg-white sticky top-0 z-50"
+  class="w-full border-b"
+  style="height: 64px; border-color: var(--color-border);"
   role="banner"
 >
   <nav
-    class="max-w-6xl mx-auto flex items-center justify-between"
+    class="mx-auto flex items-center justify-between h-full px-6"
+    style="max-width: 1080px;"
     aria-label="Main navigation"
   >
     <a
       href="/"
-      class="text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors"
+      class="transition-opacity duration-200 hover:opacity-60"
       aria-label="Cognitidata - Home"
     >
-      Cognitidata
+      <img
+        src="/interrupted-black.svg"
+        alt="Cognitidata"
+        width="320"
+        height="64"
+        style="height: 64px; width: auto;"
+      />
     </a>
 
     <!-- Mobile menu button -->
     <button
       type="button"
-      class="md:hidden p-2 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-lg"
+      class="md:hidden p-2 focus:outline-none"
+      style="color: var(--color-muted);"
       aria-label="Toggle menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
       id="mobile-menu-button"
     >
-      <Icon name="tabler:menu-2" class="w-6 h-6" aria-hidden="true" />
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="3" y1="5" x2="17" y2="5" />
+        <line x1="3" y1="10" x2="17" y2="10" />
+        <line x1="3" y1="15" x2="17" y2="15" />
+      </svg>
     </button>
 
     <!-- Desktop navigation -->
-    <ul class="hidden md:flex items-center gap-6" role="list">
-      <li>
-        <a
-          href="/services"
-          class="text-gray-600 hover:text-gray-900 transition-colors"
-          aria-current={Astro.url.pathname === '/services' ? 'page' : undefined}
-        >
-          Services
-        </a>
-      </li>
-      <li>
-        <a
-          href="/portfolio"
-          class="text-gray-600 hover:text-gray-900 transition-colors"
-          aria-current={Astro.url.pathname === '/portfolio' ? 'page' : undefined}
-        >
-          Portfolio
-        </a>
-      </li>
-      <li>
-        <a
-          href="/about"
-          class="text-gray-600 hover:text-gray-900 transition-colors"
-          aria-current={Astro.url.pathname === '/about' ? 'page' : undefined}
-        >
-          About
-        </a>
-      </li>
-      <li>
-        <a
-          href="/contact"
-          class="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-          aria-current={Astro.url.pathname === '/contact' ? 'page' : undefined}
-        >
-          Contact
-        </a>
-      </li>
-    </ul>
+    <div class="hidden md:flex items-center gap-10">
+      <ul class="flex items-center gap-8" role="list">
+        <li>
+          <a
+            href="/services"
+            class="transition-opacity duration-200 hover:opacity-60"
+            style={`font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 16px; color: ${currentPath === '/services' ? 'var(--color-text)' : 'var(--color-muted)'};`}
+            aria-current={currentPath === '/services' ? 'page' : undefined}
+          >
+            Services
+          </a>
+        </li>
+        <li>
+          <a
+            href="/portfolio"
+            class="transition-opacity duration-200 hover:opacity-60"
+            style={`font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 16px; color: ${currentPath === '/portfolio' ? 'var(--color-text)' : 'var(--color-muted)'};`}
+            aria-current={currentPath === '/portfolio' ? 'page' : undefined}
+          >
+            Work
+          </a>
+        </li>
+        <li>
+          <a
+            href="/about"
+            class="transition-opacity duration-200 hover:opacity-60"
+            style={`font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 16px; color: ${currentPath === '/about' ? 'var(--color-text)' : 'var(--color-muted)'};`}
+            aria-current={currentPath === '/about' ? 'page' : undefined}
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="/contact"
+            class="transition-opacity duration-200 hover:opacity-60"
+            style={`font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 16px; color: ${currentPath === '/contact' ? 'var(--color-text)' : 'var(--color-muted)'};`}
+            aria-current={currentPath === '/contact' ? 'page' : undefined}
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+      <a href="/contact" class="btn-primary">
+        Book a call
+      </a>
+    </div>
   </nav>
 
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden border-t border-gray-200 bg-white"
+    class="hidden md:hidden border-t"
+    style="border-color: var(--color-border); background-color: var(--color-bg);"
     role="menu"
     aria-labelledby="mobile-menu-button"
   >
-    <ul class="flex flex-col py-4" role="list">
+    <ul class="flex flex-col py-4 px-6" role="list">
       <li>
         <a
           href="/services"
-          class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+          class="block py-3 transition-opacity duration-200 hover:opacity-60"
+          style={`font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 16px; color: ${currentPath === '/services' ? 'var(--color-text)' : 'var(--color-muted)'};`}
           role="menuitem"
-          aria-current={Astro.url.pathname === '/services' ? 'page' : undefined}
+          aria-current={currentPath === '/services' ? 'page' : undefined}
         >
           Services
         </a>
@@ -92,19 +116,21 @@ import { Icon } from "astro-icon/components";
       <li>
         <a
           href="/portfolio"
-          class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+          class="block py-3 transition-opacity duration-200 hover:opacity-60"
+          style={`font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 16px; color: ${currentPath === '/portfolio' ? 'var(--color-text)' : 'var(--color-muted)'};`}
           role="menuitem"
-          aria-current={Astro.url.pathname === '/portfolio' ? 'page' : undefined}
+          aria-current={currentPath === '/portfolio' ? 'page' : undefined}
         >
-          Portfolio
+          Work
         </a>
       </li>
       <li>
         <a
           href="/about"
-          class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+          class="block py-3 transition-opacity duration-200 hover:opacity-60"
+          style={`font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 16px; color: ${currentPath === '/about' ? 'var(--color-text)' : 'var(--color-muted)'};`}
           role="menuitem"
-          aria-current={Astro.url.pathname === '/about' ? 'page' : undefined}
+          aria-current={currentPath === '/about' ? 'page' : undefined}
         >
           About
         </a>
@@ -112,11 +138,17 @@ import { Icon } from "astro-icon/components";
       <li>
         <a
           href="/contact"
-          class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+          class="block py-3 transition-opacity duration-200 hover:opacity-60"
+          style={`font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 16px; color: ${currentPath === '/contact' ? 'var(--color-text)' : 'var(--color-muted)'};`}
           role="menuitem"
-          aria-current={Astro.url.pathname === '/contact' ? 'page' : undefined}
+          aria-current={currentPath === '/contact' ? 'page' : undefined}
         >
           Contact
+        </a>
+      </li>
+      <li class="pt-4">
+        <a href="/contact" class="btn-primary">
+          Book a call
         </a>
       </li>
     </ul>
@@ -124,7 +156,6 @@ import { Icon } from "astro-icon/components";
 </header>
 
 <script>
-  // Mobile menu toggle functionality
   const menuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
 
@@ -135,7 +166,6 @@ import { Icon } from "astro-icon/components";
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (
         !menuButton.contains(e.target as Node) &&
@@ -147,7 +177,6 @@ import { Icon } from "astro-icon/components";
       }
     });
 
-    // Close menu on escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
         menuButton.setAttribute('aria-expanded', 'false');

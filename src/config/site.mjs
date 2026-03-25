@@ -1,6 +1,6 @@
 export const SITE = {
   title: "Cognitidata",
-  description: "Cognitidata designs and deploys custom AI systems — from agentic workflows to full-stack LLM applications — built to perform at scale, not just in demos.",
+  description: "We build custom AI systems for agencies and SMEs across the UAE. The repetitive work disappears. Your team focuses on what actually matters.",
   defaultLanguage: "en",
   url: "https://cognitidata.com",
   author: "Cognitidata",

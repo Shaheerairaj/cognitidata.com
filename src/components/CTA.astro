@@ -1,22 +1,29 @@
 ---
 import ScrollReveal from "./ScrollReveal.tsx";
-import { Icon } from "astro-icon/components";
 ---
 
-<section id="cta" class="max-w-6xl mx-auto px-4 py-20">
-  <ScrollReveal client:idle scale={true}>
-    <div class="bg-black rounded-2xl p-12 text-center text-white">
-      <h2 class="text-4xl font-bold mb-4">Ready to build something?</h2>
-      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-        Whether you have a clear brief or just an idea, let's figure out if we're a good fit.
-      </p>
-      <a
-        href="/contact"
-        class="inline-flex items-center gap-2 px-8 py-3 bg-white text-black rounded-lg hover:bg-gray-100 transition-colors font-medium"
+<section class="px-6" style="padding-top: 96px; padding-bottom: 96px;" aria-labelledby="cta-heading">
+  <div class="mx-auto" style="max-width: 640px;">
+    <ScrollReveal client:idle>
+      <h2
+        id="cta-heading"
+        style="font-size: clamp(44px, 5.5vw, 72px); line-height: 1.1; color: var(--color-text);"
       >
-        <Icon name="tabler:calendar" class="w-5 h-5" aria-hidden="true" />
-        Book a Free Discovery Call
-      </a>
-    </div>
-  </ScrollReveal>
+        Something in your business taking too long?
+      </h2>
+    </ScrollReveal>
+
+    <ScrollReveal client:idle delay={0.1}>
+      <p class="mt-6" style="font-size: 22px; line-height: 1.65; color: var(--color-body); max-width: 480px;">
+        Let's find it and fix it. First call is free, no pitch deck, no pressure.
+      </p>
+    </ScrollReveal>
+
+    <ScrollReveal client:idle delay={0.2}>
+      <div class="flex items-center gap-8 mt-10">
+        <a href="/contact" class="btn-primary">Book a discovery call</a>
+        <a href="#process" class="btn-ghost">See how we work &rarr;</a>
+      </div>
+    </ScrollReveal>
+  </div>
 </section>

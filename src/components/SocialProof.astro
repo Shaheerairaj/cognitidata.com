@@ -1,0 +1,35 @@
+---
+import ScrollReveal from "./ScrollReveal.tsx";
+
+const stats = [
+  "40+ systems shipped",
+  "100% client ownership",
+  "UAE-based team",
+  "Appeared on Dubai One TV",
+];
+---
+
+<section class="px-6" aria-label="Key facts">
+  <ScrollReveal client:idle>
+    <div
+      class="mx-auto border-t border-b flex flex-wrap justify-between py-5 gap-y-2"
+      style="max-width: 1080px; border-color: var(--color-border);"
+    >
+      {stats.map((stat, i) => (
+        <span
+          class="flex items-center gap-3"
+          style="font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 17px; color: var(--color-muted);"
+        >
+          {i > 0 && (
+            <span
+              class="hidden sm:inline-block w-px h-3"
+              style="background-color: var(--color-border);"
+              aria-hidden="true"
+            />
+          )}
+          {stat}
+        </span>
+      ))}
+    </div>
+  </ScrollReveal>
+</section>

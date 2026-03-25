@@ -1,0 +1,66 @@
+---
+import ScrollReveal from "./ScrollReveal.tsx";
+
+const steps = [
+  {
+    num: "01",
+    title: "Discovery call",
+    body: "We spend an hour understanding your business, your team, and exactly where time is being wasted. No jargon, no slide decks.",
+  },
+  {
+    num: "02",
+    title: "We build",
+    body: "We move fast. You get regular updates and full visibility. No disappearing acts.",
+  },
+  {
+    num: "03",
+    title: "Handover",
+    body: "You get full ownership. The code, the workflows, the documentation. We train your team and make sure nothing feels like a black box.",
+  },
+  {
+    num: "04",
+    title: "It runs",
+    body: "The system does what it was built to do. If anything needs adjusting, we\u2019re here.",
+  },
+];
+---
+
+<section id="process" class="px-6" style="padding-top: 96px; padding-bottom: 96px;" aria-labelledby="process-heading">
+  <div class="mx-auto" style="max-width: 1080px;">
+    <ScrollReveal client:idle>
+      <p class="eyebrow mb-5">The process</p>
+      <h2
+        id="process-heading"
+        style="font-size: clamp(44px, 5.5vw, 72px); line-height: 1.1; color: var(--color-text); max-width: 640px;"
+      >
+        Simple by design
+      </h2>
+    </ScrollReveal>
+
+    <div class="grid md:grid-cols-4 mt-16" style="border-top: 1px solid var(--color-border);">
+      {steps.map((step, i) => (
+        <ScrollReveal client:idle delay={i * 0.1}>
+          <div
+            class="pt-8 pb-8 md:pr-10"
+            style=""
+          >
+            <span
+              style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; color: var(--color-muted);"
+            >
+              {step.num}
+            </span>
+            <h3
+              class="mt-4"
+              style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 30px; color: var(--color-text); line-height: 1.3;"
+            >
+              {step.title}
+            </h3>
+            <p class="mt-3" style="font-size: 19px; color: var(--color-body); max-width: 280px;">
+              {step.body}
+            </p>
+          </div>
+        </ScrollReveal>
+      ))}
+    </div>
+  </div>
+</section>
