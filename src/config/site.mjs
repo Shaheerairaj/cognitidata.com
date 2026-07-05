@@ -1,6 +1,6 @@
 export const SITE = {
   title: "Cognitidata",
-  description: "We build custom AI systems for agencies and SMEs across the UAE. The repetitive work disappears. Your team focuses on what actually matters.",
+  description: "We help agencies and SMEs across the UAE move faster with AI — two ways. We build custom automation that does the repetitive work for you, or implement Claude alongside your team so you deliver 3x faster.",
   defaultLanguage: "en",
   url: "https://cognitidata.com",
   author: "Cognitidata",

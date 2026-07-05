@@ -1,0 +1,65 @@
+---
+import ScrollReveal from "./ScrollReveal.tsx";
+
+const paths = [
+  {
+    num: "01",
+    mode: "Done for you",
+    title: "Custom AI Automation",
+    link: "/services",
+    linkText: "Explore automation",
+  },
+  {
+    num: "02",
+    mode: "Done with you",
+    title: "AI Adoption Workshop",
+    link: "/workshop",
+    linkText: "See the workshop",
+  },
+];
+---
+
+<section id="two-ways" class="px-6" style="padding-top: 96px; padding-bottom: 96px;" aria-labelledby="two-ways-heading">
+  <div class="mx-auto" style="max-width: 1080px;">
+    <ScrollReveal client:idle>
+      <p class="eyebrow mb-5">How we work together</p>
+      <h2
+        id="two-ways-heading"
+        style="font-size: clamp(44px, 5.5vw, 72px); line-height: 1.1; color: var(--color-text); max-width: 640px;"
+      >
+        Two ways to work with us
+      </h2>
+    </ScrollReveal>
+
+    <div class="grid md:grid-cols-2 mt-16" style="border-top: 1px solid var(--color-border);">
+      {paths.map((path, i) => (
+        <ScrollReveal client:idle delay={i * 0.1}>
+          <div
+            class="pt-8 pb-10 flex flex-col h-full"
+            style={i === 1 ? "border-left: 1px solid var(--color-border); padding-left: 3rem;" : "padding-right: 3rem;"}
+          >
+            <span
+              style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; color: var(--color-muted);"
+            >
+              {path.num}
+            </span>
+            <p class="eyebrow mt-4">{path.mode}</p>
+            <h3
+              class="mt-3"
+              style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 34px; color: var(--color-text); line-height: 1.25;"
+            >
+              {path.title}
+            </h3>
+            <a
+              href={path.link}
+              class="mt-8 transition-opacity duration-200 hover:opacity-60"
+              style="font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 16px; color: var(--color-text);"
+            >
+              {path.linkText} &rarr;
+            </a>
+          </div>
+        </ScrollReveal>
+      ))}
+    </div>
+  </div>
+</section>

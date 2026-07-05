@@ -1,0 +1,323 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ScrollReveal from "../components/ScrollReveal.tsx";
+import { SITE } from "../config/site.mjs";
+
+const included = [
+  {
+    num: "01",
+    title: "Three group workshops",
+    body: "3 × 90-minute live sessions, once a week for three weeks, in a small cohort.",
+  },
+  {
+    num: "02",
+    title: "Three 1-to-1 sessions",
+    body: "3 × 30-minute private sessions with Shaheer, once a week, focused on your business.",
+  },
+  {
+    num: "03",
+    title: "Guided migration to Claude",
+    body: "We move your team off other AI platforms and onto Claude, cleanly and without disruption.",
+  },
+  {
+    num: "04",
+    title: "Done-for-you personalization",
+    body: "We personalize Claude to how your business works — not just a workflow, the whole setup.",
+  },
+];
+
+const curriculum = [
+  {
+    num: "01",
+    week: "Week one",
+    title: "Pick one painful task and set up",
+    body: "We choose one real, painful task and stand up Claude around it — projects scoped to your function. Best practices are taught while we build, not in the abstract.",
+  },
+  {
+    num: "02",
+    week: "Week two",
+    title: "Build your workflow live",
+    body: "Using Skills, we build your first workflow live, together. Your team learns by doing, so the capability stays in-house after we leave.",
+  },
+  {
+    num: "03",
+    week: "Week three",
+    title: "Automate, test, hand off",
+    body: "We add triggers and scheduling with Cowork, then test, debug, and hand everything over with documentation your team can run on its own.",
+  },
+];
+---
+
+<Layout
+  title={`AI Adoption Workshop | ${SITE.title}`}
+  description="A done-with-you, three-week program to implement and personalize Claude for your team — so you deliver client work 3x faster in 21 days."
+  canonicalURL={`${SITE.url}/workshop`}
+>
+  <Header />
+  <main id="main-content" role="main">
+    <!-- Hero -->
+    <section class="px-6" style="padding-top: 96px; padding-bottom: 64px;" aria-labelledby="workshop-heading">
+      <div class="mx-auto" style="max-width: 1080px;">
+        <ScrollReveal client:load>
+          <p class="eyebrow mb-6">AI Adoption Workshop &middot; Done with you</p>
+        </ScrollReveal>
+
+        <ScrollReveal client:load delay={0.1}>
+          <h1
+            id="workshop-heading"
+            style="font-size: clamp(52px, 7vw, 84px); line-height: 1.05; letter-spacing: -0.01em; color: var(--color-text); max-width: 900px;"
+          >
+            Deliver <em style="font-style: italic; font-weight: 400;">3x faster</em> in 21 days
+          </h1>
+        </ScrollReveal>
+
+        <ScrollReveal client:load delay={0.2}>
+          <p
+            class="mt-8"
+            style="max-width: 620px; font-size: 22px; line-height: 1.65; color: var(--color-body);"
+          >
+            A guided, three-week program for agencies and teams that want to move fast with Claude. We migrate you across, personalize it to your business, and build one real workflow live — so faster client delivery outlasts the workshop.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal client:load delay={0.3}>
+          <div class="flex items-center gap-8 mt-10">
+            <a href="/contact" class="btn-primary">Apply for a seat</a>
+            <a href="#curriculum" class="btn-ghost">See the curriculum &rarr;</a>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+
+    <!-- Fact strip -->
+    <section class="px-6" aria-label="Workshop at a glance">
+      <ScrollReveal client:idle>
+        <div
+          class="mx-auto border-t border-b flex flex-wrap justify-between py-5 gap-y-2"
+          style="max-width: 1080px; border-color: var(--color-border);"
+        >
+          {["21 days", "3 companies max", "1-to-1 with Shaheer", "Satisfaction guaranteed"].map((stat, i) => (
+            <span
+              class="flex items-center gap-3"
+              style="font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 17px; color: var(--color-muted);"
+            >
+              {i > 0 && (
+                <span
+                  class="hidden sm:inline-block w-px h-3"
+                  style="background-color: var(--color-border);"
+                  aria-hidden="true"
+                />
+              )}
+              {stat}
+            </span>
+          ))}
+        </div>
+      </ScrollReveal>
+    </section>
+
+    <!-- What's included -->
+    <section class="px-6" style="padding-top: 96px; padding-bottom: 96px;" aria-labelledby="included-heading">
+      <div class="mx-auto" style="max-width: 1080px;">
+        <ScrollReveal client:idle>
+          <p class="eyebrow mb-5">What's included</p>
+          <h2
+            id="included-heading"
+            style="font-size: clamp(44px, 5.5vw, 72px); line-height: 1.1; color: var(--color-text); max-width: 640px;"
+          >
+            Everything, done alongside you
+          </h2>
+        </ScrollReveal>
+
+        <div class="grid md:grid-cols-2 mt-16" style="border-top: 1px solid var(--color-border);">
+          {included.map((item, i) => (
+            <ScrollReveal client:idle delay={(i % 2) * 0.1}>
+              <div
+                class="pt-8 pb-10"
+                style={`
+                  ${(i % 2 === 1) ? 'border-left: 1px solid var(--color-border); padding-left: 3rem;' : 'padding-right: 3rem;'}
+                  ${i < 2 ? 'border-bottom: 1px solid var(--color-border);' : ''}
+                `}
+              >
+                <span
+                  style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; color: var(--color-muted);"
+                >
+                  {item.num}
+                </span>
+                <h3
+                  class="mt-4"
+                  style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 30px; color: var(--color-text); line-height: 1.3;"
+                >
+                  {item.title}
+                </h3>
+                <p class="mt-3" style="font-size: 18px; color: var(--color-body); line-height: 1.7; max-width: 420px;">
+                  {item.body}
+                </p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum -->
+    <section id="curriculum" class="px-6" style="padding-top: 96px; padding-bottom: 96px; border-top: 1px solid var(--color-border);" aria-labelledby="curriculum-heading">
+      <div class="mx-auto" style="max-width: 1080px;">
+        <ScrollReveal client:idle>
+          <p class="eyebrow mb-5">The curriculum</p>
+          <h2
+            id="curriculum-heading"
+            style="font-size: clamp(44px, 5.5vw, 72px); line-height: 1.1; color: var(--color-text); max-width: 640px;"
+          >
+            One real workflow, built end to end
+          </h2>
+          <p class="mt-6" style="font-size: 20px; line-height: 1.65; color: var(--color-body); max-width: 560px;">
+            No theory-first slide decks. We start from a task that actually costs you time and work outward until it runs itself.
+          </p>
+        </ScrollReveal>
+
+        <div class="mt-16" style="border-top: 1px solid var(--color-border);">
+          {curriculum.map((step, i) => (
+            <ScrollReveal client:idle delay={i * 0.1}>
+              <div
+                class="grid md:grid-cols-12 gap-8 py-10"
+                style={i < curriculum.length - 1 ? 'border-bottom: 1px solid var(--color-border);' : ''}
+              >
+                <div class="md:col-span-1">
+                  <span
+                    style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; color: var(--color-muted);"
+                  >
+                    {step.num}
+                  </span>
+                </div>
+                <div class="md:col-span-4">
+                  <p class="eyebrow mb-2">{step.week}</p>
+                  <h3
+                    style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 32px; color: var(--color-text); line-height: 1.3;"
+                  >
+                    {step.title}
+                  </h3>
+                </div>
+                <div class="md:col-span-7">
+                  <p style="font-size: 19px; color: var(--color-body); line-height: 1.7;">
+                    {step.body}
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Format & Guarantee -->
+    <section class="px-6" style="padding-top: 96px; padding-bottom: 96px;" aria-labelledby="format-heading">
+      <div class="mx-auto" style="max-width: 1080px;">
+        <div class="grid md:grid-cols-2 mt-0" style="border-top: 1px solid var(--color-border);">
+          <ScrollReveal client:idle>
+            <div class="pt-12 pb-12" style="padding-right: 3rem;">
+              <p class="eyebrow mb-5">The format</p>
+              <h2
+                id="format-heading"
+                style="font-size: clamp(34px, 4vw, 48px); line-height: 1.15; color: var(--color-text);"
+              >
+                Three companies. No more.
+              </h2>
+              <p class="mt-6" style="font-size: 19px; line-height: 1.7; color: var(--color-body); max-width: 460px;">
+                Each cohort is capped at three companies. Small enough that the group sessions stay personal and your 1-to-1 time with Shaheer is real — not a webinar.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal client:idle delay={0.1}>
+            <div class="pt-12 pb-12" style="border-left: 1px solid var(--color-border); padding-left: 3rem;">
+              <p class="eyebrow mb-5">The guarantee</p>
+              <h2
+                style="font-size: clamp(34px, 4vw, 48px); line-height: 1.15; color: var(--color-text);"
+              >
+                Love it, or full refund.
+              </h2>
+              <p class="mt-6" style="font-size: 19px; line-height: 1.7; color: var(--color-body); max-width: 460px;">
+                If you reach the end of the three weeks and it wasn't valuable, you get a full refund. The risk sits with us, not you.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social proof -->
+    <section class="px-6" style="padding-top: 96px; padding-bottom: 96px; border-top: 1px solid var(--color-border);" aria-labelledby="proof-heading">
+      <div class="mx-auto" style="max-width: 1080px;">
+        <div class="grid md:grid-cols-2 gap-16 md:gap-24">
+          <div>
+            <ScrollReveal client:idle>
+              <p class="eyebrow mb-5">Proof</p>
+              <h2
+                id="proof-heading"
+                style="font-size: clamp(40px, 5vw, 64px); line-height: 1.1; color: var(--color-text);"
+              >
+                Featured, and proven with a real business
+              </h2>
+            </ScrollReveal>
+          </div>
+
+          <div class="flex flex-col justify-center">
+            <ScrollReveal client:idle delay={0.1}>
+              <p style="font-size: 22px; line-height: 1.65; color: var(--color-body);">
+                Shaheer has been featured on <span style="color: var(--color-text);">Dubai One TV</span>. We've run this approach with a wellness and coaching business, embedding Claude into how they deliver client work.
+              </p>
+            </ScrollReveal>
+          </div>
+        </div>
+
+        <ScrollReveal client:idle delay={0.15}>
+          <figure class="mt-16">
+            <div style="border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; background-color: var(--color-surface);">
+              <img
+                src="/dubai-one-tv.jpg"
+                alt="Shaheer Airaj Ahmed featured on Dubai One TV's DXB Today"
+                width="1820"
+                height="932"
+                loading="lazy"
+                style="width: 100%; height: auto; display: block;"
+              />
+            </div>
+            <figcaption class="mt-4" style="font-size: 15px; color: var(--color-muted);">
+              Shaheer on Dubai One TV &mdash; DXB Today
+            </figcaption>
+          </figure>
+        </ScrollReveal>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="px-6" style="padding-top: 96px; padding-bottom: 96px;" aria-labelledby="workshop-cta-heading">
+      <div class="mx-auto" style="max-width: 640px;">
+        <ScrollReveal client:idle>
+          <h2
+            id="workshop-cta-heading"
+            style="font-size: clamp(44px, 5.5vw, 72px); line-height: 1.1; color: var(--color-text);"
+          >
+            Want one of the three seats?
+          </h2>
+        </ScrollReveal>
+
+        <ScrollReveal client:idle delay={0.1}>
+          <p class="mt-6" style="font-size: 22px; line-height: 1.65; color: var(--color-body); max-width: 480px;">
+            Tell us about your business and how your team delivers today. If it's a fit, we'll get you into the next cohort.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal client:idle delay={0.2}>
+          <div class="flex items-center gap-8 mt-10">
+            <a href="/contact" class="btn-primary">Apply for a seat</a>
+            <a href="/services" class="btn-ghost">Or see what we build &rarr;</a>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

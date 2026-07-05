@@ -29,7 +29,7 @@ const currentPath = Astro.url.pathname;
     <!-- Mobile menu button -->
     <button
       type="button"
-      class="md:hidden p-2 focus:outline-none"
+      class="lg:hidden p-2 focus:outline-none"
       style="color: var(--color-muted);"
       aria-label="Toggle menu"
       aria-expanded="false"
@@ -44,7 +44,7 @@ const currentPath = Astro.url.pathname;
     </button>
 
     <!-- Desktop navigation -->
-    <div class="hidden md:flex items-center gap-10">
+    <div class="hidden lg:flex items-center gap-10">
       <ul class="flex items-center gap-8" role="list">
         <li>
           <a
@@ -53,7 +53,17 @@ const currentPath = Astro.url.pathname;
             style={`font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 16px; color: ${currentPath === '/services' ? 'var(--color-text)' : 'var(--color-muted)'};`}
             aria-current={currentPath === '/services' ? 'page' : undefined}
           >
-            Services
+            Automation
+          </a>
+        </li>
+        <li>
+          <a
+            href="/workshop"
+            class="transition-opacity duration-200 hover:opacity-60"
+            style={`font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 16px; color: ${currentPath === '/workshop' ? 'var(--color-text)' : 'var(--color-muted)'};`}
+            aria-current={currentPath === '/workshop' ? 'page' : undefined}
+          >
+            Workshop
           </a>
         </li>
         <li>
@@ -96,7 +106,7 @@ const currentPath = Astro.url.pathname;
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden border-t"
+    class="hidden lg:hidden border-t"
     style="border-color: var(--color-border); background-color: var(--color-bg);"
     role="menu"
     aria-labelledby="mobile-menu-button"
@@ -110,7 +120,18 @@ const currentPath = Astro.url.pathname;
           role="menuitem"
           aria-current={currentPath === '/services' ? 'page' : undefined}
         >
-          Services
+          Automation
+        </a>
+      </li>
+      <li>
+        <a
+          href="/workshop"
+          class="block py-3 transition-opacity duration-200 hover:opacity-60"
+          style={`font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 16px; color: ${currentPath === '/workshop' ? 'var(--color-text)' : 'var(--color-muted)'};`}
+          role="menuitem"
+          aria-current={currentPath === '/workshop' ? 'page' : undefined}
+        >
+          Workshop
         </a>
       </li>
       <li>
