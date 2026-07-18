@@ -1,14 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396">
-  <rect x="0" y="0" width="1584" height="396" fill="#F0F0F0"/>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&amp;display=swap');</style>
+  <rect x="0" y="0" width="1584" height="396" fill="#FAFAF9"/>
 
   <!-- Wordmark + tagline. Starts at x=370: LinkedIn's company logo overlaps the left ~1/5 width x bottom ~1/2 height -->
-  <text x="370" y="175" font-family="Montserrat" font-size="54" font-weight="300" fill="#111111">Cognitidata</text>
-  <text x="371" y="203" font-family="Montserrat" font-size="15" font-weight="500" letter-spacing="4" fill="#777777">AI SOLUTIONS</text>
+  <text x="370" y="175" font-family="Montserrat" font-size="54" font-weight="800" fill="#111111">Cognitidata</text>
+  <text x="371" y="203" font-family="Montserrat" font-size="15" font-weight="800" letter-spacing="4"><tspan fill="#3F6C7A">AI</tspan><tspan fill="#777777"> SOLUTIONS</tspan></text>
 
   <!-- Social proof row -->
   <text x="370" y="270" font-family="Montserrat" font-size="22" font-weight="500" fill="#111111">Featured on Dubai One TV</text>
   <line x1="699" y1="252" x2="699" y2="283" stroke="#DCDCDC" stroke-width="1.5"/>
-  <text x="735" y="270" font-family="Montserrat" font-size="22" font-weight="500" fill="#111111">10+ years of industry experience</text>
+  <text x="735" y="270" font-family="Montserrat" font-size="22" font-weight="500" fill="#111111">5+ years of industry experience</text>
   <line x1="1125" y1="252" x2="1125" y2="283" stroke="#DCDCDC" stroke-width="1.5"/>
   <text x="1161" y="270" font-family="Montserrat" font-size="22" font-weight="500" fill="#111111">40+ systems shipped</text>
 </svg>

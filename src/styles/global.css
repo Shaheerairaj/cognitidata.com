@@ -3,14 +3,16 @@
 
 /* ── Design Tokens ── */
 :root {
-  --color-bg: #F0F0F0;
+  --color-bg: #FAFAF9;
   --color-surface: #FFFFFF;
   --color-text: #111111;
   --color-body: #444444;
-  --color-muted: #777777;
+  --color-muted: #999999;
   --color-hint: #999999;
   --color-border: #DCDCDC;
-  --color-btn-bg: #111111;
+  --color-accent: #3F6C7A;
+  --color-accent-soft: #7FA8B5;
+  --color-btn-bg: #3F6C7A;
   --color-btn-text: #F0F0F0;
 }
 
@@ -21,8 +23,8 @@ html {
 }
 
 body {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
   color: var(--color-body);
   background-color: var(--color-bg);
   font-size: 20px;
@@ -30,23 +32,23 @@ body {
 }
 
 h1, h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   color: var(--color-text);
   letter-spacing: -0.01em;
 }
 
 h3, h4, h5, h6 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   color: var(--color-text);
   letter-spacing: -0.01em;
 }
 
 /* ── Eyebrow ── */
 .eyebrow {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -58,12 +60,12 @@ h3, h4, h5, h6 {
   display: inline-block;
   background-color: var(--color-btn-bg);
   color: var(--color-btn-text);
-  font-family: 'Outfit', sans-serif;
-  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.04em;
   padding: 12px 24px;
-  border-radius: 5px;
+  border-radius: 4px;
   transition: opacity 200ms ease;
 }
 
@@ -76,8 +78,8 @@ h3, h4, h5, h6 {
   background: none;
   border: none;
   color: var(--color-hint);
-  font-family: 'Outfit', sans-serif;
-  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   font-size: 17px;
   letter-spacing: 0.02em;
   padding: 14px 0;

@@ -16,7 +16,7 @@ This is the Cognitidata website — an Astro static site using file-based routin
 
 **Styling:** Tailwind CSS is the primary styling method. Sass is available for component-scoped styles using `<style lang="scss">`.
 
-**Icons:** Use `<Icon name="tabler:icon-name" />` from astro-icon. Browse icons at tabler.io/icons.
+**Icons:** astro-icon (`<Icon name="tabler:icon-name" />`) is available but unused — the design brief calls for numbered labels (01, 02, 03) instead of icons everywhere. Don't introduce icons without checking the brief first.
 
 **Animations:** `ScrollReveal.tsx` wraps content for scroll-triggered animations. Requires `client:load` or `client:idle` directive.
 
@@ -24,32 +24,35 @@ This is the Cognitidata website — an Astro static site using file-based routin
 
 ## **COGNITIDATA — DESIGN BRIEF**
 
-**Aesthetic:** Editorial minimalism. Quiet confidence. No visual tricks. Whitespace is the primary design element. Closer to a luxury consultancy than a tech startup.
+Full source of truth: `brand/brand-guidelines.html` (v1.0). This section is a condensed reference — check the source doc for anything not covered here.
 
-**Fonts:** Import from Google Fonts.
-- Headlines: Cormorant Garamond, light weight only, italic for emphasis — never bold
-- Body/UI: Outfit, light weight for body, regular for labels/nav, medium for buttons only
-- Logo: Outfit, light weight, uppercase, wide letter-spacing
+**Aesthetic:** "Ink discipline, one accent." Confident minimalism — whitespace still does most of the work, but typography is bolder than the original editorial-luxury look. One neutral system (ink on paper), one signal color, used the same way everywhere it appears.
 
-**Colours — strictly monochrome, no accent colours:**
+**Fonts:** Montserrat only — Cormorant Garamond and Outfit are both retired. Weight carries every role, never lighter than 500:
+- 700 — headlines (h1/h2, hero/section titles)
+- 700 italic, accent color — the one emphasized word per headline
+- 600 — subheads/labels: card titles (h3–h6), eyebrows, buttons, nav
+- 500 — body copy (never lighter, reads too thin below this)
+- 800 — logo wordmark only
+
+**Colours:**
 ```
-Page background:  #F0F0F0
+Page background:  #FAFAF9   (never pure white/black)
 Surface/cards:    #FFFFFF
-Text primary:     #111111
-Text body:        #777777
-Text muted:       #999999
-Text hint:        #AAAAAA
+Text primary:     #111111   (ink — headlines, logo)
+Text body:        #444444   (paragraph copy)
+Text hint/muted:  #999999   (eyebrows, nav, muted labels — one grey tier, not two)
 Borders:          #DCDCDC
-Button bg:        #111111
-Button text:      #F0F0F0
+Accent — Frost Deep: #3F6C7A   (emphasis words, buttons, links, one full-color moment on closing CTAs)
+Accent — Frost Soft: #7FA8B5   (numbered labels only — 01, 02, 03)
+Button text:       #F0F0F0
 ```
+The accent is a signal, not decoration: emphasis words, buttons/links, and index numbers — three touchpoints, nothing more. Never a second accent color, never as a border-left strip, never coloring the logo (except "AI" in the tagline).
 
 **Typography rules:**
-- Headlines: large, tight line-height, slight negative letter-spacing — use Cormorant Garamond light
-- Eyebrow labels: Outfit regular, small, uppercase, wide letter-spacing, hint colour (`#AAAAAA`)
-- Body: comfortable reading size, generous line-height
-- Feature/card titles: Cormorant Garamond light, mid-size
-- Numbers (01, 02, 03) replace icons everywhere
+- Headlines: large, tight line-height, slight negative letter-spacing
+- Eyebrow labels: uppercase, wide letter-spacing, hint colour
+- Numbers (01, 02, 03) replace icons everywhere — Frost Soft accent
 
 **Layout:**
 - Max content width: 1080px centred
@@ -60,19 +63,19 @@ Button text:      #F0F0F0
 - Feature columns: separated by 1px border lines only, no card backgrounds, no gaps
 
 **Buttons:**
-- Primary: `#111111` bg, `#F0F0F0` text, small border-radius, Outfit medium
+- Primary: Frost Deep (`#3F6C7A`) bg, `#F0F0F0` text, small border-radius (4px)
 - Ghost: no background, no border, muted text colour
 - No pills, no gradients, no shadows
 
 **Strictly avoid:**
-- Any accent or brand colour
+- A second accent color, or filling large areas with the accent outside end cards/closing CTAs
 - Gradients, shadows, textures
 - Large border-radius (keep corners subtle)
-- Heavy font weights
 - Centred hero text
 - All-caps headlines (eyebrows only)
 - Icons (use numbered labels instead)
-- Coloured section backgrounds
+- Serif or monospace type anywhere, including code
+- Pure black/white backgrounds
 - Heavy or prolonged animations
 
-**Reference:** High-end architecture studio websites.
+**Reference:** `brand/brand-guidelines.html` — treat it as the living doc; update there first, then propagate here and to the site.

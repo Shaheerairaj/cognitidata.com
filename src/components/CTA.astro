@@ -2,27 +2,27 @@
 import ScrollReveal from "./ScrollReveal.tsx";
 ---
 
-<section class="px-6" style="padding-top: 96px; padding-bottom: 96px;" aria-labelledby="cta-heading">
+<section class="px-6" style="padding-top: 96px; padding-bottom: 96px; background-color: var(--color-accent);" aria-labelledby="cta-heading">
   <div class="mx-auto" style="max-width: 640px;">
     <ScrollReveal client:idle>
       <h2
         id="cta-heading"
-        style="font-size: clamp(44px, 5.5vw, 72px); line-height: 1.1; color: var(--color-text);"
+        style="font-size: clamp(44px, 5.5vw, 72px); line-height: 1.1; color: var(--color-btn-text);"
       >
         Something in your business taking too long?
       </h2>
     </ScrollReveal>
 
     <ScrollReveal client:idle delay={0.1}>
-      <p class="mt-6" style="font-size: 22px; line-height: 1.65; color: var(--color-body); max-width: 480px;">
+      <p class="mt-6" style="font-size: 22px; line-height: 1.65; color: rgba(240, 240, 240, 0.82); max-width: 480px;">
         Let's find it and fix it. First call is free, no pitch deck, no pressure.
       </p>
     </ScrollReveal>
 
     <ScrollReveal client:idle delay={0.2}>
       <div class="flex items-center gap-8 mt-10">
-        <a href="/contact" class="btn-primary">Book a discovery call</a>
-        <a href="#process" class="btn-ghost">See how we work &rarr;</a>
+        <a href="/contact" class="btn-primary" style="background-color: var(--color-btn-text); color: var(--color-text);">Book a discovery call</a>
+        <a href="#process" class="btn-ghost" style="color: rgba(240, 240, 240, 0.75);">See how we work &rarr;</a>
       </div>
     </ScrollReveal>
   </div>

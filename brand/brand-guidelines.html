@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cognitidata — Brand Guidelines</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #FAFAF9;
+    --surface: #FFFFFF;
+    --ink: #111111;
+    --body: #444444;
+    --hint: #999999;
+    --border: #DCDCDC;
+    --border-strong: #BFBFBF;
+
+    --accent-deep: #3F6C7A;
+    --accent-soft: #7FA8B5;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--body);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .page { max-width: 880px; margin: 0 auto; padding: 72px 32px 120px; }
+
+  /* ── Masthead ── */
+  .masthead { margin-bottom: 88px; }
+  .masthead .logo { margin-bottom: 40px; }
+  .masthead .kicker {
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--hint);
+    margin: 0 0 12px;
+  }
+  h1.doc-title {
+    font-weight: 700;
+    font-size: clamp(34px, 4.4vw, 52px);
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+  .doc-sub {
+    max-width: 560px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--body);
+    margin: 0;
+  }
+  .doc-sub strong { color: var(--ink); font-style: italic; font-weight: 700; }
+  .doc-meta {
+    margin-top: 28px;
+    font-size: 13px;
+    color: var(--hint);
+    font-weight: 500;
+  }
+
+  /* ── Sections ── */
+  section.chapter {
+    margin-top: 88px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+  .chapter-num {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--accent-deep);
+    margin: 0 0 8px;
+  }
+  h2.chapter-title {
+    font-weight: 700;
+    font-size: clamp(24px, 2.8vw, 32px);
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+  }
+  .chapter-intro {
+    max-width: 620px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--body);
+    margin: 0 0 32px;
+  }
+
+  /* ── Logo section ── */
+  .logo-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 48px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 600px) { .logo-grid { grid-template-columns: 1fr; } }
+  .logo-cell {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-caption {
+    font-size: 13px;
+    color: var(--hint);
+    margin: 10px 0 0;
+  }
+
+  .rule-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .rule-list li {
+    display: flex;
+    gap: 14px;
+    font-size: 15px;
+    color: var(--body);
+    line-height: 1.6;
+  }
+  .rule-list .mark { color: var(--ink); font-weight: 700; flex-shrink: 0; }
+
+  /* ── Color section ── */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+  @media (max-width: 700px) { .swatch-grid { grid-template-columns: repeat(2, 1fr); } }
+  .swatch {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .swatch-fill { height: 72px; }
+  .swatch-label { padding: 10px 12px; }
+  .swatch-name { display: block; font-weight: 600; font-size: 13px; color: var(--ink); }
+  .swatch-hex { display: block; font-weight: 500; font-size: 11.5px; color: var(--hint); margin-top: 2px; }
+  .swatch-role { display: block; font-weight: 500; font-size: 11.5px; color: var(--body); margin-top: 4px; line-height: 1.4; }
+
+  .group-label {
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--hint);
+    margin: 32px 0 14px;
+  }
+  .group-label:first-child { margin-top: 0; }
+
+  .callout {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    padding: 16px 20px;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--body);
+    margin-top: 8px;
+  }
+  .callout strong { color: var(--ink); }
+
+  /* ── Typography section ── */
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .type-row:first-of-type { border-top: 1px solid var(--border); }
+  .type-sample { font-family: 'Montserrat', sans-serif; color: var(--ink); }
+  .type-meta { flex-shrink: 0; text-align: right; font-size: 12px; color: var(--hint); font-weight: 500; line-height: 1.6; white-space: nowrap; }
+
+  /* ── Voice section ── */
+  .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  @media (max-width: 700px) { .voice-grid { grid-template-columns: 1fr; } }
+  .voice-traits { list-style: none; margin: 0; padding: 0; }
+  .voice-traits li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .voice-traits li:first-child { border-top: 1px solid var(--border); }
+  .voice-trait-name { font-weight: 700; color: var(--ink); font-size: 15px; display: block; margin-bottom: 3px; }
+  .voice-trait-desc { font-size: 13.5px; color: var(--body); line-height: 1.55; }
+
+  .quote-block {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .quote-block:first-child { border-top: 1px solid var(--border); }
+  .quote-source { display: block; font-style: normal; font-weight: 500; font-size: 12px; color: var(--hint); margin-top: 8px; }
+
+  /* ── Application preview mini-cards ── */
+  .app-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
+  @media (max-width: 700px) { .app-grid { grid-template-columns: 1fr; } }
+  .app-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .app-card-label {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--hint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .app-hero { padding: 32px 24px; }
+  .app-eyebrow { font-weight: 600; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hint); margin: 0 0 10px; }
+  .app-headline { font-weight: 700; font-size: 24px; line-height: 1.15; color: var(--ink); margin: 0 0 14px; letter-spacing: -0.01em; }
+  .app-headline em { font-style: italic; font-weight: 700; color: var(--accent-deep); }
+  .app-btn { display: inline-block; background: var(--accent-deep); color: #F0F0F0; font-weight: 600; font-size: 12px; padding: 8px 16px; border-radius: 4px; }
+
+  .app-social { aspect-ratio: 4/5; position: relative; container-type: inline-size; }
+  .app-social-inner { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 8cqw; }
+  .app-social-eyebrow { font-weight: 600; font-size: 3.4cqw; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hint); }
+  .app-social-headline { font-weight: 700; font-size: 8.5cqw; line-height: 1.08; color: var(--ink); }
+  .app-social-headline em { font-style: italic; color: var(--accent-deep); }
+  .app-social-num { font-weight: 700; font-size: 9cqw; -webkit-text-stroke: 1px var(--accent-soft); color: transparent; }
+
+  /* ── Don'ts ── */
+  .donts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .donts li { display: flex; gap: 12px; font-size: 14.5px; color: var(--body); line-height: 1.6; }
+  .donts .x { color: var(--ink); font-weight: 700; flex-shrink: 0; }
+
+  footer.doc-footer {
+    margin-top: 88px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--hint);
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ============ MASTHEAD ============ -->
+  <div class="masthead">
+    <div class="logo">
+      <svg width="340" height="68" viewBox="0 0 280 56" xmlns="http://www.w3.org/2000/svg">
+        <line x1="2" y1="27" x2="18" y2="27" stroke="#111111" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3.5 3"/>
+        <line x1="24" y1="27" x2="36" y2="27" stroke="#111111" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="36" cy="27" r="3.2" fill="#111111"/>
+        <text x="52" y="24" font-family="Montserrat,sans-serif" font-size="17" font-weight="800" fill="#111111">Cognitidata</text>
+        <text x="53" y="40" font-family="Montserrat,sans-serif" font-size="8" font-weight="800" letter-spacing="2.8"><tspan fill="#3F6C7A">AI</tspan><tspan fill="#AAAAAA"> SOLUTIONS</tspan></text>
+      </svg>
+    </div>
+    <p class="kicker"># brand guidelines — v1</p>
+    <h1 class="doc-title">Ink discipline, one accent.</h1>
+    <p class="doc-sub">This is the first written version of the Cognitidata brand — before this, it lived as scattered decisions across the site's CSS and a designer's memory. <strong>One neutral system, one signal color, used the same way everywhere it appears.</strong></p>
+    <p class="doc-meta">v1.0 &middot; 2026 &middot; Applies to: cognitidata.com, social/carousel content, client-facing collateral</p>
+  </div>
+
+  <!-- ============ 01 LOGO ============ -->
+  <section class="chapter">
+    <p class="chapter-num">01</p>
+    <h2 class="chapter-title">Logo</h2>
+    <p class="chapter-intro">The mark is a literal drawing of what the company does: a dashed line — the broken, manual way of working — resolves into a solid line and a dot. Interrupted, then fixed. Keep that story intact; don't simplify it into an abstract shape.</p>
+
+    <div class="logo-grid">
+      <div class="logo-cell">
+        <svg width="200" height="40" viewBox="0 0 280 56" xmlns="http://www.w3.org/2000/svg">
+          <line x1="2" y1="27" x2="18" y2="27" stroke="#111111" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3.5 3"/>
+          <line x1="24" y1="27" x2="36" y2="27" stroke="#111111" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="36" cy="27" r="3.2" fill="#111111"/>
+          <text x="52" y="24" font-family="Montserrat,sans-serif" font-size="17" font-weight="800" fill="#111111">Cognitidata</text>
+          <text x="53" y="40" font-family="Montserrat,sans-serif" font-size="8" font-weight="800" letter-spacing="2.8"><tspan fill="#3F6C7A">AI</tspan><tspan fill="#AAAAAA"> SOLUTIONS</tspan></text>
+        </svg>
+      </div>
+      <div class="logo-cell">
+        <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <line x1="4" y1="24" x2="20" y2="24" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3.5"/>
+          <line x1="27" y1="24" x2="38" y2="24" stroke="#111111" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="38" cy="24" r="5" fill="#111111"/>
+        </svg>
+      </div>
+    </div>
+
+    <ul class="rule-list">
+      <li><span class="mark">&mdash;</span> The full lockup (mark + wordmark) is for the site header, footer, and anywhere the brand needs a name attached. The mark alone is for favicons, app icons, and social profile photos — anywhere space is tight.</li>
+      <li><span class="mark">&mdash;</span> Mark and wordmark: always ink (#111111) on a light ground, or reversed to the paper color on a dark/ink ground. <strong style="color:var(--ink)">Never in the accent color.</strong> The one exception is "AI" in the "AI Solutions" tagline, which carries the accent deliberately — everything else in the lockup stays neutral so that one word keeps its meaning as a signal.</li>
+      <li><span class="mark">&mdash;</span> Minimum clearspace around the mark: the height of the dot, on all sides. Don't crowd it with text or edges.</li>
+    </ul>
+  </section>
+
+  <!-- ============ 02 COLOR ============ -->
+  <section class="chapter">
+    <p class="chapter-num">02</p>
+    <h2 class="chapter-title">Color</h2>
+    <p class="chapter-intro">Two layers: a neutral foundation that does almost all the work, and one accent — Nord Frost — that appears in exactly three places: emphasis words, buttons/links, and index numbers. Nothing else carries color.</p>
+
+    <p class="group-label">Foundation</p>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-fill" style="background:#FAFAF9; border-bottom:1px solid var(--border);"></div><div class="swatch-label"><span class="swatch-name">Page</span><span class="swatch-hex">#FAFAF9</span><span class="swatch-role">Background, everywhere — near-white, not flat grey</span></div></div>
+      <div class="swatch"><div class="swatch-fill" style="background:#FFFFFF; border-bottom:1px solid var(--border);"></div><div class="swatch-label"><span class="swatch-name">Surface</span><span class="swatch-hex">#FFFFFF</span><span class="swatch-role">Cards, panels above the page</span></div></div>
+      <div class="swatch"><div class="swatch-fill" style="background:#111111;"></div><div class="swatch-label"><span class="swatch-name">Ink</span><span class="swatch-hex">#111111</span><span class="swatch-role">Headlines, primary text, logo</span></div></div>
+      <div class="swatch"><div class="swatch-fill" style="background:#444444;"></div><div class="swatch-label"><span class="swatch-name">Body</span><span class="swatch-hex">#444444</span><span class="swatch-role">Paragraph copy</span></div></div>
+      <div class="swatch"><div class="swatch-fill" style="background:#999999;"></div><div class="swatch-label"><span class="swatch-name">Hint</span><span class="swatch-hex">#999999</span><span class="swatch-role">Eyebrows, nav, muted labels</span></div></div>
+      <div class="swatch"><div class="swatch-fill" style="background:#DCDCDC;"></div><div class="swatch-label"><span class="swatch-name">Border</span><span class="swatch-hex">#DCDCDC</span><span class="swatch-role">Dividers, card outlines</span></div></div>
+    </div>
+
+    <p class="group-label">Accent — Nord Frost</p>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-fill" style="background:#3F6C7A;"></div><div class="swatch-label"><span class="swatch-name">Frost Deep</span><span class="swatch-hex">#3F6C7A</span><span class="swatch-role">Emphasis words, buttons, links, code keywords</span></div></div>
+      <div class="swatch"><div class="swatch-fill" style="background:#7FA8B5;"></div><div class="swatch-label"><span class="swatch-name">Frost Soft</span><span class="swatch-hex">#7FA8B5</span><span class="swatch-role">Index numbers, quiet decorative marks</span></div></div>
+      <div class="swatch"><div class="swatch-fill" style="background:#3F6C7A;"></div><div class="swatch-label"><span class="swatch-name">Frost Fill</span><span class="swatch-hex">#3F6C7A</span><span class="swatch-role">One full-color moment: end cards, closing CTAs</span></div></div>
+    </div>
+
+    <div class="callout"><strong>The rule that matters most:</strong> the accent is a signal, not a decoration. If everything is accented, nothing is. Before adding a fourth touchpoint, ask whether an existing one already covers it.</div>
+  </section>
+
+  <!-- ============ 03 TYPOGRAPHY ============ -->
+  <section class="chapter">
+    <p class="chapter-num">03</p>
+    <h2 class="chapter-title">Typography</h2>
+    <p class="chapter-intro">One typeface, Montserrat, carrying every role through weight alone. No serif, no monospace — the earlier Cormorant Garamond / Outfit pairing and the Anton / Georgia carousel pairing are both retired in favor of this single family.</p>
+
+    <div class="type-row">
+      <span class="type-sample" style="font-weight:700; font-size:34px; letter-spacing:-0.01em;">Headline</span>
+      <span class="type-meta">Weight 700<br>Hero / section titles</span>
+    </div>
+    <div class="type-row">
+      <span class="type-sample" style="font-weight:700; font-style:italic; font-size:34px; color:var(--accent-deep);">Emphasis</span>
+      <span class="type-meta">Weight 700, italic<br>The one accented word per headline</span>
+    </div>
+    <div class="type-row">
+      <span class="type-sample" style="font-weight:600; font-size:22px;">Subhead / label</span>
+      <span class="type-meta">Weight 600<br>Card titles, eyebrows, buttons, nav</span>
+    </div>
+    <div class="type-row">
+      <span class="type-sample" style="font-weight:500; font-size:16px;">Body copy sits at weight 500, never lighter</span>
+      <span class="type-meta">Weight 500<br>Paragraph text</span>
+    </div>
+
+    <div class="callout" style="margin-top:24px;"><strong>Why no weight below 500:</strong> at Montserrat's proportions, anything lighter reads thin and undermines legibility — this was a direct fix after an earlier pass felt too delicate to read comfortably.</div>
+  </section>
+
+  <!-- ============ 04 VOICE ============ -->
+  <section class="chapter">
+    <p class="chapter-num">04</p>
+    <h2 class="chapter-title">Voice</h2>
+    <p class="chapter-intro">Drawn from the actual copy already live on the site — this section describes a pattern that already exists, not a new invention. Treat it as observed, not prescribed; revisit once more copy exists to check it against.</p>
+
+    <div class="voice-grid">
+      <ul class="voice-traits">
+        <li><span class="voice-trait-name">Plain-spoken</span><span class="voice-trait-desc">No jargon, no framework names dropped for effect. Says what a thing does, not what category it belongs to.</span></li>
+        <li><span class="voice-trait-name">Anti-fluff, on the record</span><span class="voice-trait-desc">States what a thing is <em>not</em> as often as what it is — a habit that reads as confidence rather than hedging.</span></li>
+        <li><span class="voice-trait-name">Evidence over adjectives</span><span class="voice-trait-desc">Leads with a number or a fact ("40+ systems shipped") instead of a claim ("industry-leading").</span></li>
+      </ul>
+      <div>
+        <p class="quote-block">"No jargon, no slide decks."<span class="quote-source">— How It Works</span></p>
+        <p class="quote-block">"First call is free, no pitch deck, no pressure."<span class="quote-source">— CTA</span></p>
+        <p class="quote-block">"We train your team and make sure nothing feels like a black box."<span class="quote-source">— How It Works</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 APPLICATION ============ -->
+  <section class="chapter">
+    <p class="chapter-num">05</p>
+    <h2 class="chapter-title">Application</h2>
+    <p class="chapter-intro">The same three rules — ink base, Montserrat, one Frost accent — hold across both contexts the brand actually shows up in. Neither is a special case of the other.</p>
+
+    <div class="app-grid">
+      <div class="app-card">
+        <div class="app-card-label">Site / formal</div>
+        <div class="app-hero">
+          <p class="app-eyebrow">AI Automation &middot; Dubai, UAE</p>
+          <h3 class="app-headline">Your business, running <em>faster</em></h3>
+          <span class="app-btn">Book a call</span>
+        </div>
+      </div>
+      <div class="app-card">
+        <div class="app-card-label">Social / carousel</div>
+        <div class="app-social" style="background:#F0F0F0;">
+          <div class="app-social-inner">
+            <p class="app-social-eyebrow"># pattern 02</p>
+            <div>
+              <div class="app-social-num">02</div>
+            </div>
+            <p class="app-social-headline">Config <em>first.</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 DON'TS ============ -->
+  <section class="chapter">
+    <p class="chapter-num">06</p>
+    <h2 class="chapter-title">Don't</h2>
+    <ul class="donts">
+      <li><span class="x">&times;</span> Add a second accent color. If Frost isn't working somewhere, that's a signal to rethink the layout, not to introduce a new hue.</li>
+      <li><span class="x">&times;</span> Fill large areas with the accent outside the one established convention (end cards / closing CTAs).</li>
+      <li><span class="x">&times;</span> Use the accent as a colored border-left "strip" on cards or callouts. Borders stay neutral (#DCDCDC); the accent lives in text, buttons, and numbers only.</li>
+      <li><span class="x">&times;</span> Reintroduce serif or monospace type. Montserrat carries every role now, including code samples.</li>
+      <li><span class="x">&times;</span> Color the logo. It stays ink-only so the accent keeps its meaning.</li>
+      <li><span class="x">&times;</span> Use pure black (#000000) or pure white (#FFFFFF) as page background — the system runs on off-black ink and off-white paper, never true extremes.</li>
+    </ul>
+  </section>
+
+  <footer class="doc-footer">
+    Cognitidata Brand Guidelines &middot; v1.0 &middot; This document should evolve — update it here first, then propagate changes to cognitidata.com and content templates.
+  </footer>
+
+</div>
+
+</body>
+</html>
