@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <!-- Icon mark: dashed (manual) resolving into solid (automated) -->
+  <g transform="translate(66.4,-9.92) scale(4.4)">
+    <line x1="2" y1="27" x2="18" y2="27" stroke="#111111" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3.5 3"/>
+    <line x1="24" y1="27" x2="36" y2="27" stroke="#111111" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="36" cy="27" r="3.2" fill="#111111"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="150" y="169" text-anchor="middle" font-family="Montserrat" font-size="42" font-weight="300" letter-spacing="0" fill="#111111">Cognitidata</text>
+
+  <!-- Tagline -->
+  <text x="150" y="204" text-anchor="middle" font-family="Montserrat" font-size="19" font-weight="500" letter-spacing="5.5" fill="#777777">AI SOLUTIONS</text>
+</svg>
