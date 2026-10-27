@@ -1,0 +1,70 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 842 595] /Resources << /Font << /F1 7 0 R /F2 8 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 842 595] /Resources << /Font << /F1 7 0 R /F2 8 0 R >> >> /Contents 6 0 R >>
+endobj
+5 0 obj
+<< /Length 437 >>
+stream
+0.09 0.11 0.16 rg 0 0 842 595 re f
+0.85 0.42 0.18 rg 60 300 80 6 re f
+0.85 0.42 0.18 rg BT /F2 14 Tf 60 380 Td (COGNITIDATA) Tj ET
+1 1 1 rg BT /F2 40 Tf 60 330 Td (Hospitality Intelligence) Tj ET
+0.8 0.82 0.86 rg BT /F1 16 Tf 60 260 Td (Find the hotels worth converting, know who owns them, and reach out with a reason.) Tj ET
+0.6 0.62 0.66 rg BT /F1 10 Tf 60 70 Td (Placeholder teaser for the Cognitidata demo. Not a real offer.) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Length 1292 >>
+stream
+1 1 1 rg 0 0 842 595 re f
+0.85 0.42 0.18 rg 60 500 60 5 re f
+0.09 0.11 0.16 rg BT /F2 26 Tf 60 520 Td (What the hub does) Tj ET
+0.85 0.42 0.18 rg 60 432 10 10 re f
+0.09 0.11 0.16 rg BT /F2 15 Tf 84 440 Td (Map-first discovery) Tj ET
+0.42 0.45 0.5 rg BT /F1 12 Tf 84 418 Td (Every hotel in a market, deduplicated and pinned on the map.) Tj ET
+0.85 0.42 0.18 rg 60 360 10 10 re f
+0.09 0.11 0.16 rg BT /F2 15 Tf 84 368 Td (Owner research) Tj ET
+0.42 0.45 0.5 rg BT /F1 12 Tf 84 346 Td (Who owns each property, with sources and a confidence level.) Tj ET
+0.85 0.42 0.18 rg 60 288 10 10 re f
+0.09 0.11 0.16 rg BT /F2 15 Tf 84 296 Td (Decision-maker contacts) Tj ET
+0.42 0.45 0.5 rg BT /F1 12 Tf 84 274 Td (The people to reach at the owner, with their role and channel.) Tj ET
+0.85 0.42 0.18 rg 60 216 10 10 re f
+0.09 0.11 0.16 rg BT /F2 15 Tf 84 224 Td (Guest sentiment) Tj ET
+0.42 0.45 0.5 rg BT /F1 12 Tf 84 202 Td (What guests love and complain about, from public reviews.) Tj ET
+0.85 0.42 0.18 rg 60 144 10 10 re f
+0.09 0.11 0.16 rg BT /F2 15 Tf 84 152 Td (Outreach drafts) Tj ET
+0.42 0.45 0.5 rg BT /F1 12 Tf 84 130 Td (A tailored first email per owner, ready to open in Outlook.) Tj ET
+0.42 0.45 0.5 rg BT /F1 10 Tf 60 40 Td (Cognitidata - Hospitality Intelligence - demo placeholder) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+8 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000000393 00000 n 
+0000000880 00000 n 
+0000002223 00000 n 
+0000002293 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R /Info << /Title (Cognitidata - Hospitality Intelligence) >> >>
+startxref
+2368
+%%EOF

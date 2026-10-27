@@ -24,3 +24,12 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# demo images live in R2 (bucket cognitidata-demos), served by workers/demos-assets
+public/demos/proposal-foundry/api/
+demos/proposal-foundry/
+demos/intelligence-hub/.verify/
+demos/intelligence-hub/public/fonts/FuturaPT*
+*.tsbuildinfo
+demos/intelligence-hub/vite.config.js
+demos/intelligence-hub/vite.config.d.ts

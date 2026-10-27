@@ -1,0 +1,109 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   THEME — the one file to swap.
+
+   Every colour and font in the demo comes from the tokens below: the app, the
+   architecture diagram and the Agency page. To re-theme, edit the values here
+   or replace this file with your own that defines the same token names.
+   It sits in public/, so swapping it in a built site (dist/theme.css) needs
+   no rebuild.
+
+   Rules of thumb
+   - Keep every token name; change only the values.
+   - --*-tint  : a pale background in that hue (chips, highlights).
+   - --*-ink   : a dark, readable text colour in that hue (on light surfaces).
+   - --on-ink  : text on an --ink background (chat bubbles, toasts).
+   - --on-strong: text on a saturated fill (--accent-ink, --warn-ink, --danger-ink).
+   - --on-accent: text on an --accent fill.
+   - Dials (--space, --radius-scale, --motion) scale every spacing, corner and
+     animation value; 1 keeps the design as built.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* ── Fonts ── Montserrat only, self-hosted in public/fonts/. Weights never go below 500. */
+@font-face { font-family: "Montserrat"; src: url("fonts/Montserrat-Medium.woff2") format("woff2"); font-weight: 100 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("fonts/Montserrat-SemiBold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("fonts/Montserrat-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("fonts/Montserrat-ExtraBold.woff2") format("woff2"); font-weight: 800 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("fonts/Montserrat-BoldItalic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
+
+:root {
+  /* Typefaces: one family, no serif or monospace anywhere */
+  --sans:  "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; /* headings */
+  --body:  "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; /* text */
+  --label: "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; /* small caps / eyebrows */
+  --mono:  "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; /* brand: no monospace */
+
+  /* Surfaces */
+  --bg:        #FAFAF9;
+  --surface:   #FFFFFF;
+  --surface-2: #F5F5F4;
+  --surface-3: #EFEFEE;
+
+  /* Lines */
+  --hair:   #DCDCDC;
+  --hair-2: #EBEBEA;
+  --hair-3: #C9C9C8;
+
+  /* Text */
+  --ink:   #111111;
+  --ink-2: #444444;
+  --ink-3: #999999;
+  --ink-4: #BDBDBD;
+  --on-ink:    #F0F0F0;
+  --on-strong: #fff;
+  --on-accent: #F0F0F0;
+
+  /* Brand accent: Frost Deep */
+  --accent:      #3F6C7A;
+  --accent-tint: #E8EFF1;
+  --accent-ink:  #2F5360;
+
+  /* Status */
+  --ok:     oklch(0.62 0.12 150);
+  --ok-tint: oklch(0.96 0.03 150);
+  --ok-ink:  oklch(0.42 0.13 150);
+  --warn:     oklch(0.7 0.14 75);
+  --warn-tint: oklch(0.965 0.04 75);
+  --warn-ink:  oklch(0.44 0.12 75);
+  --danger:     oklch(0.6 0.18 25);
+  --danger-tint: oklch(0.97 0.03 25);
+  --danger-ink:  oklch(0.42 0.18 25);
+  --info:      #7FA8B5;
+  --info-tint: #E8EFF1;
+  --info-ink:  #2F5360;
+  --star: #3F6C7A;
+
+  /* Overlays */
+  --scrim: rgb(17 17 17 / 0.32);
+
+  /* Map */
+  --map-style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
+
+  /* Teaser PDF attached to every email (a file in public/) */
+  --teaser-pdf: "teaser.pdf";
+
+  /* ── Shape, spacing, motion: dials. 1 = as designed. ── */
+  --radius-scale: 0.4;   /* corner rounding: 0 = square, 1.5 = rounder */
+  --radius-pill: 6px;   /* fully rounded pills and chips */
+  --space: 1;           /* all padding, margins and gaps: 0.85 = denser, 1.15 = roomier */
+  --motion: 1;          /* animation length: 0 = no animation, 2 = twice as slow */
+
+  --ease-out: cubic-bezier(.2,.7,.2,1);  /* entrances */
+  --ease-in:  cubic-bezier(.4,0,1,1);    /* exits */
+  --ease-mid: cubic-bezier(.4,0,.2,1);   /* movement */
+  --dur-1: calc(120ms * var(--motion)); --dur-2: calc(200ms * var(--motion));
+  --dur-3: calc(320ms * var(--motion)); --dur-4: calc(520ms * var(--motion));
+  --rise: 8px; --stagger: calc(40ms * var(--motion));
+
+  /* ── Illustrations: the Agency page's building, props and characters ── */
+  --ill-wall:#efe5d4; --ill-wall-2:#e7dbc6; --ill-wall-lit:#fff6e6; --ill-wall-lit-2:#f7e7cc;
+  --ill-skirting:#d8c7aa; --ill-night:#2a2520; --ill-ground:#6d5c48; --ill-glow:#ffcf8a88;
+  --ill-cord:#0005; --ill-shade:#8a7a64; --ill-lamp:#ffd27a; --ill-lamp-glow:#ffd27a99;
+  --ill-stair:#3a332c; --ill-stair-2:#4a4138; --ill-vault:#cfd6d9; --ill-vault-2:#b9c2c6; --ill-gate:#6b777d;
+  --ill-coin-rim:#f6d27a; --ill-folder-tab:#e2b45a; --ill-folder:#f0c56b; --ill-folder-ink:#5b3d06; --ill-shadow:#0004;
+  --ill-pane:#fff9;
+  /* props + characters (used from the script) */
+  --ill-rust:#b8531c; --ill-green:#3f7a4a; --ill-red:#b3362f; --ill-purple:#6a4c93; --ill-blue:#2f5f8a;
+  --ill-gold:#d79b1d; --ill-brown:#7a3e1d; --ill-teal:#0f6b6b; --ill-charcoal:#1d1a16; --ill-slate:#55636a;
+  --ill-wood:#6d5c48; --ill-desk:#8a7a64; --ill-map:#e9f1df; --ill-lilac:#e3d8f0; --ill-white:#fff; --ill-lens:#fff7;
+  --ill-type:#3a332c; --ill-type-lines:#7a6f62; --ill-steel:#8b979c; --ill-skin:#f1d2b0; --ill-skin-2:#e8b98f; --ill-hair:#1d1a1666;
+}

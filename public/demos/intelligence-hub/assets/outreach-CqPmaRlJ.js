@@ -1,0 +1,467 @@
+const e={"f1812d10-0250-40cb-8bb1-803bab917b23":{content:{brand:"Halcyon",today:["On-site nightclub disturbs guests on upper floors","Rooms flagged for outdated furnishings and décor","Mixed 2-star positioning despite a strong location"],proofs:["110 keys","Central Abu Dhabi, walking distance to Abu Dhabi Mall","Conference, pool and spa on site"],frictions:["On-site nightclub noise disturbs sleep on upper floors","No hotel parking, and nearby spaces are hard to find","Outdated furniture and décor, with smoky smells noted through ventilation"],email_body:`Dear ownership team of Al Diar Dana Hotel,
+
+Your guests keep returning to two things in their reviews: the short walk to Abu Dhabi Mall and rooms that feel larger than the price suggests, with kitchenettes and washing machines that add real value. The same reviewers flag the on-site nightclub noise on upper floors and furnishings that are ready for a refresh. That gap between a strong location and dated rooms is exactly the kind of property we convert.
+
+Cognitidata operates lifestyle brands across the Middle East, and we convert using brand guidelines instead of rigid standards, so a property keeps its identity and the refurbishment stays cost- and time-effective. Recent signings in the region include Halcyon Al Murjan Island Resort in Dammam.
+
+We have sketched what Al Diar Dana could look like under our best-fit brand, and the attached teaser shows it. A short intro call would walk you through it.
+
+[Your name]
+Cognitidata`,fit_points:["Location and room value are already there to build on","Conversion via guidelines keeps refurbishment cost- and time-effective"],call_script:`Hi, this is [name] from Cognitidata. Do you have a moment to talk about Al Diar Dana Hotel?
+
+I called because your guests consistently praise the central location near Abu Dhabi Mall and the spacious, good-value rooms, while the same reviews point to nightclub noise on upper floors and furnishings ready for a renovation. That combination is what we work with when we convert independent properties.
+
+You might be thinking a rebrand means a full, expensive gut renovation. We convert using brand guidelines instead of rigid standards, so the property keeps its identity and the refurbishment stays cost- and time-effective.
+
+We have already sketched what the property could look like under our best-fit brand. Could I send that teaser over and set up a short call to walk you through it?`,guests_love:["Central location, a short walk to Abu Dhabi Mall with easy access to shops and transport","Friendly reception staff named by guests for going above and beyond","Spacious, clean rooms that feel larger than the price, with kitchenettes and washing machines"],with_cognitidata:["Reprogrammed public spaces that fit a relaxed lifestyle guest without the noise complaints","A cost- and time-effective refresh under brand guidelines that keeps the building's identity","A clear Halcyon boutique-lifestyle position built on the location guests already praise"],hook_support:"Reviewers repeatedly cite the short walk to Abu Dhabi Mall and rooms larger than expected, with kitchenettes and washing machines. The location and layout are ready for a lifestyle repositioning.",email_subject:"Al Diar Dana's location and rooms, with a nightclub problem",hook_headline:"A prime Abu Dhabi address with rooms guests already rate above their price",hook_sentence:"A central Abu Dhabi location and roomy, well-valued rooms with kitchenettes give Al Diar Dana the bones for a relaxed Halcyon boutique-lifestyle conversion once the noise and dated décor are addressed.",brand_descriptor:"Halcyon is Cognitidata's high-end-but-relaxed, tech-forward boutique-lifestyle brand aimed at younger and digital-nomad travellers."},identity:{city:"Abu Dhabi",keys:110,country:"UAE",segment:null,hotel_name:"Al Diar Dana Hotel",owner_name:"Abu Dhabi National Hotels Group",owner_type:"institutional",star_rating:2,booking_rating:null,booking_reviews:null},direction:"a",recipient:{mode:"no-contact",name:null,title:null},generated_at:"2026-07-03T10:22:49+00:00"},"c75bfec2-b03d-430a-bbc3-474c129d7bf2":{content:{brand:"The House",today:[],proofs:["281 keys, five-star luxury in Abu Dhabi","Full suite ladder: Classic Suites through Presidential and Royal","Fine dining, pool, and spa on site"],frictions:[],email_body:`Hi,
+
+This note is for the ownership team at Al Farida Investments Co. Abu Dhabi's luxury market is deepening, and the demand today favours design-led properties with a clear point of view and residence-style flexibility, particularly for the design-conscious upscale and MICE travellers moving through the city. That shift is worth a conversation now, ahead of the next planning cycle.
+
+Cognitidata grows by converting independent properties onto brand guidelines rather than rigid standards, which keeps refurbishment cost- and time-effective. Portfolio-wide, 64.8% of our reservations are direct bookings, with OTAs held to 21.1%, and our branded-residence work has drawn partners such as a global athleisure brand at The Atelier Bayfront. Branded residences also command a 25-35% premium over comparable non-branded stock.
+
+We have sketched what this property could look like under The House, our upper-upscale design-led brand, and put it in the attached teaser. A short intro call would let us walk you through it.
+
+[Your name]
+Cognitidata`,fit_points:["Design-led upper-upscale positioning under The House","Branded-residence and serviced-apartment upside on the existing suite depth"],guests_love:[],with_cognitidata:[],hook_support:"281 keys, five-star, and a suite range from Classic through Royal Suites give the depth of product The Atelier is built to carry, including serviced-apartment and branded-residence potential.",email_subject:"Converting design-led luxury in Abu Dhabi",hook_headline:"A luxury address built for a design-led lifestyle reposition",hook_sentence:"A 281-key five-star property in Abu Dhabi with a full suite ladder up to Royal Suites fits The House, Cognitidata's upper-upscale design-led brand with branded-residence upside.",brand_descriptor:"The Atelier is Cognitidata's upper-upscale, design-led lifestyle brand spanning hotels and branded residences for design-conscious upscale travellers and MICE."},identity:{city:"Abu Dhabi",keys:281,country:"UAE",segment:"luxury",hotel_name:"Rocco Forte Hotel Abu Dhabi",owner_name:"Al Farida Investments Co.",owner_type:"institutional",star_rating:5,booking_rating:null,booking_reviews:null},direction:"b",recipient:{mode:"no-contact",name:null,title:null},generated_at:"2026-07-03T13:54:33+00:00"},"cfaf4b6b-2136-4613-a3f2-2a404cf1efc4":{content:{brand:"The House",today:[],proofs:["32 keys","Beachfront Abu Dhabi","Spa + kids club programming"],frictions:[],email_body:`Hi Aldar,
+
+Nurai Island is a rare asset—32 keys, beachfront Abu Dhabi, anchored by spa and kids' programming. That's upper-upscale resort positioning with genuine operational leverage.
+
+We've built The House to serve exactly this profile: independent properties with the design, service, and residential upside to compete at the upper end. We rebrand, operate, and unlock ancillary revenue (serviced apartments, MICE, design-conscious travel). Eleven properties in, we know the conversion economics.
+
+I'd like a brief call to understand Nurai Island's ownership goals and current growth ceiling. If the timing's right, we'll explore whether a rebrand-and-operate partnership makes sense.
+
+Would next week work?
+
+[Your name]
+Cognitidata`,fit_points:["Upper-upscale segment with design and service expectations aligned to The House positioning.","Established amenities and key count create immediate residences/MICE upsell opportunity."],call_script:`Hi, this is [Your name] from Cognitidata. I'm calling because Nurai Island caught our attention—32 keys, beachfront positioning, spa and kids' club already in place. That's the profile we actively convert to The House.
+
+We operate upper-upscale independent hotels and are building out branded residences and serviced apartments on the same properties. Your setup has genuine upside there.
+
+I'd expect you might be happy where you are—but if growth or operational leverage is a question, it's worth a 20-minute call to explore whether our model fits.
+
+Do you have 20 minutes next week?`,guests_love:[],with_cognitidata:[],hook_support:null,email_subject:"Nurai Island × The House — edited by smoke test",hook_headline:null,hook_sentence:"32-key beachfront luxury resort in Abu Dhabi with spa and family amenities—positioned for The House's upper-upscale, residentially-enabled model.",brand_descriptor:"Upper-upscale, design-led lifestyle hotels with branded residences and serviced-apartment upside; positioned for MICE, design-conscious travel, and residential longevity."},identity:{city:"Abu Dhabi",keys:32,country:"UAE",segment:"luxury",hotel_name:"Nurai Island",owner_name:"Aldar",owner_type:"institutional",star_rating:null,booking_rating:null,booking_reviews:null},direction:"d",edited_at:"2026-07-02T14:42:17+00:00",generated_at:"2026-07-02T13:28:11+00:00",edited_fields:["email_subject"]},"4ed6f162-6d0b-4bfb-9f02-33dea69b4ff8":{content:{brand:"The House",today:["Guests write about track, jet, and club noise reaching the rooms"],proofs:["8.6 on Booking.com across 1,960 reviews","499 keys, 5-star, Yas Island","Beach, marina, spa, fine dining, and conference space on site"],frictions:["Noise from the F1 track, passing jets, and the rooftop nightclub bleeding into rooms"],email_body:`Hi Talal,
+
+Your guests praise the rooms and the pools, then in the same breath write about noise from the F1 track, the passing jets, and the rooftop club. A 5-star, 499-key asset holding an 8.6 across nearly 2,000 reviews is doing well despite a positioning that pulls in two directions at once, and that gap usually means the property is earning less than it could.
+
+Cognitidata grows by converting independent and owner-held properties onto brand guidelines rather than rigid standards, which keeps refurbishment cost- and time-effective. Portfolio-wide, 64.8% of our reservations are direct bookings, with OTAs held to 21.1%, so the demand you build stays yours.
+
+We have sketched what Yas Viceroy could look like under The House, our design-led upper-upscale brand, in the attached teaser. A short call walks you through it.
+
+[Your name]
+Cognitidata`,fit_points:["Direct bookings held at 64.8% portfolio-wide, OTAs at 21.1%","Conversion on brand guidelines, keeping refurbishment cost- and time-effective"],guests_love:["Spacious, modern rooms with comfortable beds","Pool areas guests keep returning to"],with_cognitidata:["Design and room positioning under The House built around quieter, guest-first layouts and clearer brand intent"],hook_support:"499 keys at 5 stars on Yas Island, rated 8.6 across nearly 2,000 reviews. The rooms and pools already carry it; a clearer brand position closes the gap the reviews point to.",email_subject:"the noise your guests keep writing about",hook_headline:"A landmark asset earning below its address",hook_sentence:"A 5-star, 499-key waterfront property with a marina, spa, and fine dining, held at an 8.6 guest score, is the design-led upper-upscale asset The Atelier is built to reposition.",brand_descriptor:"The Atelier is Cognitidata's upper-upscale, design-led lifestyle brand, spanning hotels and branded residences for design-conscious travellers and MICE."},identity:{city:"Abu Dhabi",keys:499,country:"United Arab Emirates",segment:"Upscale",hotel_name:"Yas Viceroy Abu Dhabi",owner_name:"Aldar Properties",owner_type:"institutional",star_rating:5,booking_rating:8.6,booking_reviews:1960},direction:"a",recipient:{mode:"corporate",name:"Talal Dhiyebi",title:"Group Chief Executive Officer"},generated_at:"2026-07-07T06:28:33+00:00"},"e35fd215-6762-4790-9b04-6315849c7158":{content:{email_body:`Hi [First name],
+
+Your guests keep writing about two things: how good your staff are, and the shower that runs out of hot water.
+
+That split matters. The hard part, a team guests single out for its service, is already in place at Odyssee Center. What holds the 8.2 back is the hot water and the WiFi, and both are fixable.
+
+Cognitidata converts independent hotels into its own brands. We work from brand guidelines instead of rigid standards, which keeps refurbishment cost- and time-effective. Halcyon Roma opened in February 2025 and reached 9.2 on Booking.com within months, with 20-25% direct bookings in its first months.
+
+Halcyon is our tech-forward lifestyle brand, and a central Casablanca hotel a walk from Casa Port fits its urban version well. We have sketched what Odyssee Center could look like as a Halcyon (the attached teaser). Would a short call to walk you through it work in the next couple of weeks?
+
+[Your name]
+Cognitidata`,email_subject:"your staff, and your showers"},identity:{city:"Casablanca",keys:138,country:"Morocco",segment:null,hotel_name:"Odyssee Center Casablanca",owner_name:"Hôtel Odyssee Center SA",owner_type:"family",star_rating:4,booking_rating:8.2,booking_reviews:962},recipient:{mode:"owner-direct",name:"Hôtel Odyssee Center SA",title:null},generated_at:"2026-10-14T10:24:07+00:00"},"491a6193-e42d-470e-b8a1-91d7b95ce557":{content:{brand:"Halcyon",today:["Tired rooms and bathrooms flagged for renovation","Cleanliness complaints dragging the score","Nightclub noise inside the building"],proofs:["95 keys in central Abu Dhabi","Beachfront location","1,586 guest reviews on Booking.com"],frictions:["Rooms and bathrooms reported as old and in need of renovation","Cleanliness issues raised in guest reviews","Nightclub noise carrying through the building"],email_body:`Hi Khalid,
+
+1,586 reviews behind a 6.3 says Al Diar Mina holds a real book of demand, and something in the physical asset is capping what that demand converts into. Your guests write about spacious rooms, the central location, and staff who look after them, then the same reviews turn to tired bathrooms, cleanliness, and nightclub noise carrying through the building.
+
+That gap is the case for a conversion rather than more discounting. On brand guidelines instead of rigid standards, a refurbishment stays cost- and time-effective, and the direct-booking economics change the math: across Cognitidata's portfolio 64.8% of reservations are direct, with OTAs held to 21.1%.
+
+We've sketched what 95 keys and a beachfront address in Abu Dhabi could look like under Halcyon, and put it in the attached teaser. Worth a short call to walk you through it?
+
+[Your name]
+Cognitidata`,fit_points:["Direct bookings run 64.8% portfolio-wide, with OTAs held to 21.1%","Conversions run on brand guidelines, keeping refurbishment cost- and time-effective"],guests_love:["Rooms guests describe as spacious","A central, easy-to-reach location","Staff service that earns positive mentions"],with_cognitidata:["A cost- and time-effective refurbishment on Halcyon brand guidelines","Rooms and bathrooms brought to a relaxed sea-side lifestyle standard","A repositioned property built around the beach, not the noise"],hook_support:"1,586 reviews sit behind a 6.3 score. Guests praise the space, location, and service, then flag rooms and bathrooms that need renovation.",email_subject:"1,586 reviews and a 6.3 in Abu Dhabi",hook_headline:"The demand is already here. The rooms are holding it back.",hook_sentence:"95 keys, a beachfront address, and 1,586 guest reviews give Al Diar Mina the demand base to reopen as a relaxed sea-side Halcyon once the rooms match the location.",brand_descriptor:"Halcyon is Cognitidata's high-end-but-relaxed, tech-forward boutique-lifestyle brand for younger and digitally connected travellers, with mountain, desert, urban, and sea variants."},identity:{city:"Abu Dhabi",keys:95,country:"United Arab Emirates",segment:null,hotel_name:"Al Diar Mina Hotel",owner_name:"Abu Dhabi National Hotel",owner_type:"institutional",star_rating:3,booking_rating:6.3,booking_reviews:1586},direction:"a",edited_at:"2026-07-03T15:45:24+00:00",recipient:{mode:"corporate",name:"Khalid Anib",title:"Chief Executive Officer"},generated_at:"2026-07-03T15:17:23+00:00",edited_fields:["email_body"]},"a0ca82de-36c3-48aa-9469-20ba724aa3f2":{content:{email_body:`Hi Paul,
+
+Do you know what share of Andaz Capital Gate's bookings ADNEC actually owns, as opposed to paying a flag or an OTA to bring in?
+
+As CEO you will know the margin side of that better than anyone. The 8.9 score across 2,571 reviews says the product already works for guests. The open question is how much of that guest relationship comes back to the owner.
+
+At Cognitidata, 64.8% of reservations across the portfolio are direct bookings, and OTAs are held to 21.1%. We also work with government owners: Saudi Arabia's Ministry of Culture entrusted us with Dar Sahra The Atelier Hotel in the Saudi desert as a project of national strategic tourism importance.
+
+I recognise the hotel sits under a Hyatt agreement today. We have sketched what Capital Gate could look like as The House, our upper-upscale, design-led brand with a strong MICE fit (teaser attached). Would a short call to walk you through it be worth 20 minutes, whenever the timing suits your planning?
+
+[Your name]
+Cognitidata`,email_subject:"A question on Capital Gate's direct bookings"},identity:{city:"Abu Dhabi",keys:188,country:"United Arab Emirates",segment:"luxury",hotel_name:"Andaz Capital Gate Abu Dhabi - A Concept By Hyatt",owner_name:"Abu Dhabi National Exhibitions Company (ADNEC Group)",owner_type:"government",star_rating:5,booking_rating:8.9,booking_reviews:2571},recipient:{mode:"corporate",name:"Paul Macpherson",title:"Chief Executive Officer"},generated_at:"2026-10-01T12:54:00+00:00"},"4f608fc7-4c31-459a-8e13-98ada3cf8208":{content:{email_body:`Hi Alex,
+
+Your guests at the Majestic keep writing about two things: how kind your staff are, and how tired the rooms have become.
+
+That gap matters. Thousands of reviews say the hard parts already work, the people and the location near Mohammed V Square. What holds the scores down is old furniture, dated bathrooms and housekeeping, and those are all fixable.
+
+Cognitidata grows by converting independent hotels. Our conversions run on brand guidelines instead of rigid standards, so refurbishment stays cost- and time-effective. The closest example is Halcyon Roma, steps from the Trevi Fountain. It opened in February 2025 and reached 9.2 on Booking.com and 9.6 on Expedia within months, ranking in Rome's top 10th percentile.
+
+We've sketched what the Majestic could look like as a Halcyon in Casablanca, and the teaser is attached. Would a short call next week work so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"What your Majestic guests keep writing about"},identity:{city:"Casablanca",keys:90,country:"Morocco",segment:null,hotel_name:"Hotel Majestic",owner_name:"MAJESTIC HOTEL",owner_type:"family",star_rating:4,booking_rating:6.8,booking_reviews:6529},recipient:{mode:"owner-direct",name:"Alex Soldevila Fernandez-Cruz",title:"CEO"},generated_at:"2026-10-14T10:22:43+00:00"},"f537ab11-3445-4878-8819-f75a9935dee2":{content:{brand:"Halcyon",today:["Decor reads as tired against a strong location","Reception service raised inconsistently","Guest score sitting at 8.0"],proofs:["8.0 on Booking.com across 1,304 reviews","305 keys, beachfront on the Corniche","Beach, pool, spa and wellness on site"],frictions:["Outdated decor flagged by reviewers","Occasional service issues, especially at reception","Towel availability noted as a concern"],email_body:`Hi,
+
+Your guests keep circling the same two notes at Corniche Hotel Abu Dhabi: the central Corniche location with spacious rooms and impressive views, and rooms that read as tired. An 8.0 on 1,304 reviews is a solid floor for a 305-key beachfront asset in this city, and the gap between what the building offers and what the decor communicates is where the earning sits.
+
+Cognitidata grows by converting independent properties onto brand guidelines instead of rigid standards, which keeps a refurbishment cost- and time-effective. Halcyon Roma opened in February 2025 and reached 9.2 on Booking.com within months, ranking in Rome's top 10th percentile. Portfolio-wide, 64.8% of our reservations are direct, with OTAs held to 21.1%, which changes what a 305-key asset takes home per room.
+
+We have sketched what this property could look like under the best-fit brand (the attached teaser), and a short call would walk you through it.
+
+[Your name]
+Cognitidata`,fit_points:["Halcyon sea variant fits a beachfront 305-key asset","Direct-booking economics: 64.8% direct portfolio-wide, OTAs held to 21.1%"],guests_love:["Central Corniche location","Spacious rooms with impressive views","Well-maintained pool and gym, with cleanliness often praised"],with_cognitidata:["Refurbishment on Halcyon brand guidelines, cost- and time-effective","Lifestyle service model built around the guest experience","Positioned to climb the way Halcyon Roma reached 9.2 within months"],hook_support:"Guests praise the central Corniche setting, the spacious rooms with impressive views, and a well-maintained pool and gym. The main drag on sentiment is outdated decor, which is what a conversion addresses first.",email_subject:"the 8.0 and the outdated decor",hook_headline:"The location and views are already there. The rooms are the only thing holding the score down.",hook_sentence:"A 305-key beachfront asset with spacious view rooms and an 8.0 guest score is exactly the relaxed, tech-forward boutique-lifestyle product Halcyon's sea variant is built to carry.",brand_descriptor:"Halcyon is Cognitidata's high-end-but-relaxed, tech-forward boutique-lifestyle brand, with a sea variant built for beachfront destinations."},identity:{city:"Abu Dhabi",keys:305,country:"United Arab Emirates",segment:"3 Star",hotel_name:"Corniche Hotel Abu Dhabi",owner_name:"Bin Otaiba Hotels",owner_type:"institutional",star_rating:5,booking_rating:8,booking_reviews:1304},direction:"a",recipient:{mode:"no-contact",name:null,title:null},generated_at:"2026-07-23T09:25:46+00:00"},"627acb29-9369-4f27-8635-4614b9065209":{content:{email_body:`Hi Ynna,
+
+Do you know what share of Grand Mogador's bookings Zimania actually owns, and what share it rents back from the OTAs?
+
+At 420 keys, with conference space, a spa and fine dining under one roof, every point of booking share held by an intermediary is margin leaving the asset. From the ownership side, that gap compounds year after year.
+
+I work in business development at Cognitidata, where we grow by converting existing hotels. Across our portfolio, 64.8% of reservations are direct bookings and OTAs are held to 21.1%. Our conversions run on brand guidelines instead of rigid standards, which keeps refurbishment cost- and time-effective.
+
+We have sketched what Grand Mogador could look like as The House, our upper-upscale, design-led brand built for design-conscious travellers and MICE. The teaser is attached. Would you have 20 minutes in the next couple of weeks for a short call so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"Who owns the demand at Grand Mogador?"},identity:{city:"Casablanca",keys:420,country:"Morocco",segment:null,hotel_name:"Grand Mogador Casablanca",owner_name:"Société d'investissements immobiliers et touristiques Zimania",owner_type:"institutional",star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"corporate",name:"Ynna Holding",title:null},generated_at:"2026-10-16T09:14:49+00:00"},"5cc10e43-52e5-474b-a93d-f56e8e8a42d1":{content:{email_body:`Hi,
+
+Do you know what share of Hotel Soho's bookings you actually own, and what share you rent back from an OTA every night?
+
+At 74 rooms, that split decides a lot of the margin. A Casablanca hotel with a pool has a real reason for guests to book with you directly, and every commission paid on a guest who could have come straight to you is money that never reaches the asset.
+
+That is the part of the business we focus on at Cognitidata. Across our portfolio, 64.8% of reservations are direct bookings, and OTAs are held to 21.1%. When we opened Halcyon Roma in February 2025, it reached 20-25% direct bookings in its first months, along with a 9.2 on Booking.com.
+
+We convert existing hotels on brand guidelines instead of rigid standards, which keeps refurbishment cost- and time-effective. We have sketched what Hotel Soho could look like as a Halcyon, our relaxed, tech-forward boutique-lifestyle brand (teaser attached). Would a 20-minute call to walk you through it work in the next couple of weeks?
+
+[Your name]
+Cognitidata`,email_subject:"Who owns the bookings at Hotel Soho"},identity:{city:"Casablanca",keys:74,country:"Morocco",segment:null,hotel_name:"Hotel Soho",owner_name:null,owner_type:null,star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"no-contact",name:null,title:null},generated_at:"2026-10-16T09:15:59+00:00"},"092780e6-bfc5-4e24-8fad-7d71a5addb78":{content:{email_body:`Hi Rassuich,
+
+Guests at Le Palace d'Anfa keep writing about two things: suites they describe as luxurious and impeccably clean, and a pool and spa that they feel don't live up to the five stars on the door.
+
+That second point is what holds a 7.8 score down while the rooms, the breakfast and much of the staff are earning real praise. Closing the gap is mostly a question of where the refurbishment money goes.
+
+At Cognitidata we run 50+ projects across 12 brands and about 4,000 keys. Our conversions work on brand guidelines, which keeps refurbishment cost- and time-effective, and each property is tailored to its destination. Across the portfolio, 64.8% of reservations are direct bookings, with OTAs held to 21.1%.
+
+We have sketched what Le Palace d'Anfa could look like as The House, our upper-upscale, design-led brand, and the teaser is attached. Could we set up a short call so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"what your guests say about the suites and the spa"},identity:{city:"Casablanca",keys:156,country:"Morocco",segment:"5-star",hotel_name:"Le Palace d'Anfa",owner_name:"BER ANAS",owner_type:"family",star_rating:5,booking_rating:7.8,booking_reviews:690},recipient:{mode:"owner-direct",name:"Rassuich",title:null},generated_at:"2026-10-14T10:22:18+00:00"},"f3956b07-5b4e-4ea0-b388-3148115217c7":{content:{email_body:`Hi,
+
+Do you know what share of Hotel Touring's bookings you actually own, and what share an OTA takes a cut of before the guest even checks in?
+
+That split decides how much of each room night in Casablanca stays with the hotel. It is also easy to lose sight of when the platforms keep the calendar full.
+
+It is the number we watch hardest at Cognitidata. Across our portfolio, 64.8% of reservations are direct bookings and OTAs are held to 21.1%. When Halcyon Roma opened in February 2025, it reached 20-25% direct bookings in its first months, alongside a 9.2 on Booking.com.
+
+Our conversions run on brand guidelines, which keeps refurbishment cost- and time-effective and lets each hotel stay tailored to its city.
+
+We have sketched what Hotel Touring could look like as a Halcyon, our relaxed, tech-forward boutique-lifestyle brand, in the attached teaser. Would a short call in the next couple of weeks work to walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"Who owns Hotel Touring's bookings"},identity:{city:"Casablanca",keys:null,country:"Morocco",segment:null,hotel_name:"Hotel Touring",owner_name:null,owner_type:null,star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"no-contact",name:null,title:null},generated_at:"2026-10-16T09:16:14+00:00"},"40a210dd-0aee-41df-bb70-5440229fc6a1":{content:{email_body:`Hi,
+
+Do you know what share of Al Tujjar's bookings you actually own, and what share you pay a commission on each night?
+
+For a Casablanca hotel, that split decides much of what reaches the bottom line. Every guest who arrives through a third party costs more than one who books with you directly.
+
+Across Cognitidata's portfolio, 64.8% of reservations are direct bookings and OTAs are held to 21.1%. When we opened Halcyon Roma in February 2025, it reached 20-25% direct bookings in its first months and a 9.2 on Booking.com from 365+ reviews.
+
+We grow by converting existing hotels. Conversions run on brand guidelines, which keeps refurbishment cost- and time-effective, and each property is tailored to its destination.
+
+We have sketched what Al Tujjar could look like as a Cognitidata property, and the teaser is attached. Would you be open to a 20-minute call so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"Who owns Al Tujjar's bookings?"},identity:{city:"Casablanca",keys:null,country:"Morocco",segment:null,hotel_name:"Al Tujjar Hotel (فندق التجار)",owner_name:null,owner_type:null,star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"no-contact",name:null,title:null},generated_at:"2026-10-16T09:16:39+00:00"},"53bc35e1-9da9-44c2-8bf3-837a4fcd6d17":{content:{email_body:`Hi Riad,
+
+Do you know what share of the bookings at Riad Chaouia Tamaris you actually own, and what the rest is costing you in commission?
+
+For a pool property near Casablanca, that split decides how much of each room night stays with the owner. From the real estate side, it also shapes what the asset is worth on paper.
+
+I work with Cognitidata, a lifestyle operator that grows by converting existing properties. Across our portfolio, 64.8% of reservations are direct bookings, and OTAs are held to 21.1%. When Halcyon Roma opened in February 2025, it reached 20-25% direct bookings in its first months and a 9.2 on Booking.com. Our conversions follow brand guidelines that adapt to each property, which keeps refurbishment cost- and time-effective.
+
+We've sketched what Riad Chaouia Tamaris could look like as a Halcyon, our relaxed boutique-lifestyle brand (teaser attached). Would a 20-minute call next week work to walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"Who owns the bookings at Riad Chaouia Tamaris"},identity:{city:"Casablanca",keys:null,country:"Morocco",segment:null,hotel_name:"Riad chaouia tamaris",owner_name:null,owner_type:null,star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"corporate",name:"Riad chaouia tamaris (Real Estate)",title:null},generated_at:"2026-10-16T09:16:27+00:00"},"782238d4-3f1d-470f-b868-0a2773e7dec5":{content:{email_body:`Hi,
+
+Do you know what share of Hôtel Rio's 59 rooms are filled by guests who booked with you directly? When the owning company carries the hotel's own name, that number decides how much of each night's rate actually stays with the hotel.
+
+The OTA commission line usually tells you the rest, and it is the part most owners would like back.
+
+Across Cognitidata's portfolio, 64.8% of reservations are direct bookings, and OTAs are held to 21.1%. When we opened Halcyon Roma in February 2025, it reached 9.2 on Booking.com and 9.6 on Expedia within months, with 20-25% direct bookings in its first months. Our conversions run on brand guidelines instead of rigid standards, so refurbishment stays cost- and time-effective.
+
+We have sketched what Hôtel Rio could look like as a Halcyon, our relaxed, tech-forward boutique-lifestyle brand, and the teaser is attached. Would a 20-minute call next week work for me to walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"a question about Hôtel Rio's bookings"},identity:{city:"Casablanca",keys:59,country:"Morocco",segment:null,hotel_name:"Hôtel Rio",owner_name:"Hotel Rio (S.A.)",owner_type:"institutional",star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"no-contact",name:null,title:null},generated_at:"2026-10-14T10:23:52+00:00"},"6f535cb4-5b2c-420b-b0da-5cf8462357e1":{content:{email_body:`Hi Loubna,
+
+Behind the Ajiad name is Hôtel Odyssee Center SA, a family company, running 140 keys and its own fine-dining room in Casablanca. That is a hotel with a character worth keeping, and it is exactly what a rigid brand manual tends to flatten.
+
+It is also the size where selling rooms through other people's channels starts to cost real money.
+
+Cognitidata grows by working with properties like this. Across our portfolio, 64.8% of reservations are direct bookings and OTAs are held to 21.1%. Our conversions run on brand guidelines, with no rigid standards, so refurbishment stays cost- and time-effective and each hotel stays tailored to its destination.
+
+We have sketched what Ajiad could look like as The House, our upper-upscale, design-led brand, and the teaser is attached. Would you be open to a short call so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"A thought on Ajiad's next chapter"},identity:{city:"Casablanca",keys:140,country:"Morocco",segment:null,hotel_name:"Ajiad Hotel Casablanca Marrocos",owner_name:"Hôtel Odyssee Center SA",owner_type:"family",star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"owner-direct",name:"Loubna Eddamanhoury",title:"Directrice générale / General Manager"},generated_at:"2026-10-15T09:47:33+00:00"},"a9d4997c-6bf1-455e-8908-f61c822da577":{content:{email_body:`Hi [First name],
+
+Tracing who actually stands behind Domo Hotel in Casablanca took more digging than usual, which tells me the hotel doesn't get many serious approaches. Family-held city hotels with a pool are the ones I most want to talk to, because the owner still decides what the property becomes next.
+
+Cognitidata converts independent hotels into its lifestyle brands. We run conversions on brand guidelines, which keeps refurbishment cost- and time-effective.
+
+The closest comparison for Casablanca is Halcyon Roma. It opened in February 2025 steps from the Trevi Fountain, reached 9.2 on Booking.com and 9.6 on Expedia within months, and took 20-25% of its bookings direct in the first months. Across our portfolio, 64.8% of reservations are direct and OTAs are held to 21.1%.
+
+We've sketched what Domo could look like as a Halcyon, and it's in the attached teaser. Would a 20-minute call in the next couple of weeks work for me to walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"A Halcyon sketch for Domo Hotel"},identity:{city:"Casablanca",keys:null,country:"Morocco",segment:null,hotel_name:"Domo Hotel",owner_name:"Grupo Hotusa",owner_type:"family",star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"owner-direct",name:"Domo Hotel Casablanca",title:null},generated_at:"2026-10-16T09:17:12+00:00"},"fb4da566-c82c-4fbf-a69a-ffba72ea1b8a":{content:{email_body:`Hi [First name],
+
+Melliber has 4,257 Booking.com reviews at 8.0. As the owner, do you know what share of those guests booked with you directly, and what share came through an OTA you paid commission on?
+
+This matters at Melliber because the reviews show demand with room to grow. Guests praise the Hassan II Mosque views, the spacious studios and the friendly staff, but they also mention worn rooms and a thin breakfast. A gap like that usually holds the rate down, and commission then takes a slice of what is left.
+
+Two things from Cognitidata are relevant here. Across our portfolio, 64.8% of reservations are direct bookings, and OTAs are held to 21.1%. Our conversions also run on brand guidelines, which keeps a refurbishment of the studios cost- and time-effective.
+
+We have sketched Melliber as a The House property, with the apartment format positioned as serviced residences for upscale and MICE travellers. The teaser is attached. Could I walk you through it on a 20-minute call next week?
+
+[Your name]
+Cognitidata`,email_subject:"how many of melliber's 4,257 reviewers booked with you directly?"},identity:{city:"Casablanca",keys:90,country:"Morocco",segment:null,hotel_name:"Melliber Appart Hotel",owner_name:"Résidence Melliber",owner_type:"institutional",star_rating:4,booking_rating:8,booking_reviews:4257},recipient:{mode:"corporate",name:"Résidence Melliber",title:null},generated_at:"2026-10-15T10:26:13+00:00"},"1638926a-34fe-4b6d-bb34-b7e3b799d1a3":{content:{email_body:`Hi,
+
+Do you know what share of Hotel Al Walid's bookings you actually own? For a 70-key hotel in Casablanca with its own spa, that share decides how much of each room night stays with you once the OTAs take their cut.
+
+It is the number we watch most closely at Cognitidata. Across our portfolio, 64.8% of reservations are direct bookings, and OTAs are held to 21.1%.
+
+Our Halcyon brand is the closest fit here. It is a relaxed, tech-forward boutique-lifestyle brand for younger and digital-nomad travellers, with an urban variant. Halcyon Roma opened in February 2025 steps from the Trevi Fountain. Within months it reached 9.2 on Booking.com and 9.6 on Expedia, and it took 20-25% direct bookings in its first months. Our conversions run on brand guidelines, so refurbishment stays cost- and time-effective.
+
+We have sketched what Hotel Al Walid could look like as a Halcyon (the attached teaser). Would you have 20 minutes for a short call so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"who owns Hotel Al Walid's bookings"},identity:{city:"Casablanca",keys:70,country:"Morocco",segment:null,hotel_name:"Hotel Al Walid",owner_name:"Hamed Benhammou",owner_type:"individual",star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"no-contact",name:null,title:null},generated_at:"2026-10-15T10:27:06+00:00"},"345b9758-cba7-40b3-82a0-9f2731dbc3f9":{content:{email_body:`Hi Mbark,
+
+Do you know what share of Hôtel Maâmoura's bookings COSUMAR actually owns, and what share it rents back from the OTAs at commission?
+
+For a 52-key hotel in Casablanca, that split decides a large part of the margin. As gérant you see the commission line every month, and it rarely shrinks on its own.
+
+Across Cognitidata's portfolio, 64.8% of reservations are direct bookings and OTAs are held to 21.1%. When we opened Halcyon Roma in February 2025, it reached 20-25% direct bookings in its first months, with a 9.2 on Booking.com. We grow by converting existing hotels, and our conversions run on brand guidelines, which keeps refurbishment cost- and time-effective.
+
+We have sketched what Hôtel Maâmoura could look like as a Halcyon (the teaser is attached). Would you have 20 minutes in the next two weeks for a short call so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"Who owns Maâmoura's bookings?"},identity:{city:"Casablanca",keys:52,country:"Morocco",segment:null,hotel_name:"Hôtel Maâmoura",owner_name:"COSUMAR SA",owner_type:"institutional",star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"corporate",name:"Mbark Boudad",title:"gérant/directeur (hotel maaamoura)"},generated_at:"2026-10-14T10:23:25+00:00"},"8ecf071f-2f07-400f-9bd2-13c769c45449":{content:{email_body:`Hi [First name],
+
+It is unusual in Casablanca to find a beach hotel with a pool, conference rooms and a fine-dining kitchen that is still in family hands. That mix brings leisure guests and meeting groups to the same address, and the open question is how much of that demand you own and how much the booking sites take.
+
+Across Cognitidata's portfolio, 64.8% of reservations are direct bookings and OTAs are held to 21.1%. We grow by converting independent hotels. Conversions run on brand guidelines, which keeps refurbishment cost- and time-effective, and each of our 50+ projects is tailored to its destination.
+
+For Val d'Anfa, The House looks like the natural fit. It is our upper-upscale, design-led brand, and it is built for meetings guests as well as leisure. We have sketched what the hotel could look like under it in the attached teaser. Would you be open to a 20-minute call so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"Val d'Anfa and who owns its bookings"},identity:{city:"Casablanca",keys:null,country:"Morocco",segment:null,hotel_name:"Hôtel Club Val d'Anfa",owner_name:"Société Hôtelière Tamaris",owner_type:"family",star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"owner-direct",name:"Société Hôteliere Tamaris",title:null},generated_at:"2026-10-16T09:16:57+00:00"},"44d3459d-d68b-4d70-96e4-76bc240c9f38":{content:{email_body:`Hi [First name],
+
+As the company that owns Oum Palace, do you know what share of the hotel's bookings you actually own, and what the rest costs you in commission?
+
+For a 99-key hotel in Casablanca with a spa and a fine-dining room, that share decides how much of the property's earnings reach the owner. Every booking that comes through an OTA pays twice: once in fees, and again in a guest relationship the hotel never keeps.
+
+Across the Cognitidata portfolio, 64.8% of reservations are direct bookings and OTAs are held to 21.1%. We convert existing hotels on brand guidelines, which keeps refurbishment cost- and time-effective.
+
+Our upper-upscale brand, The House, runs a a global athleisure brand wellness programme at The Atelier Bayfront. That is the kind of partnership a spa and wellness offer like yours could carry.
+
+We have sketched what Oum Palace could look like as a The House property, and the teaser is attached. Would you have 20 minutes for a short call so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"Who owns Oum Palace's bookings?"},identity:{city:"Casablanca",keys:99,country:"Morocco",segment:null,hotel_name:"Oum Palace Hotel & Spa",owner_name:"Oum Palace Hotel SARL",owner_type:"institutional",star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"corporate",name:"Oum Palace Hotel SARL",title:null},generated_at:"2026-10-14T10:24:53+00:00"},"fcd8fe27-9a44-4d74-8f87-1709ad5040fe":{content:{email_body:`Hi [First name],
+
+Le Zenith is registered under a company name, and it took some digging to learn it is still a family-held hotel. A family running 140 keys with a spa and conference space is competing with the flagged hotels in Casablanca for the same guests, usually without their booking engines behind it.
+
+That gap is the part we work on. Across Cognitidata's portfolio, 64.8% of reservations are direct bookings and OTAs are held to 21.1%, so more of each room night stays with the owner. Our conversions run on brand guidelines, which keeps refurbishment cost- and time-effective and lets each hotel stay tailored to its destination.
+
+We have sketched what Le Zenith could look like as The House, our upper-upscale, design-led brand, with the spa and wellness side at its centre. We already run a a global athleisure brand wellness programme at The Atelier Bayfront. The teaser is attached, and I would be glad to walk you through it on a short 20-minute call. Would next week work for you?
+
+[Your name]
+Cognitidata`,email_subject:"The family behind le Zenith"},identity:{city:"Casablanca",keys:140,country:"Morocco",segment:null,hotel_name:"Le Zenith Hotel and Spa",owner_name:"le Zénith Hôtel (SARL)",owner_type:"family",star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"owner-direct",name:"le Zénith Hôtel (SARL)",title:null},generated_at:"2026-10-15T09:54:19+00:00"},"77364279-3faf-424b-9852-0cde8bcea2d0":{content:{email_body:`Hi New,
+
+Do you know what share of the bookings at New Hotel Piscine you actually own, and what share you rent back from the OTAs at commission?
+
+For a 96-key Casablanca hotel with a spa and conference space, that split decides how much of your wellness and meeting demand ends up as margin. As CEO you will have your own figure to hand, so here is ours to set against it.
+
+Across Cognitidata's portfolio, 64.8% of reservations are direct bookings and OTAs are held to 21.1%. Our conversions run on brand guidelines, so refurbishment stays cost- and time-effective.
+
+The brand we see for your property is The House, our upper-upscale, design-led lifestyle brand. Wellness already draws partners there. a global athleisure brand runs a wellness programme at The Atelier Bayfront.
+
+We have sketched what New Hotel Piscine could look like as The House (the teaser is attached). Would a 20-minute call in the next couple of weeks work for me to walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"Who owns the bookings at New Hotel Piscine"},identity:{city:"Casablanca",keys:96,country:"Morocco",segment:null,hotel_name:"New Hotel Piscine Wellness & Spa",owner_name:null,owner_type:null,star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"corporate",name:"New Car",title:"CEO"},generated_at:"2026-10-16T09:15:07+00:00"},"6f0f9ad4-31c1-48e7-906f-56fedc430750":{content:{email_body:`Hi [First name],
+
+Hotel Gauthier has 621 reviews on Booking.com. As the owner, do you know what share of those stays Al Hoceinia Holding actually owns, and what share it pays commission on?
+
+At 35 keys and a $59 entry rate, every point of OTA commission comes straight out of margin. Your guests already give people reasons to book with you directly. They keep writing about the staff's warmth and about the breakfast.
+
+Across Cognitidata's portfolio, 64.8% of reservations are direct bookings and OTAs are held to 21.1%. Halcyon Roma opened in February 2025 and reached 20-25% direct bookings in its first months, with a 9.2 on Booking.com.
+
+We think Hotel Gauthier fits Halcyon, our relaxed, tech-forward boutique-lifestyle brand, in its urban version. We have sketched what the hotel could look like under it in the attached teaser. Would a 20-minute call next week work for me to walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"Who owns Hotel Gauthier's bookings?"},identity:{city:"Casablanca",keys:35,country:"Morocco",segment:null,hotel_name:"Hotel Gauthier Casablanca",owner_name:"Al Hoceinia Holding",owner_type:"institutional",star_rating:4,booking_rating:7.7,booking_reviews:621},recipient:{mode:"corporate",name:"Villa Blanca Hôtel Urban",title:null},generated_at:"2026-10-13T14:44:39+00:00"},"03497f04-4d31-4a98-b561-168a194cbc78":{content:{email_body:`Hi [First name],
+
+Do you know what share of Le Casablanca's bookings you actually own?
+
+From the ownership seat, that split decides most of the margin on a 68-key five-star. Guests already praise the spa, the hammam and the beds. They also write that service falls below five-star level, and that is the gap that keeps a hotel dependent on OTA discounting.
+
+Across Cognitidata's portfolio, 64.8% of reservations are direct bookings and OTAs are held to 21.1%. We run 50+ projects across 12 brands, each tailored to its destination, and conversions follow brand guidelines, which keeps refurbishment cost- and time-effective.
+
+We have sketched what Le Casablanca could look like as The House, our upper-upscale, design-led brand, and the teaser is attached. Could we set up a short intro call in the next two weeks so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"Who owns Le Casablanca's bookings"},identity:{city:"Casablanca",keys:68,country:"Morocco",segment:null,hotel_name:"Le Casablanca Hotel",owner_name:"DANFA SA",owner_type:"institutional",star_rating:5,booking_rating:8.4,booking_reviews:392},recipient:{mode:"corporate",name:"Moroccan royal family",title:"Owner"},generated_at:"2026-10-14T10:22:05+00:00"},"ba8b54d5-02a7-49e6-a7ba-5b018fc021c9":{content:{email_body:`Hi [First name],
+
+Do you know what share of Hotel Rania's bookings your company actually owns?
+
+I ask because your reviews pull in two directions. Guests like the location, the clean rooms and the breakfast, yet several write that the rooms fall short of the price. When a hotel is losing the price argument on review sites, it tends to lean harder on the same OTAs that publish those reviews.
+
+You will know your commission line better than I do. Across Cognitidata's portfolio, 64.8% of reservations are direct bookings, and OTAs are held to 21.1%. Our conversions run on brand guidelines, which keeps refurbishment cost- and time-effective on a 65-key property like yours.
+
+We have sketched what Hotel Rania could look like as an urban Halcyon, our relaxed, tech-forward boutique brand, and the teaser is attached. Would you be open to a 20-minute call so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"Who owns Hotel Rania's bookings?"},identity:{city:"Casablanca",keys:65,country:"Morocco",segment:null,hotel_name:"Hotel Rania",owner_name:"Hôtel Rania Belmadina S.A.",owner_type:"institutional",star_rating:3,booking_rating:null,booking_reviews:null},recipient:{mode:"corporate",name:"Hôtel Rania Belmadina S.A.",title:null},generated_at:"2026-10-15T10:41:43+00:00"},"aa0878e8-366d-4eea-8b03-c77ae88b0b6a":{content:{brand:"The House",today:["Aging facilities noted in guest reviews","A sprawling layout that lengthens internal walking distances","Villa and suite inventory positioned as standard luxury"],proofs:["9.3 on Booking.com across 2,370 reviews","306 keys including villas and ocean-view suites","Private-beach Saadiyat position with spa, golf, and fine dining"],frictions:["Long walking distances across the sprawling property","Some facilities showing their age and due for renovation","Restaurant pricing some guests find expensive"],email_body:`Hi Khalid,
+
+As CEO of Abu Dhabi National Hotels, you sit over one of the strongest beachfront assets on Saadiyat, and its position is exactly why I am writing. Abu Dhabi's luxury demand is deepening as the island's cultural anchors mature, and the moment to reconsider how a flagship of this calibre captures that demand is now, ahead of the next refurbishment cycle.
+
+Where Cognitidata tends to add value is the distribution and brand side. Across our portfolio, 64.8% of reservations come direct and OTAs are held to 21.1%, which changes the margin picture on a property with this rate potential. We also run conversions on brand guidelines rather than rigid standards, so a repositioning stays cost and time effective and keeps what already works about the property.
+
+We have sketched what this asset could look like under The House, our upper-upscale design-led brand, and it is in the attached teaser. Worth a short call to walk you through it?
+
+[Your name]
+Cognitidata`,fit_points:["Direct-booking economics: 64.8% direct portfolio-wide, OTAs held to 21.1%","Upper-upscale brand fit for a design-led beachfront flagship"],guests_love:["Service guests call exceptional","Pristine, comfortable rooms and an excellent breakfast","A beautiful private beach"],with_cognitidata:["A design-led refurbishment run on brand guidelines, cost and time effective","Wayfinding and guest flow reworked as part of the conversion design","Villas and suites positioned under The House with branded-residence upside"],hook_support:"Exceptional service and a private beach already carry the property. A design-led conversion sharpens the guest experience where aging facilities and the sprawling layout currently pull against it.",email_subject:"Park Hyatt Abu Dhabi and the conversion economics on Saadiyat",hook_headline:"A 9.3-rated Saadiyat flagship with the bones for an upper-upscale repositioning",hook_sentence:"A 306-key Saadiyat beachfront property rated 9.3 on Booking.com, with a villa inventory and a private beach, is a natural fit for The House, Cognitidata's upper-upscale design-led brand.",brand_descriptor:"The Atelier is Cognitidata's upper-upscale, design-led lifestyle brand, spanning hotels and branded residences for design-conscious upscale travellers and MICE."},identity:{city:"Abu Dhabi",keys:306,country:"United Arab Emirates",segment:"Luxury",hotel_name:"Park Hyatt Abu Dhabi Hotel and Villas",owner_name:"Abu Dhabi National Hotels",owner_type:"institutional",star_rating:5,booking_rating:9.3,booking_reviews:2370},direction:"a",recipient:{mode:"corporate",name:"Khalid Anib",title:"Chief Executive Officer"},generated_at:"2026-07-03T14:21:49+00:00"},"f49763a7-2be7-412c-bbd7-faa8e617af65":{content:{brand:"The House",today:["Check-in slows when the house is full","Extras and room service read as overpriced to guests","Demand routed largely through OTAs and a franchise flag"],proofs:["8.9 on Booking.com across 2,078 reviews","532 keys with a full suite-and-villa ladder","Waterfront setting with private beach, spa, and fine dining"],frictions:["Occasional check-in delays when fully booked","Extras and room service priced too high","Narrow beach"],email_body:`Hi Khalid,
+
+ADNH owns the real estate at the Grand Canal, but Marriott owns the demand. Portfolio-wide, 64.8% of our reservations are direct bookings and OTAs are held to 21.1%. On a 532-key waterfront asset, the gap between owning your guest relationship and renting it back through a franchise flag is a large annual number.
+
+The reason I'm writing now is that our conversions run on brand guidelines, not rigid standards, so the refurbishment stays cost- and time-effective while the property keeps its character. In this region, Saudi Arabia's Ministry of Culture entrusted Dar Sahra The Atelier Hotel to us as a project of national strategic tourism importance, alongside a 300-plus key Halcyon nearby.
+
+We've sketched what the Grand Canal could look like under The House, our upper-upscale design-led brand with serviced-apartment and residence upside. It's in the attached teaser, and a short call walks you through it.
+
+[Your name]
+Cognitidata`,fit_points:["Design-led repositioning under The House without full brand-standard rebuild cost","Serviced-apartment and residence upside on a large waterfront footprint"],guests_love:["Friendly, attentive staff and service","Spacious rooms and strong food variety, especially breakfast","Pools and the private beach"],with_cognitidata:["Arrival and service design tuned to peak occupancy","Value positioning owned under one lifestyle brand","64.8% direct bookings portfolio-wide, OTAs held to 21.1%"],hook_support:"The Grand Canal already holds an 8.9 guest score across more than 2,000 reviews. Under The House, that reputation feeds a direct-booking engine rather than an OTA and franchise dependency.",email_subject:"532 keys under a flag you don't own",hook_headline:"532 keys of waterfront demand, owned instead of rented",hook_sentence:"A 532-key waterfront asset with a private beach, fine dining, and a full suite-and-villa ladder is a natural fit for The House, where design-led positioning and residence upside meet institutional-grade scale.",brand_descriptor:"The Atelier is Cognitidata's upper-upscale, design-led lifestyle brand spanning hotels and branded residences for design-conscious travellers and MICE."},identity:{city:"Abu Dhabi",keys:532,country:"United Arab Emirates",segment:"5-star",hotel_name:"The Ritz-Carlton Abu Dhabi, Grand Canal",owner_name:"Abu Dhabi National Hotels (ADNH)",owner_type:"institutional",star_rating:5,booking_rating:8.9,booking_reviews:2078},direction:"a",recipient:{mode:"corporate",name:"Khalid Anib",title:"Chief Executive Officer"},generated_at:"2026-07-07T06:28:15+00:00"},"e0b85457-74d2-4b35-b98d-761ea9ef2180":{content:{brand:"The House",today:["Breakfast guests describe as limited","Parking nearby is a recurring guest complaint","Sold as hotel apartments on the property's own channels"],proofs:["8.9 on Booking.com from 1,772 reviews","216 keys, 5-star","Near Abu Dhabi Mall, with pool and spa"],frictions:["Limited breakfast options","Difficulty finding parking in the area"],email_body:`Hi Nicolas,
+
+Across 1,772 Booking.com reviews, Al Manzel's guests keep coming back to two things: how much space the apartments give them, and how little there is at breakfast.
+
+That gap says a lot. The product people pay for, a full apartment with a kitchen near Abu Dhabi Mall, is already right. The value being left on the table sits in what surrounds it.
+
+That is where The House fits. It is Cognitidata's upper-upscale, design-led brand for hotels and serviced apartments. Branded residences command a 25-35% premium over comparable non-branded properties, and Cognitidata backs that with global booking channels and marketing. Across our portfolio, 64.8% of reservations are direct bookings, with OTAs held to 21.1%. Conversions run on brand guidelines, so refurbishment stays cost- and time-effective.
+
+We have sketched what Al Manzel could look like as a The House property, and it is attached. Would you have 20 minutes for a short call so I can walk you through it?
+
+[Your name]
+Cognitidata`,fit_points:["Serviced-apartment product fits The House residences model","Branded residences command a 25-35% premium over non-branded"],guests_love:["Exceptionally spacious, well-equipped apartments with full kitchens","Friendly, helpful staff","Prime location near Abu Dhabi Mall"],with_cognitidata:["A The House breakfast offer built to match the apartment product","Arrival and parking guidance planned into the guest experience","Positioned as branded serviced residences, backed by Cognitidata's global booking channels and marketing"],hook_support:"Guests single out the space and the staff at Al Manzel. The friction they mention, breakfast and parking, sits outside the apartment itself, which is exactly what a brand layer addresses.",email_subject:"What Al Manzel's guests keep writing about",hook_headline:"The apartments already earn an 8.9, and the experience around them can catch up.",hook_sentence:"With 216 spacious, kitchen-equipped apartments rated 8.9 by 1,772 Booking.com guests near Abu Dhabi Mall, Al Manzel already has the core of a The House serviced-residence property.",brand_descriptor:"The Atelier is Cognitidata's upper-upscale, design-led lifestyle brand spanning hotels, branded residences and serviced apartments."},identity:{city:"Abu Dhabi",keys:216,country:"United Arab Emirates",segment:null,hotel_name:"Al Manzel Hotel Apartments",owner_name:"Al Masar Investments",owner_type:"family",star_rating:5,booking_rating:8.9,booking_reviews:1772},direction:"a",recipient:{mode:"owner-direct",name:"Nicolas Ghajar",title:"CEO and Chief Investment Officer"},generated_at:"2026-09-29T08:55:29+00:00"},"b42d75d7-e30e-4e8b-b13a-fb2216cb35f9":{content:{email_body:`Hi,
+
+At 55 keys, with a spa and conference space under one roof, how much of Moroccan House Hotel's business do you actually own?
+
+On a property this size, every booking that arrives through an OTA carries a commission that is harder to absorb than it would be across a few hundred rooms. The spa and the meeting rooms are the reasons a guest or an event planner would book direct, if the brand behind them gives people a reason to.
+
+Across Cognitidata's portfolio, 64.8% of reservations are direct bookings and OTAs are held to 21.1%. Our conversions run on brand guidelines instead of rigid standards, so refurbishment stays cost- and time-effective and each property is tailored to its destination.
+
+We have sketched what Moroccan House Hotel could look like under The House, our upper-upscale, design-led brand with a MICE focus (we also run a a global athleisure brand wellness programme at The Atelier Bayfront). The teaser is attached. Would you have 20 minutes for a short call so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"who owns Moroccan House Hotel's bookings"},identity:{city:"Casablanca",keys:55,country:"Morocco",segment:null,hotel_name:"Moroccan House Hotel",owner_name:null,owner_type:null,star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"no-contact",name:null,title:null},generated_at:"2026-10-16T09:15:29+00:00"},"468d7aea-c303-4116-9d3e-d4773d081c93":{content:{brand:"Halcyon",today:["Dated interiors limiting rate capture","Operational noise and amenity gaps","Value-focused guest mix"],proofs:["110 keys, 2,677 reviews at 7.8 rating","Prime Corniche location in Abu Dhabi","4-star independent with strong operational foundation"],frictions:["Dated facilities below 4-star expectations","Night-time noise disturbances","Lack of on-site parking"],email_body:`Shaikh Nahyan,
+
+Your 110-key property has built genuine guest loyalty—2,677 reviews at 7.8, with consistent praise for the Corniche location and attentive service. That's a solid foundation.
+
+The friction is clear from the same reviews: dated facilities and operational gaps (noise, parking) that suppress rating and rate in a 4-star segment where guests expect more.
+
+We specialize in converting independents like Al Ain Palace into lifestyle brands—repositioning the property, tightening operations, and capturing upscale traveller segments willing to pay for design and reliability.
+
+Would you be open to a brief call to explore what that looks like for your property?
+
+[Your name]
+Cognitidata`,fit_points:["Corniche location and guest loyalty provide strong conversion platform","Mid-size key count (110) fits Halcyon's focused, boutique-lifestyle model"],call_script:`Hi Shaikh Nahyan, this is [Your name] from Cognitidata. We work with independent hotel owners in the lifestyle and upscale segments—converting properties by rebranding and repositioning them.
+
+I called because Al Ain Palace has something uncommon: a prime Corniche location, 2,677 guest reviews, and real loyalty. But the reviews also flag dated facilities and operational issues that are costing you in the 4-star segment.
+
+A fair question: 'Why now?' Because repositioning—new brand, operations, design—takes 12–18 months, not overnight. The sooner you start, the sooner you capture the upscale traveller willing to pay for it.
+
+I'd like to spend 20 minutes walking through what that looks like for your specific property. Does Thursday or Friday work better?`,guests_love:["Excellent Corniche waterfront location","Friendly, attentive staff","Good value positioning with core guests"],with_cognitidata:["Repositioned as design-led lifestyle brand","Operational tightening (noise, parking solutions, facility refresh)","Upscale traveller segments and higher rate realization"],hook_support:"2,677 Booking reviews (7.8 rating) confirm the Corniche location and staff quality. Guest feedback flags dated facilities and operational gaps preventing capture of higher-rate segments.",email_subject:"Al Ain Palace—Corniche location + strong guest loyalty, underutilized potential",hook_headline:"Prime location, strong guest loyalty—operations and design are the constraint.",hook_sentence:"Al Ain Palace's Corniche position and loyal guest base (2,677 reviews, 7.8 rating) align with Halcyon's upscale-but-relaxed positioning, but dated facilities are suppressing occupancy and rate in a segment demanding design-led, reliable experiences.",brand_descriptor:"Tech-forward boutique-lifestyle for younger, digitally-engaged travellers, relaxed but design-conscious, across mountain, desert, urban and coastal settings."},identity:{city:"Abu Dhabi",keys:110,country:"United Arab Emirates",segment:null,hotel_name:"Al Ain Palace Hotel",owner_name:"Shaikh Nahyan Bin Mubarak Al Nahyan",owner_type:"individual",star_rating:4,booking_rating:7.8,booking_reviews:2677},direction:"a",generated_at:"2026-07-03T05:02:27+00:00"},"8ef14537-061d-4072-8eab-fe8cbe6c9cd4":{content:{brand:"The House",today:["Some areas read as needing updates","Value occasionally debated by guests","Design and noise flagged in reviews"],proofs:["9.1 guest rating across 1,288 reviews","376 keys, 5-star","Saadiyat Island beachfront with golf, spa, and fine dining"],frictions:["Some areas noted as needing updates","Occasional service lapses and debated value","Some guests note noise and design issues"],email_body:`Hi,
+
+This note is for the ownership team at Abu Dhabi United Group Investment & Development. Saadiyat Island is entering a new phase as its cultural district matures, and luxury resort demand there increasingly rewards properties with a clear design point of view and strong direct-booking control. That shift is worth a conversation now, ahead of the next refurbishment cycle.
+
+Cognitidata grows by converting independent and institutionally owned properties onto brand guidelines rather than rigid standards, which keeps refurbishment cost- and time-effective. Across our portfolio, 64.8% of reservations come direct, with OTAs held to 21.1%. Dar Sahra The Atelier Hotel in the Saudi desert was entrusted to us by Saudi Arabia's Ministry of Culture as a project of national strategic tourism importance, which speaks to how we work with institutional owners on assets of this standing.
+
+We have sketched what this resort could look like under The House, our design-led upper-upscale brand. The attached teaser outlines it, and a short intro call would walk you through the thinking.
+
+[Your name]
+Cognitidata`,fit_points:["Branded-residence and serviced-apartment upside on The House","Direct-booking control: 64.8% portfolio-wide, OTAs held to 21.1%"],guests_love:["Immaculate pools and a pristine beach","An elegant, tranquil atmosphere","Warm, professional service"],with_cognitidata:["A design-led refresh on The House brand guidelines, cost- and time-effective","A clearer brand identity and direct-booking economics to firm up perceived value","Considered design intervention addressing layout and noise concerns"],hook_support:"The elegance and calm guests already praise are the foundation The House builds on, addressing the areas that reviewers say need updates and adding a sharper design identity.",email_subject:"A conversion path for Saadiyat's luxury resort market",hook_headline:"A design-led repositioning for a resort guests already rate 9.1",hook_sentence:"A 5-star, 376-key Saadiyat resort with a 9.1 guest rating and an elegant, tranquil reputation is a natural fit for The House, where design leadership and branded-residence upside meet.",brand_descriptor:"The Atelier is Cognitidata's upper-upscale, design-led lifestyle brand, spanning hotels and branded residences for design-conscious travellers and MICE."},identity:{city:"Abu Dhabi",keys:376,country:"United Arab Emirates",segment:"luxury",hotel_name:"The St. Regis Saadiyat Island Resort, Abu Dhabi",owner_name:"Abu Dhabi United Group Investment & Development",owner_type:"institutional",star_rating:5,booking_rating:9.1,booking_reviews:1288},direction:"a",recipient:{mode:"no-contact",name:null,title:null},generated_at:"2026-07-03T13:54:21+00:00"},"8f2bb828-0a75-4a5c-9a59-373fbc2787fa":{content:{brand:"Halcyon",today:["Rooms and cleanliness drag the score down","Service quality flagged in reviews","Noise and thin amenities noted"],proofs:["7.8 on Booking.com across 4,315 reviews","80 keys in Abu Dhabi","Location consistently praised by guests"],frictions:["Cleanliness standards fall short of expectations","Service quality draws complaints","Amenities and room noise are recurring issues"],email_body:`Hi Richard,
+
+4,315 Booking reviews on an 80-key property in Abu Dhabi tells me this hotel runs at real occupancy and that guests keep coming back for the location. What holds the 7.8 down is not the address, it is what your guests write about cleanliness and rooms feeling worn.
+
+That gap is usually the most fixable one, because the demand is already proven. The question worth asking is what share of that demand you actually own. Across Cognitidata's portfolio, 64.8% of reservations are direct bookings, with OTAs held to 21.1%, so more of the value from a hotel like yours stays with the owner.
+
+Cognitidata grows by converting independent properties onto brand guidelines rather than rigid standards, which keeps a refurbishment cost- and time-effective.
+
+We sketched what this property could look like under the best-fit brand, in the attached teaser. A short call walks you through it.
+
+[Your name]
+Cognitidata`,fit_points:["Proven demand ready for a boutique-lifestyle repositioning","Direct-booking economics to keep more value with the owner"],guests_love:["Guests praise the location","Staff are called out as helpful"],with_cognitidata:["Rooms brought to Halcyon brand guidelines","Service model set to a lifestyle standard","Amenity and room experience redefined for the segment"],hook_support:"4,315 reviews point to steady demand and a strong address. The 7.8 score is weighed down by cleanliness and room condition, the part a conversion addresses directly.",email_subject:"4,315 reviews on an 80-key hotel",hook_headline:"The location already works. The rooms are what hold it back.",hook_sentence:"An 80-key hotel with a proven, high-volume guest base and a praised Abu Dhabi location, positioned for a relaxed boutique-lifestyle conversion under Halcyon.",brand_descriptor:"Halcyon is a high-end-but-relaxed, tech-forward boutique-lifestyle brand built for younger and digital-nomad travellers."},identity:{city:"Abu Dhabi",keys:80,country:"United Arab Emirates",segment:"Budget",hotel_name:"Palette Top Stars Hotel",owner_name:"Richard Lou",owner_type:"individual",star_rating:1,booking_rating:7.8,booking_reviews:4315},direction:"a",recipient:{mode:"owner-direct",name:"Richard Lou",title:"Chief Executive Officer and Founder at Palette Hotels"},generated_at:"2026-07-23T09:27:22+00:00"},"6d962be3-a09f-4f01-aafe-690acb388d3f":{content:{email_body:`Hi,
+
+Your guests keep writing about two things: how spacious the suites and balconies are, and kitchenettes with no plates, cutlery or cooking utensils in them.
+
+In a hotel where every room is a suite, the kitchenette is what lets a business trip stretch into a longer stay. The space is already winning guests over. The suite promise is where it slips, along with a few comments about room categories getting mixed up at the front desk.
+
+That gap is close to what The Atelier, one of our brands, is built for: upper-upscale, design-led hotels with serviced-apartment stays and meetings business. Cognitidata converts properties on brand guidelines, which keeps refurbishment cost- and time-effective, and across our portfolio 64.8% of reservations are booked direct, with OTAs held to 21.1%.
+
+We have sketched what Suite Hotel Casa Diamond could look like as a The House property (teaser attached). Would you be open to a 20-minute call so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"the kitchenettes at Casa Diamond"},identity:{city:"Casablanca",keys:73,country:"Morocco",segment:null,hotel_name:"Suite Hotel Casa Diamond",owner_name:null,owner_type:null,star_rating:5,booking_rating:8.4,booking_reviews:3014},recipient:{mode:"no-contact",name:null,title:null},generated_at:"2026-10-15T10:40:39+00:00"},"05499c0a-a684-4828-be6f-e021c55fb4f4":{content:{email_body:`Hi M'hamed,
+
+Your guests keep coming back to the same two things: the panoramic view of the Hassan II Mosque, and staff they describe as friendly, helpful and professional.
+
+Neither can be bought or installed by a brand. A family hotel that already has both is in a strong position to earn more from them than it does today.
+
+Cognitidata works with independent hotels like yours. The Atelier is our upper-upscale, design-led brand, built for design-conscious travellers and conference business, which suits Idou Anfa's spa, fine dining and meeting space. Our conversions run on brand guidelines, so each property stays tailored to its destination and refurbishment stays cost- and time-effective. Across the portfolio, 64.8% of reservations are direct bookings and OTAs are held to 21.1%, so more of the revenue stays with you.
+
+We have sketched what Idou Anfa could look like as a The House property, and the teaser is attached. Would a 20-minute call next week work for me to walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"What your guests keep saying about Idou Anfa"},identity:{city:"Casablanca",keys:220,country:"Morocco",segment:null,hotel_name:"Idou Anfa Hotel and Spa",owner_name:"Hôtel Idou Anfa (M'hamed Idoulahiane family)",owner_type:"family",star_rating:4,booking_rating:8.6,booking_reviews:2583},recipient:{mode:"owner-direct",name:"Idou Holding",title:null},generated_at:"2026-10-15T09:42:19+00:00"},"396e3012-932f-4078-abfa-da6e9276aecf":{content:{email_body:`Hi,
+
+Guests at Imperial Casablanca keep writing about two things: staff who greet them with a smile, and a tram they can hear through closed windows.
+
+The first is the hard part to build, and you already have it. The second, along with the breakfast and maintenance comments, is the kind of issue a focused refurbishment plan fixes. It is also what decides whether a central hotel with a spa, pool and conference space earns upscale rates or keeps selling rooms from $27.
+
+Cognitidata converts hotels into its lifestyle brands using flexible brand guidelines, which keeps refurbishment cost- and time-effective. When we opened Halcyon Roma in February 2025, it reached 9.2 on Booking.com within months, with 20-25% direct bookings in the first months.
+
+We have sketched what Imperial Casablanca could look like as a Halcyon (the attached teaser). Would you be open to a 20-minute call so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"The smiles and the tram at Imperial Casablanca"},identity:{city:"Casablanca",keys:105,country:"Morocco",segment:null,hotel_name:"Imperial Casablanca Hotel & Spa",owner_name:"Famille Bennani (Bennani family)",owner_type:"family",star_rating:4,booking_rating:null,booking_reviews:null},recipient:{mode:"no-contact",name:null,title:null},generated_at:"2026-10-14T10:23:38+00:00"},"13d18edc-5b0a-4b5c-97e5-d4bbf96af884":{content:{email_body:`Hi Chun,
+
+A question for you as owner: of the guests who come to Hotel Suisse for the beach or a conference, what share booked with you directly?
+
+A Casablanca property that can run a conference by day and a beach and golf stay by evening has demand that should not need an OTA in the middle. Every booking that goes through one gives up commission on exactly the guests you most want back.
+
+That is the problem Cognitidata is built around. Across our portfolio, 64.8% of reservations are direct bookings and OTAs are held to 21.1%. We grow by converting properties on brand guidelines instead of rigid standards, which keeps refurbishment cost- and time-effective.
+
+We have sketched what Hotel Suisse could look like as a The House property, our upper-upscale, design-led brand for design-conscious travellers and MICE. It is in the attached teaser, and a 20-minute call would let me walk you through it. Would next week work?
+
+[Your name]
+Cognitidata`,email_subject:"What share of Hotel Suisse bookings do you own?"},identity:{city:"Casablanca",keys:193,country:"Morocco",segment:null,hotel_name:"Hotel Suisse",owner_name:null,owner_type:null,star_rating:null,booking_rating:null,booking_reviews:null},recipient:{mode:"corporate",name:"Chun Liu",title:"Owner"},generated_at:"2026-10-14T10:22:57+00:00"},"67433bd3-10dd-4e8d-94b0-62f96401ac2a":{content:{email_body:`Hi Saad,
+
+Your guests keep writing about two things at Diwan: rooms much larger than other hotels give them, and the old towels and dust that let those rooms down.
+
+That gap is costly to leave alone, because the hard parts are already in place. You have the space, and you have a location a short walk from Casa Port and Hassan Mosque, with a team guests describe as friendly and efficient.
+
+Cognitidata converts independent hotels on brand guidelines, so refurbishment stays cost- and time-effective. When we opened Halcyon Roma near the Trevi Fountain in February 2025, it reached 9.2 on Booking.com within months, with 20-25% of bookings coming direct in the first months.
+
+We have sketched what Diwan could look like as a Halcyon (the teaser is attached). Would you have 20 minutes for a short call so I can walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"what your guests say about the rooms at Diwan"},identity:{city:"Casablanca",keys:109,country:"Morocco",segment:null,hotel_name:"Diwan Casablanca Hotel & Spa",owner_name:"HOTEL DIWAN CASABLANCA (SARL)",owner_type:"family",star_rating:4,booking_rating:6.6,booking_reviews:500},recipient:{mode:"owner-direct",name:"Saad Bennani",title:"Managing Director"},generated_at:"2026-10-15T10:25:10+00:00"},"22dd020f-b4fb-4462-a470-f993bb9ce0e1":{content:{brand:"Halcyon",today:["Dated furnishings and facilities noted in reviews","Cleanliness reported as inconsistent","Independent boutique with no brand demand engine"],proofs:["7.7 across 3,526 reviews","88 keys in central Abu Dhabi","Steps from the World Trade Center and the Corniche"],frictions:["Outdated furnishings and kitchen and bathroom facilities","Parking challenges","Inconsistent cleanliness, especially in kitchens"],email_body:`Hi Mohammad,
+
+Your guests keep writing about two things: how spacious the suites are and how well-placed you are near the World Trade Center and the Corniche. In the same reviews they keep mentioning furnishings that feel dated and kitchens and bathrooms that need attention. That gap, 3,526 reviews at 7.7, usually means the location and the space are carrying an asset the interiors are holding back.
+
+At Cognitidata we run conversions on brand guidelines instead of rigid standards, which keeps a refresh cost- and time-effective. We also hold OTAs to 21.1% portfolio-wide against 64.8% direct bookings, so more of the demand your address already creates stays yours.
+
+We've sketched what The Eclipse could look like as a Halcyon property (the attached teaser shows it), and I'd value a short call to walk you through it.
+
+[Your name]
+Cognitidata`,fit_points:["Central Abu Dhabi boutique suites suited to Halcyon's relaxed urban positioning","Conversion on brand guidelines, not rigid standards, keeping refurbishment efficient"],guests_love:["Spacious suites","Location near the World Trade Center and the Corniche","Friendly, helpful staff"],with_cognitidata:["A cost- and time-effective refresh run on Halcyon brand guidelines","Operating standards to hold quality steady across suites","64.8% direct bookings portfolio-wide, OTAs held to 21.1%"],hook_support:"Guests consistently praise the spacious suites and the address near WTC and the Corniche. The furnishings and facilities are the recurring drag, and a Halcyon conversion targets exactly that.",email_subject:"the two things your guests keep writing about",hook_headline:"The location and the space are already there. The interiors are what's holding the rating back.",hook_sentence:"88 spacious suites near the World Trade Center and Corniche, rated across 3,526 reviews, are a natural fit for Halcyon's relaxed urban boutique-lifestyle positioning once the interiors catch up to the location.",brand_descriptor:"Halcyon is a high-end-but-relaxed, tech-forward boutique-lifestyle brand built for younger and digital-nomad travellers, with urban, sea, desert, and mountain variants."},identity:{city:"Abu Dhabi",keys:88,country:"United Arab Emirates",segment:"Boutique",hotel_name:"The Eclipse Boutique Suites",owner_name:"Mohammad Abdul Saleem",owner_type:"individual",star_rating:3,booking_rating:7.7,booking_reviews:3526},direction:"a",recipient:{mode:"owner-direct",name:"Mohammed Abdul Saleem",title:"Chairman"},generated_at:"2026-07-23T09:25:26+00:00"},"02cc2b91-eb06-4b2d-93d3-4f3d04d05816":{content:{email_body:`Hi,
+
+Guests at Hotel Anfa Port write warmly about the seafood and the sauna, then about traffic noise on the port side and a night they were moved to another hotel.
+
+That pattern usually points to operations. The restaurant and spa that guests praise are already in place, and most of the complaints are about how the hotel is run day to day.
+
+Cognitidata grows by converting independent properties into its own brands, and we think Halcyon fits here. It is a relaxed, tech-forward boutique-lifestyle brand with urban and sea variants, which suits a Casablanca waterfront. Our conversions run on brand guidelines, which keeps refurbishment cost- and time-effective. For a sense of ramp-up, Halcyon Roma opened in February 2025 and reached 9.2 on Booking.com and 9.6 on Expedia within months, with 20-25% direct bookings in the first months.
+
+We have sketched what Anfa Port could look like as a Halcyon (attached). Would a 20-minute call in the next couple of weeks work to walk you through it?
+
+[Your name]
+Cognitidata`,email_subject:"The seafood at Anfa Port, and the port-side rooms"},identity:{city:"Casablanca",keys:143,country:"Morocco",segment:null,hotel_name:"Hotel Anfa Port (فندق أنفا الميناء)",owner_name:"The Emirates Group",owner_type:"institutional",star_rating:4,booking_rating:null,booking_reviews:null},recipient:{mode:"no-contact",name:null,title:null},generated_at:"2026-10-14T10:25:22+00:00"}};export{e as default};

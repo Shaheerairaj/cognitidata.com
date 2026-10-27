@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Proposal Engine</title>
+    
+    
+    
+    
+    <script type="module" crossorigin src="./assets/index-DL7ItKEv.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Cd8VHdvW.css">
+    <link rel="stylesheet" href="./theme/theme.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+  <a id="demo-restart" href="#/" style="position:fixed;left:12px;bottom:10px;z-index:2147483000;font:11px/1 system-ui,sans-serif;color:var(--theme-ink-3);text-decoration:none;opacity:.7">Restart demo</a>
+  <script>document.getElementById("demo-restart").addEventListener("click",function(e){e.preventDefault();try{Object.keys(localStorage).filter(function(k){return k.indexOf("kh.")===0}).forEach(function(k){localStorage.removeItem(k)});Object.keys(sessionStorage).filter(function(k){return k.indexOf("kh.")===0}).forEach(function(k){sessionStorage.removeItem(k)});localStorage.removeItem("pe.session_id")}catch(_){}location.hash="#/";location.reload()})</script>
+  </body>
+</html>

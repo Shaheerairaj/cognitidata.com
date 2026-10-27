@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How Foundry Works</title>
+<link rel="stylesheet" href="./theme/theme.css" />
+<style>
+
+  /* Every colour comes from theme/theme.css. Kinds: ai = accent, code = ink-3, person = ok (green), data = info (blue). */
+  :root {
+    --ground: var(--theme-page-3);
+    --paper: var(--theme-surface);
+    --ink: var(--theme-ink);
+    --ink-2: var(--theme-ink-2);
+    --ink-3: var(--theme-ink-3);
+    --ink-4: var(--theme-ink-4);
+    --hair: var(--theme-line);
+    --accent: var(--theme-accent);
+    --accent-ink: var(--theme-accent-ink);
+    --accent-tint: var(--theme-accent-tint);
+    --ai: var(--theme-accent);
+    --code: var(--theme-ink-3);
+    --person: var(--theme-ok);
+    --person-ink: var(--theme-ok-ink);
+    --person-tint: color-mix(in oklab, var(--theme-ok) 12%, var(--theme-surface));
+    --data: var(--theme-info);
+    --data-ink: var(--theme-info-ink);
+    --data-tint: color-mix(in oklab, var(--theme-info) 11%, var(--theme-surface));
+    --lift: 0 1px 2px color-mix(in oklab, var(--theme-ink) 5%, transparent), 0 12px 32px -14px color-mix(in oklab, var(--theme-ink) 18%, transparent);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--theme-font-sans);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  [hidden] { display: none !important; }
+  button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+
+  /* top bar, same build as the app's */
+  .bar { height: 60px; display: flex; align-items: center; gap: 16px; padding: 0 26px; background: var(--paper); border-bottom: 1px solid var(--hair); }
+  .bar .mark { font-weight: 700; font-size: 18px; letter-spacing: -.01em; }
+  .bar .crumb { color: var(--ink-2); padding-left: 16px; border-left: 1px solid var(--hair); }
+  .bar .back { margin-left: auto; font-size: 14px; color: var(--ink-3); text-decoration: none; }
+  .bar .back:hover { color: var(--ink); }
+
+  main { max-width: 1340px; margin: 0 auto; padding: 28px 16px 40px; }
+  .head { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 28px; margin-bottom: 18px; }
+  .head h1 { margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -.01em; }
+  .head p { margin: 6px 0 0; color: var(--ink-2); max-width: 620px; line-height: 1.45; }
+  .controls { margin-left: auto; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+  .seg { display: inline-flex; background: var(--paper); border: 1px solid var(--hair); border-radius: 999px; padding: 4px; position: relative; }
+  .seg button { position: relative; z-index: 1; padding: 8px 18px; border-radius: 999px; font-weight: 600; font-size: 14.5px; color: var(--ink-3); transition: color .25s; }
+  .seg button[aria-pressed="true"] { color: var(--ink); }
+  .seg .knob { position: absolute; top: 4px; bottom: 4px; border-radius: 999px; background: var(--accent-tint); border: 1px solid color-mix(in oklab, var(--accent) 28%, var(--paper)); transition: left .35s cubic-bezier(.6,0,.2,1), width .35s cubic-bezier(.6,0,.2,1); }
+
+  .play { display: inline-flex; align-items: center; gap: 9px; padding: 10px 20px 10px 16px; border-radius: 999px; background: var(--accent); color: var(--theme-accent-text); font-weight: 600; font-size: 15px; box-shadow: 0 6px 16px -8px color-mix(in oklab, var(--accent) 90%, transparent); transition: transform .15s; }
+  .play:hover { transform: translateY(-1px); }
+  .play svg { width: 14px; height: 14px; }
+  .ghost { padding: 10px 14px; border-radius: 999px; font-size: 14px; color: var(--ink-3); }
+  .ghost:hover { color: var(--ink); }
+
+  .board { position: relative; background: var(--paper); border: 1px solid var(--hair); border-radius: 18px; box-shadow: var(--lift); overflow: hidden; }
+  .board::before { /* faint blueprint grid */
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image: radial-gradient(circle, var(--hair) 1px, transparent 1.2px);
+    background-size: 22px 22px; opacity: .8;
+  }
+  .stage { position: relative; width: 1280px; height: 730px; transform-origin: 0 0; }
+  svg.wires { position: absolute; inset: 0; width: 1280px; height: 730px; overflow: visible; pointer-events: none; }
+
+  .wire { fill: none; stroke-linecap: round; }
+  .wire.flow { stroke: var(--ink-4); stroke-width: 2; stroke-dasharray: 2 7; animation: crawl 1.6s linear infinite; }
+  .wire.person { stroke: var(--person); stroke-width: 1.6; stroke-dasharray: 5 5; opacity: .75; }
+  .wire.data { stroke: var(--data); stroke-width: 1.4; stroke-dasharray: 1 5; opacity: .7; }
+  .wire.lit { stroke: var(--accent); opacity: 1; stroke-width: 2.4; }
+  @keyframes crawl { to { stroke-dashoffset: -18; } }
+  .wlabel { font-size: 12px; fill: var(--person); paint-order: stroke; stroke: var(--paper); stroke-width: 5px; stroke-linejoin: round; font-weight: 500; }
+
+  .node { position: absolute; border-radius: 14px; background: var(--paper); border: 1.5px solid var(--hair); cursor: pointer; overflow: hidden;
+          transition: box-shadow .25s, border-color .25s, opacity .35s, filter .35s; will-change: left, top, width, height; }
+  .node:hover { border-color: var(--ink-4); box-shadow: var(--lift); }
+  .node .in { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 10px 12px; gap: 4px; }
+  .node .ic { line-height: 0; color: var(--ink-2); }
+  .node .ic .ico { width: 28px; height: 28px; transition: width .3s, height .3s; }
+  .node.k-ai .ic { color: var(--accent-ink); }
+  .node.k-person .ic { color: var(--person-ink); }
+  .node.k-data .ic { color: var(--data-ink); }
+  .node .lb { font-weight: 600; font-size: 17px; line-height: 1.15; letter-spacing: -.005em; }
+  .node .sb { font-size: 12.5px; color: var(--ink-3); line-height: 1.3; max-width: 100%; }
+  .node.k-person { background: var(--person-tint); border-color: color-mix(in oklab, var(--person) 25%, var(--paper)); }
+  .node.k-data { background: var(--data-tint); border-color: color-mix(in oklab, var(--data) 25%, var(--paper)); }
+  .node.k-input { background: color-mix(in oklab, var(--paper) 60%, var(--ground)); border-style: dashed; }
+
+  /* a stage opened up in the detailed view: title moves to the corner */
+  .node.open { background: color-mix(in oklab, var(--paper) 55%, transparent); border-style: solid; }
+  .node.open.k-data { background: color-mix(in oklab, var(--data-tint) 60%, transparent); }
+  .node.open .in { align-items: flex-start; justify-content: flex-start; flex-direction: row; gap: 7px; padding: 10px 12px; text-align: left; }
+  .node.open .ic .ico { width: 17px; height: 17px; }
+  .node.band .ic .ico { width: 22px; height: 22px; }
+  .node.open .lb { font-size: 14.5px; }
+  .node.open .sb { display: none; }
+
+  .node.chip { border-radius: 9px; border-width: 1px; box-shadow: 0 1px 1px color-mix(in oklab, var(--theme-ink) 4%, transparent); }
+  .node.chip .in { flex-direction: row; justify-content: flex-start; gap: 7px; padding: 0 10px; text-align: left; }
+  .node.chip .ic { font-size: 0; width: 8px; height: 8px; border-radius: 50%; flex: none; background: var(--ai); }
+  .node.chip.k-code .ic { background: var(--code); border-radius: 2px; }
+  .node.chip.k-data .ic { background: var(--data); border-radius: 2px; }
+  .node.chip.k-person .ic { background: var(--person); }
+  .node.chip .lb { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .node.chip .sb { display: none; }
+  .node.band .in { flex-direction: row; gap: 10px; }
+  .node.band .sb { font-size: 13px; }
+  .board.detail .node.k-person.band .sb { display: none; }
+  .node.stack { background: var(--paper); box-shadow: 5px 5px 0 -1px var(--paper), 5px 5px 0 0 var(--hair), 10px 10px 0 -1px var(--paper), 10px 10px 0 0 var(--hair); overflow: visible; }
+
+  /* the run: spotlight what is working */
+  .board.running .node { filter: saturate(.6); opacity: .5; }
+  .board.running .node.hot, .board.running .node.warm { filter: none; opacity: 1; }
+  .node.hot { border-color: var(--accent) !important; box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent) 18%, transparent), var(--lift); animation: breathe 1.2s ease-in-out infinite; }
+  @keyframes breathe { 50% { box-shadow: 0 0 0 8px color-mix(in oklab, var(--accent) 8%, transparent), var(--lift); } }
+  .node.picked { border-color: var(--ink) !important; }
+
+  .ticker { display: flex; align-items: center; gap: 14px; margin-top: 14px; min-height: 56px; padding: 12px 18px; background: var(--paper); border: 1px solid var(--hair); border-radius: 14px; }
+  .ticker .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ink-4); flex: none; }
+  .ticker.on .dot { background: var(--accent); animation: blink 1s ease-in-out infinite; }
+  @keyframes blink { 50% { opacity: .3; } }
+  .ticker .say { flex: 1; color: var(--ink-2); line-height: 1.4; }
+  .ticker .say b { color: var(--ink); font-weight: 600; }
+  .ticker .clock { font-variant-numeric: tabular-nums; color: var(--ink-3); font-size: 14px; white-space: nowrap; }
+  .ticker .clock b { color: var(--ink); font-size: 18px; }
+  .steps { display: flex; gap: 5px; }
+  .steps i { width: 18px; height: 4px; border-radius: 4px; background: var(--hair); transition: background .3s; }
+  .steps i.done { background: var(--accent); }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 12px; font-size: 13.5px; color: var(--ink-3); }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .legend i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+  .legend .hint { margin-left: auto; }
+
+  /* the side panel */
+  .panel { position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100vw); background: var(--paper); border-left: 1px solid var(--hair); box-shadow: -20px 0 50px -30px color-mix(in oklab, var(--theme-ink) 35%, transparent);
+           transform: translateX(105%); transition: transform .35s cubic-bezier(.6,0,.2,1); z-index: 20; display: flex; flex-direction: column; }
+  .panel.open { transform: none; }
+  .panel .top { padding: 22px 24px 16px; border-bottom: 1px solid var(--hair); display: flex; gap: 14px; align-items: flex-start; }
+  .panel .big { line-height: 0; color: var(--accent-ink); }
+  .panel .big .ico { width: 30px; height: 30px; }
+  .panel h2 { margin: 0; font-size: 21px; font-weight: 700; }
+  .panel .tag { display: inline-block; margin-top: 6px; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; background: var(--accent-tint); color: var(--accent-ink); }
+  .panel .tag.k-code { background: var(--ground); color: var(--ink-2); }
+  .panel .tag.k-person { background: var(--person-tint); color: var(--person-ink); }
+  .panel .tag.k-data { background: var(--data-tint); color: var(--data-ink); }
+  .panel .x { margin-left: auto; font-size: 22px; color: var(--ink-3); line-height: 1; }
+  .panel .body { padding: 18px 24px 28px; overflow: auto; line-height: 1.5; color: var(--ink-2); }
+  .panel .lbl { font-size: 12px; font-weight: 600; color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; margin: 18px 0 6px; }
+  .panel .lbl:first-child { margin-top: 0; }
+  .panel .eg { background: var(--ground); border-radius: 10px; padding: 12px 14px; color: var(--ink); font-size: 15px; }
+  .panel ul { margin: 0; padding-left: 18px; }
+  .panel .parts button { display: block; width: 100%; text-align: left; padding: 7px 0; border-bottom: 1px solid var(--hair); color: var(--ink); }
+  .panel .parts button:hover { color: var(--accent-ink); }
+
+  /* the finish */
+  .finale { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; opacity: 0; transition: opacity .5s; z-index: 5; }
+  .finale.show { opacity: 1; pointer-events: auto; }
+  .finale .card { background: var(--paper); border: 1px solid var(--hair); border-radius: 20px; box-shadow: var(--lift); padding: 30px 38px; text-align: center; transform: scale(.92); transition: transform .5s cubic-bezier(.2,1.4,.4,1); }
+  .finale.show .card { transform: none; }
+  .finale .was { font-size: 18px; color: var(--ink-3); text-decoration: line-through; text-decoration-color: var(--accent); }
+  .finale .now { font-size: 34px; font-weight: 700; margin: 4px 0 6px; }
+  .finale .now span { color: var(--accent); }
+  .finale p { margin: 0 0 16px; color: var(--ink-2); }
+  .flying { position: absolute; width: 46px; height: 28px; border-radius: 4px; background: var(--paper); border: 1px solid var(--hair); box-shadow: var(--lift); z-index: 4; pointer-events: none; }
+  .flying::after { content: ""; position: absolute; left: 6px; right: 14px; top: 7px; height: 4px; border-radius: 2px; background: var(--accent); box-shadow: 0 8px 0 -1px var(--hair); }
+
+  @media (max-width: 720px) {
+    .bar { padding: 0 16px; }
+    .bar .crumb { display: none; }
+    .head h1 { font-size: 24px; }
+    .controls { margin-left: 0; }
+    .legend .hint { display: none; }
+    .ticker { flex-wrap: wrap; }
+    .ticker .say { flex-basis: calc(100% - 30px); }
+    .ticker .steps { display: none; }
+    .ticker .clock { margin-left: 23px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wire.flow, .node.hot, .ticker.on .dot { animation: none; }
+  }
+</style>
+</head>
+<body>
+<header class="bar">
+  <span class="mark">Foundry</span>
+  <span class="crumb">How it works</span>
+  <a class="back" href="./">‹ back to the app</a>
+</header>
+
+<main>
+  <div class="head">
+    <div>
+      <h1>How a proposal gets made</h1>
+      <p>Documents go in on the left, a finished deck comes out on the right. Press <b>Play a run</b> to watch one go through, or click any box to see what it does.</p>
+    </div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="View">
+        <span class="knob"></span>
+        <button data-mode="simple" aria-pressed="true">Simple</button>
+        <button data-mode="detail" aria-pressed="false">Detailed</button>
+      </div>
+      <button class="play" id="play"><svg viewBox="0 0 14 14"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg><span>Play a run</span></button>
+      <button class="ghost" id="reset" hidden>Reset</button>
+    </div>
+  </div>
+
+  <div class="board" id="board">
+    <div class="stage" id="stage">
+      <svg class="wires" id="wires" viewBox="0 0 1280 730"></svg>
+    </div>
+    <div class="finale" id="finale">
+      <div class="card">
+        <div class="was">2–4 weeks of senior BD time</div>
+        <div class="now">about <span>45 minutes</span></div>
+        <p>A full first draft, written and pictured, ready for the BD to read once.</p>
+        <button class="play" id="again"><svg viewBox="0 0 14 14"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg><span>Play again</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker" id="ticker">
+    <span class="dot"></span>
+    <span class="say" id="say">Press <b>Play a run</b> to watch a proposal move through the system.</span>
+    <span class="steps" id="steps"></span>
+    <span class="clock">machine time <b id="clock">0</b> min</span>
+  </div>
+
+  <div class="legend">
+    <span><i style="background:var(--ai)"></i>AI agent</span>
+    <span><i style="background:var(--code);border-radius:2px"></i>Plain code, no AI</span>
+    <span><i style="background:var(--person)"></i>The person in the loop</span>
+    <span><i style="background:var(--data);border-radius:2px"></i>Stored data</span>
+    <span class="hint">Tip: press <b>D</b> to switch views, <b>Space</b> to play</span>
+  </div>
+</main>
+
+<aside class="panel" id="panel" aria-hidden="true">
+  <div class="top">
+    <span class="big" id="p-ic"></span>
+    <div><h2 id="p-title"></h2><span class="tag" id="p-tag"></span></div>
+    <button class="x" id="p-close" aria-label="Close">×</button>
+  </div>
+  <div class="body" id="p-body"></div>
+</aside>
+
+<script>
+(() => {
+  // Icons: Lucide v1.62.0 (ISC licence, lucide.dev), inlined so the page makes no requests.
+  const ICONS = {
+    "user-round": "<circle cx=\"12\" cy=\"8\" r=\"5\" /> <path d=\"M20 21a8 8 0 0 0-16 0\" />",
+    "app-window": "<rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\" /> <path d=\"M10 4v4\" /> <path d=\"M2 8h20\" /> <path d=\"M6 4v4\" />",
+    "workflow": "<rect width=\"8\" height=\"8\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M7 11v4a2 2 0 0 0 2 2h4\" /> <rect width=\"8\" height=\"8\" x=\"13\" y=\"13\" rx=\"2\" />",
+    "file-text": "<path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\" /> <path d=\"M14 2v5a1 1 0 0 0 1 1h5\" /> <path d=\"M10 9H8\" /> <path d=\"M16 13H8\" /> <path d=\"M16 17H8\" />",
+    "scan-search": "<path d=\"M3 7V5a2 2 0 0 1 2-2h2\" /> <path d=\"M17 3h2a2 2 0 0 1 2 2v2\" /> <path d=\"M21 17v2a2 2 0 0 1-2 2h-2\" /> <path d=\"M7 21H5a2 2 0 0 1-2-2v-2\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" /> <path d=\"m16 16-1.9-1.9\" />",
+    "globe": "<circle cx=\"12\" cy=\"12\" r=\"10\" /> <path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\" /> <path d=\"M2 12h20\" />",
+    "pen-line": "<path d=\"M13 21h8\" /> <path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\" />",
+    "image": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\" /> <circle cx=\"9\" cy=\"9\" r=\"2\" /> <path d=\"m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21\" />",
+    "presentation": "<path d=\"M2 3h20\" /> <path d=\"M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3\" /> <path d=\"m7 21 5-5 5 5\" />",
+    "sparkles": "<path d=\"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z\" /> <path d=\"M20 2v4\" /> <path d=\"M22 4h-4\" /> <circle cx=\"4\" cy=\"20\" r=\"2\" />",
+    "library": "<path d=\"m16 6 4 14\" /> <path d=\"M12 6v14\" /> <path d=\"M8 8v12\" /> <path d=\"M4 4v16\" />"
+    };
+  const icon = (name) => name ? `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>` : "";
+
+  // ---------- the parts ----------
+  // r: [x, y, w, h] on a 1280 × 730 board. A part with no rect in a view is
+  // folded into its parent there.
+  const N = {
+    bd: { ic: "user-round", lb: "The BD", sb: "one person · answers, edits, presses Export", k: "person", cls: "band",
+      s: [210, 44, 1040, 66], d: [30, 22, 150, 56],
+      what: "The business-development lead who pitches the deal. The system does the assembly; the BD keeps the creative direction.",
+      eg: "Three touches and one button: answer the open question, read and edit the draft, swap a few pictures, press Export." },
+    frontend: { ic: "app-window", lb: "The app in the browser", sb: "start · making · intake · research · draft · pictures · admin", k: "code", cls: "band", p: "bd",
+      d: [200, 22, 1050, 56],
+      what: "Six screens for the BD and an admin portal. It shows what the server has made and sends the BD's edits back.",
+      eg: "The making screen checks in every two seconds and shows the stage: 'writing slide 12 of 40'." },
+    orch: { ic: "workflow", lb: "The orchestrator", sb: "plain code decides what runs next — never the AI", k: "code", cls: "band",
+      d: [200, 112, 1050, 44],
+      what: "The conductor. Each AI agent does one job and hands back a typed answer; this code decides what runs next, runs things in parallel, and saves every step.",
+      eg: "A failed run can be run again. Research already done is reused, never paid for twice." },
+
+    docs: { ic: "file-text", lb: "Documents", sb: "RFP, masterplan, emails", k: "input",
+      s: [30, 276, 145, 140], d: [30, 300, 150, 120],
+      what: "Whatever the owner sent: an RFP, a masterplan, a brochure, email threads. Plus one optional sentence of direction from the BD.",
+      eg: "Two files: the owner's information memorandum and a mobile brochure of the estate." },
+
+    intake: { ic: "scan-search", lb: "Intake", sb: "reads the facts, names the source", k: "ai",
+      s: [215, 276, 170, 140], d: [200, 190, 170, 340],
+      what: "Reads the documents twice: once for facts (rooms, location, owner) and once for what people want. Every value says where it came from.",
+      eg: "53 keys, villas plus a clubhouse, a wellness focus. One open question: the brochure says 50 keys." },
+    extractor: { lb: "Fact reader", k: "ai", p: "intake", d: [210, 230, 150, 34],
+      what: "Fills the intake form from the documents. Every value names its source document and page. Where two documents disagree, it raises an open question instead of guessing.",
+      eg: "Keys: 53 (memorandum, p. 4) — but 50 in the brochure → open question." },
+    source: { lb: "Intent reader", k: "ai", p: "intake", d: [210, 272, 150, 34],
+      what: "Reads the same documents for positions: something someone wants, doesn't want, or hasn't decided yet, with who said it and whether it's settled. Only these drive the story.",
+      eg: "\"The objective is not to impose a predefined concept\" — the owner, settled." },
+    tpick: { lb: "Template pick", k: "ai", p: "intake", d: [210, 314, 150, 34],
+      what: "When a brand has more than one slide template and the BD didn't choose, it picks one and says why.",
+      eg: "Hotel & residences template: the estate mixes villas and hotel rooms." },
+    question: { lb: "Open questions", k: "person", p: "intake", d: [210, 356, 150, 34],
+      what: "The only stop before the draft. If the documents disagree, the BD answers right next to the field, choosing between the values found, each with its source.",
+      eg: "53 keys or 50? The BD picks 53." },
+
+    research: { ic: "globe", lb: "Research", sb: "four researchers, in parallel", k: "ai",
+      s: [425, 276, 170, 140], d: [390, 190, 170, 340],
+      what: "Four researchers search the web at the same time, each with one question. Their findings feed the story and appear as cards the BD can read.",
+      eg: "A competitive set of nearby luxury estates, the owner's track record, the market's demand drivers, and a rate range." },
+    comp: { lb: "Competitive set", k: "ai", p: "research", d: [400, 230, 150, 34],
+      what: "Finds the hotels this property would compete with and what makes each one stand out.",
+      eg: "Six nearby luxury and wellness estates, each with its rate band and one strength." },
+    owner: { lb: "Owner background", k: "ai", p: "research", d: [400, 272, 150, 34],
+      what: "Looks up who the owner is, what they've built, and what they might really need from an operator.",
+      eg: "A real-estate developer with no completed hospitality project yet — so operating experience is the gap to argue." },
+    market: { lb: "Market dynamics", k: "ai", p: "research", d: [400, 314, 150, 34],
+      what: "Reads the destination: who travels there, when, why, and where demand is heading.",
+      eg: "Rising demand for nature and wellness stays within an hour of the capital." },
+    rates: { lb: "Rate landscape", k: "ai", p: "research", d: [400, 356, 150, 34],
+      what: "Pulls together what comparable rooms sell for, so the pitch stays grounded.",
+      eg: "Comparable villas and suites priced across a clear premium band." },
+
+    draft: { ic: "pen-line", lb: "The draft", sb: "three stories, every slide written", k: "ai",
+      s: [635, 276, 170, 140], d: [580, 190, 330, 340],
+      what: "Turns what the owner wants into three different stories, then writes every slide of all three at once: the outline, the copy, every option. The BD picks one and edits it in place.",
+      eg: "Three narratives, 40 slides each with copy, plus suggested extra slides that arrive already written." },
+    classifier: { lb: "Signal sorter → three story anchors", k: "ai", p: "draft", d: [590, 230, 310, 34],
+      what: "Sorts every position by kind, then picks the three strongest. Each one becomes the anchor of its own narrative.",
+      eg: "Anchor 1: one integrated destination. Anchor 2: wellness at the centre. Anchor 3: a brief written together with the owner." },
+    writer: { lb: "Narratives", k: "ai", p: "draft", d: [590, 272, 100, 34],
+      what: "Writes three named storylines, one per anchor, each with a reason it fits this owner.",
+      eg: "'One Estate, Not a Portfolio of Amenities' · 'The Wellness Estate' · 'A Brief We Write Together'." },
+    ownerread: { lb: "Owner read", k: "ai", p: "draft", d: [695, 272, 100, 34],
+      what: "One paragraph on what the owner is really after, shared by every story.",
+      eg: "\"They want a partner who shapes the concept with them, not a template.\"" },
+    audience: { lb: "Audiences", k: "ai", p: "draft", d: [800, 272, 100, 34],
+      what: "Groups the guests the property should win into three to five clear segments.",
+      eg: "Wellness seekers · families on long weekends · second-home buyers." },
+    stack: { lb: "× 3 narratives, all at once", k: "ai", p: "draft", cls: "stack", d: [590, 316, 310, 158],
+      what: "Each of the three narratives gets its own team of agents, and all three teams run at the same time.",
+      eg: "Three full drafts land together. Switching between them on the draft screen is instant." },
+    programme: { lb: "Programme", k: "ai", p: "stack", d: [600, 350, 140, 32],
+      what: "Invents the narrative's own offerings: restaurants and bars, experiences, wellbeing.",
+      eg: "A vineyard table, a cork-oak walking trail, a hammam built into the hillside." },
+    grouping: { lb: "Grouping", k: "ai", p: "stack", d: [750, 350, 140, 32],
+      what: "Decides which items share a slide, in groups of up to four.",
+      eg: "Spa, pool, movement studio and treatment rooms share one wellbeing slide." },
+    copy: { lb: "Copy writer", k: "ai", p: "stack", d: [600, 390, 140, 32],
+      what: "Writes every slide's copy in the brand's voice, using past decks as examples of tone.",
+      eg: "\"Wake to cork oak and vineyard rows, thirty minutes from the city.\"" },
+    suggester: { lb: "Slide suggester", k: "ai", p: "stack", d: [750, 390, 140, 32],
+      what: "Recommends extra slides that would strengthen this story. Each one arrives already written.",
+      eg: "Suggested: a 'Residences sales' slide, because the owner plans to sell villas." },
+    reshape: { lb: "Fit to layout", k: "ai", p: "stack", d: [600, 430, 140, 32],
+      what: "Fits each slide's copy into the boxes of its chosen layout, within each box's word budget.",
+      eg: "A three-column layout gets three short blocks of 30 words, not one paragraph." },
+    outline: { lb: "Outline", k: "code", p: "stack", d: [750, 430, 140, 32],
+      what: "Plain code that lays the chapters, sections and slides out in order: opener, sections each with a divider, then the close.",
+      eg: "Opening → The property → Experiences → Wellbeing → Operating model → Close." },
+    ondemand: { lb: "On demand: rewrite · adapt · your own story", k: "ai", p: "draft", d: [590, 486, 310, 34],
+      what: "Agents the BD can call from the draft screen: rewrite one slide, adapt a library slide to this deck, or add a fourth narrative from their own idea.",
+      eg: "The BD types 'lead with the vineyard' and a fourth narrative is drafted from the same documents." },
+
+    pictures: { ic: "image", lb: "Pictures", sb: "a pick for every frame", k: "ai",
+      s: [845, 276, 170, 140], d: [930, 190, 150, 340],
+      what: "Starts on its own when the draft lands. Every picture frame on every slide gets a pick from the brand's image bank. Blank beats wrong.",
+      eg: "80 of 96 frames filled. The BD swaps a few by dragging." },
+    wants: { lb: "Picture wants", k: "ai", p: "pictures", d: [940, 230, 130, 34],
+      what: "Says what picture each frame should show, in the image bank's own words.",
+      eg: "Frame 1, opening slide: landscape, night sky, open countryside." },
+    placefit: { lb: "Place fit", k: "ai", p: "pictures", d: [940, 272, 130, 34],
+      what: "Checks that any picture tied to a place could believably be this place.",
+      eg: "Rejects a desert canyon for a vineyard estate." },
+    rank: { lb: "Ranking", k: "code", p: "pictures", d: [940, 314, 130, 34],
+      what: "Plain code: applies the brand's picture rules, then ranks the bank by how close each picture is to what the frame wants.",
+      eg: "Top pick plus four suggestions for each frame." },
+    swap: { lb: "BD swaps", k: "person", p: "pictures", d: [940, 356, 130, 34],
+      what: "The BD can drag pictures between frames, search the library, paste their own, and undo.",
+      eg: "Swaps the lobby shot for the piano." },
+
+    exp: { ic: "presentation", lb: "Export", sb: "the one gate → .pptx", k: "code",
+      s: [1055, 276, 195, 140], d: [1100, 190, 150, 340],
+      what: "The only gate in the whole run. The BD presses Export and the chosen narrative becomes a real PowerPoint deck on the brand's own template.",
+      eg: "28 slides on the Atrium template, every picture in its frame — ready to send." },
+    gate: { lb: "The one gate", k: "person", p: "exp", d: [1110, 230, 130, 34],
+      what: "Nothing leaves without the BD's say-so. There's no approval step before this — only this one.",
+      eg: "The BD reviews the deck and presses Export." },
+    assembler: { lb: "Deck assembler", k: "code", p: "exp", d: [1110, 272, 130, 34],
+      what: "Plain code, no AI: places every title, text box and picture into the template's real layouts.",
+      eg: "quinta-do-vale-verde-proposal.pptx · 28 slides." },
+
+    ai: { ic: "sparkles", lb: "Claude · the AI models", sb: "one model per stage · every call's cost recorded", k: "ai",
+      s: [215, 540, 590, 120], d: [200, 568, 360, 142],
+      what: "Every AI agent is a single, focused call to Claude with a typed answer. Each agent also has a free stand-in, so the whole system can be tested without spending anything.",
+      eg: "A full run costs a few dollars of model time." },
+    claude: { lb: "Claude", k: "ai", p: "ai", d: [210, 608, 165, 40],
+      what: "The language model behind every agent. One model per stage, chosen in settings.",
+      eg: "Drafting stages run on the same model so the voice stays consistent." },
+    embed: { lb: "Embeddings", k: "ai", p: "ai", d: [385, 608, 165, 40],
+      what: "Turns every picture's description into numbers so pictures can be ranked by how close they are to what a frame wants.",
+      eg: "Finds 'night sky over open land' for a frame that asked for a quiet arrival." },
+    web: { lb: "Web search", k: "ai", p: "ai", d: [210, 656, 340, 40],
+      what: "Used only by the four researchers.",
+      eg: "Hotel websites, travel press, public market reports." },
+
+    library: { ic: "library", lb: "The library", sb: "templates · image bank · phone book · saved runs", k: "data",
+      s: [845, 540, 405, 120], d: [580, 568, 670, 142],
+      what: "Everything the system reuses: the brand templates, the photo library, the people a deck names, and every run saved as it goes. No database, just folders.",
+      eg: "Three brands' templates, a curated image bank, and one folder per proposal." },
+    templates: { lb: "Brand templates", k: "data", p: "library", d: [590, 608, 155, 40],
+      what: "Each brand's PowerPoint master, read once into a catalog of layouts: what each layout can hold, read from its shapes, never its name.",
+      eg: "The Atrium · Nestly · Skyline 9, each with its own layouts." },
+    bank: { lb: "Image bank", k: "data", p: "library", d: [755, 608, 155, 40],
+      what: "Brand-approved photographs, each described in a fixed vocabulary and embedded once. The only source of pictures.",
+      eg: "Pools, rooms, food, spa, landscapes — tagged by space and brand." },
+    phone: { lb: "Phone book", k: "data", p: "library", d: [920, 608, 155, 40],
+      what: "The people a deck's closing slide names. Always from this list, never made up by the AI.",
+      eg: "The close names the regional VP and the head of development." },
+    store: { lb: "Saved runs", k: "data", p: "library", d: [1085, 608, 155, 40],
+      what: "One folder per proposal: everything each stage produced, every edit, every export.",
+      eg: "Close the tab and come back tomorrow — it's all still there." },
+    admin: { lb: "Admin portal: add a template · add pictures · edit the phone book", k: "ai", p: "library", d: [590, 656, 650, 40],
+      what: "Where the team keeps the library up to date. An AI agent reads a new template into a catalog, and another describes every picture added to the bank.",
+      eg: "Drop a new brand master; a few minutes later its layouts are ready to use." },
+  };
+
+  const E = [
+    // the main line, both views
+    ["docs", "intake", "flow"], ["intake", "research", "flow"], ["research", "draft", "flow"],
+    ["draft", "pictures", "flow"], ["pictures", "exp", "flow"],
+    // the person, simple view
+    ["bd", "intake", "person", "s", "answers a question"], ["bd", "draft", "person", "s", "reads & edits"],
+    ["bd", "pictures", "person", "s", "swaps pictures"], ["bd", "exp", "person", "s", "presses Export"],
+    // what the stages lean on
+    ["intake", "ai", "data", "s"], ["research", "ai", "data", "s"], ["draft", "ai", "data", "s"],
+    ["pictures", "library", "data", "s"], ["exp", "library", "data", "s"],
+    // detailed view
+    ["bd", "frontend", "person", "d"], ["frontend", "orch", "flow", "d"],
+    ["orch", "intake", "flow", "d"], ["orch", "research", "flow", "d"], ["orch", "draft", "flow", "d"],
+    ["orch", "pictures", "flow", "d"], ["orch", "exp", "flow", "d"],
+    ["intake", "ai", "data", "d"], ["research", "ai", "data", "d"], ["draft", "library", "data", "d"],
+    ["pictures", "library", "data", "d"], ["exp", "library", "data", "d"],
+  ];
+
+  // ---------- the run ----------
+  const STEPS = [
+    { hot: ["docs"], say: "A BD drops <b>two documents</b>: the owner's information memorandum and a brochure.", min: 0, ms: 2400 },
+    { hot: ["intake", "extractor", "source", "tpick", "claude"], go: [["docs", "extractor"], ["docs", "source"]],
+      say: "<b>Intake</b> reads every fact and notes the page it came from. It reads what the owner wants separately.", min: 3, ms: 3400 },
+    { hot: ["intake", "question", "bd", "frontend"], go: [["bd", "question"]],
+      say: "One <b>open question</b>: 53 keys or 50? The BD answers it right next to the field.", min: 1, ms: 3000 },
+    { hot: ["research", "comp", "owner", "market", "rates", "web"], go: [["intake", "research"], ["research", "comp", 500], ["research", "owner", 500], ["research", "market", 500], ["research", "rates", 500]],
+      say: "<b>Four researchers</b> search the web at once: competitors, the owner, the market and room rates.", min: 8, ms: 3800 },
+    { hot: ["draft", "classifier"], go: [["research", "classifier"]],
+      say: "The strongest signals become <b>three story anchors</b>.", min: 2, ms: 2800 },
+    { hot: ["draft", "writer", "ownerread", "audience", "stack", "claude"], go: [["classifier", "writer"], ["classifier", "ownerread"], ["classifier", "audience"]],
+      say: "Three narratives, drafted at once: <b>One Estate, Not a Portfolio of Amenities</b> · <b>The Wellness Estate</b> · <b>A Brief We Write Together</b>.", min: 10, ms: 4200 },
+    { hot: ["draft", "stack", "programme", "grouping", "copy", "suggester", "reshape", "outline", "templates"], go: [["writer", "stack"]],
+      say: "Every slide arrives <b>written</b>, in the brand's voice and fitted to its layout: <b>40 slides</b>, every option included.", min: 12, ms: 4200 },
+    { hot: ["pictures", "wants", "placefit", "rank", "bank", "embed"], go: [["draft", "pictures"], ["bank", "rank", 400]],
+      say: "Every frame gets a pick from the <b>image bank</b>: 80 of 96 filled. Blank beats wrong.", min: 6, ms: 3800 },
+    { hot: ["bd", "frontend", "draft", "ondemand", "pictures", "swap"], go: [["bd", "ondemand"], ["bd", "swap", 300]],
+      say: "The BD <b>reads it once</b>, edits in place, and swaps a few pictures.", min: 0, ms: 3600 },
+    { hot: ["exp", "gate", "assembler", "templates", "bd"], go: [["bd", "gate"], ["pictures", "assembler", 300]],
+      say: "<b>Export</b> — the one gate. 28 slides on the Atrium template, every picture in its frame.", min: 1, ms: 3400, fly: true },
+  ];
+
+  // ---------- drawing ----------
+  const stage = document.getElementById("stage");
+  const svg = document.getElementById("wires");
+  const board = document.getElementById("board");
+  const keys = Object.keys(N);
+  const kids = {};
+  keys.forEach((k) => { const p = N[k].p; if (p) (kids[p] = kids[p] || []).push(k); });
+
+  const el = {};
+  keys.forEach((k) => {
+    const n = N[k];
+    const d = document.createElement("div");
+    const chip = n.p && !n.s && !n.cls;
+    d.className = `node k-${n.k}${chip ? " chip" : ""}${n.cls ? " " + n.cls : ""}`;
+    d.innerHTML = `<div class="in"><span class="ic">${icon(n.ic)}</span><span class="lb">${n.lb}</span>${n.sb ? `<span class="sb">${n.sb}</span>` : ""}</div>`;
+    d.addEventListener("click", (e) => { e.stopPropagation(); openPanel(k); });
+    d.addEventListener("mouseenter", () => hover(k, true));
+    d.addEventListener("mouseleave", () => hover(k, false));
+    stage.appendChild(d);
+    el[k] = d;
+  });
+  // a chip sits above its parent: order the DOM parents first
+  const depth = (k) => (N[k].p ? 1 + depth(N[k].p) : 0);
+  keys.slice().sort((a, b) => depth(a) - depth(b)).forEach((k) => stage.appendChild(el[k]));
+
+  const NS = "http://www.w3.org/2000/svg";
+  const wires = E.map(([a, b, kind, only, label]) => {
+    const g = document.createElementNS(NS, "g");
+    const path = document.createElementNS(NS, "path");
+    path.setAttribute("class", `wire ${kind}`);
+    g.appendChild(path);
+    let text = null;
+    if (label) {
+      text = document.createElementNS(NS, "text");
+      text.setAttribute("class", "wlabel");
+      text.setAttribute("text-anchor", "middle");
+      text.textContent = label;
+      g.appendChild(text);
+    }
+    svg.appendChild(g);
+    return { a, b, kind, only, g, path, text };
+  });
+  const tokenLayer = document.createElementNS(NS, "g");
+  svg.appendChild(tokenLayer);
+
+  // ---------- layout & the tween between views ----------
+  let mode = "simple", from = "simple", t0 = -1e9;
+  const TWEEN = 750;
+  const ease = (x) => (x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+
+  function shown(k, m) { return !!N[k][m === "simple" ? "s" : "d"]; }
+  function home(k, m) { // where a part sits in a view; a folded part shrinks into its parent
+    const r = N[k][m === "simple" ? "s" : "d"];
+    if (r) return r;
+    const p = N[k].p;
+    if (p) { const [x, y, w, h] = home(p, m); return [x + w / 2 - w * .15, y + h / 2 - h * .15, w * .3, h * .3]; }
+    const own = N[k].d || N[k].s;
+    return [own[0] + own[2] * .1, own[1], own[2] * .8, own[3]];
+  }
+  function progress(now) { return ease(Math.min(1, Math.max(0, (now - t0) / TWEEN))); }
+  function rectOf(k, now) {
+    const e = progress(now), A = home(k, from), B = home(k, mode);
+    return A.map((v, i) => v + (B[i] - v) * e);
+  }
+  function alphaOf(k, now) {
+    const e = progress(now);
+    const a = shown(k, from) ? 1 : 0, b = shown(k, mode) ? 1 : 0;
+    // parts appear after their parent has opened, and leave before it closes
+    const late = b > a ? Math.max(0, (e - .45) / .55) : a > b ? Math.min(1, e / .4) : e;
+    return a + (b - a) * late;
+  }
+  function visible(k) { return shown(k, mode); }
+  function resolve(k) { while (k && !visible(k)) k = N[k].p; return k; }
+
+  function setMode(m) {
+    if (m === mode) return;
+    from = mode; mode = m; t0 = performance.now();
+    keys.forEach((k) => el[k].classList.toggle("open", mode === "detail" && !!kids[k] && !N[k].cls?.includes("band")));
+    document.querySelectorAll(".seg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === mode)));
+    board.classList.toggle("detail", mode === "detail");
+    placeKnob();
+  }
+
+  // a connector leaves the side that faces its target
+  function ends(A, B) {
+    const [ax, ay, aw, ah] = A, [bx, by, bw, bh] = B;
+    const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+    if (bx >= ax + aw - 4) {
+      const y0 = clamp(by + bh / 2, ay + 12, ay + ah - 12), y1 = clamp(y0, by + 12, by + bh - 12);
+      return { p0: [ax + aw, y0], p1: [bx, y1], dir: "h" };
+    }
+    if (by >= ay + ah - 4) {
+      const x0 = clamp(bx + bw / 2, ax + 14, ax + aw - 14), x1 = clamp(x0, bx + 14, bx + bw - 14);
+      return { p0: [x0, ay + ah], p1: [x1, by], dir: "v" };
+    }
+    if (by + bh <= ay + 4) {
+      const x0 = clamp(bx + bw / 2, ax + 14, ax + aw - 14), x1 = clamp(x0, bx + 14, bx + bw - 14);
+      return { p0: [x0, ay], p1: [x1, by + bh], dir: "v" };
+    }
+    // inside or overlapping: centre to centre
+    return { p0: [ax + aw / 2, ay + ah / 2], p1: [bx + bw / 2, by + bh / 2], dir: "v" };
+  }
+  function bez(A, B) {
+    const { p0, p1, dir } = ends(A, B);
+    const c = dir === "h" ? [[(p0[0] + p1[0]) / 2, p0[1]], [(p0[0] + p1[0]) / 2, p1[1]]]
+                          : [[p0[0], (p0[1] + p1[1]) / 2], [p1[0], (p0[1] + p1[1]) / 2]];
+    return [p0, c[0], c[1], p1];
+  }
+  function at(P, u) {
+    const v = 1 - u;
+    return [0, 1].map((i) => v * v * v * P[0][i] + 3 * v * v * u * P[1][i] + 3 * v * u * u * P[2][i] + u * u * u * P[3][i]);
+  }
+
+  // ---------- hover & panel ----------
+  let hovered = null, picked = null;
+  function hover(k, on) { hovered = on ? k : null; }
+
+  const panel = document.getElementById("panel");
+  const kindName = { ai: "AI agent", code: "Plain code", person: "The person", data: "Stored data", input: "What goes in" };
+  function openPanel(k) {
+    const n = N[k];
+    if (picked) el[picked].classList.remove("picked");
+    picked = k; el[k].classList.add("picked");
+    document.getElementById("p-ic").innerHTML = icon(n.ic || (n.p && (N[n.p].ic || (N[N[n.p].p] || {}).ic)));
+    document.getElementById("p-title").textContent = n.lb;
+    const tag = document.getElementById("p-tag");
+    tag.textContent = kids[k] && n.k === "ai" ? "Stage" : kindName[n.k];
+    tag.className = `tag k-${n.k}`;
+    const parts = (kids[k] || []).filter((c) => N[c].d);
+    document.getElementById("p-body").innerHTML =
+      `<div class="lbl">What it does</div><div>${n.what}</div>` +
+      `<div class="lbl">In the demo run</div><div class="eg">${n.eg}</div>` +
+      (parts.length ? `<div class="lbl">Inside it</div><div class="parts">${parts.map((c) => `<button data-k="${c}">${N[c].lb}</button>`).join("")}</div>` : "") +
+      (n.p ? `<div class="lbl">Part of</div><div class="parts"><button data-k="${n.p}">${N[n.p].lb}</button></div>` : "") +
+      (parts.length && mode === "simple" ? `<div class="lbl"></div><button class="play" id="p-open" style="font-size:14px;padding:8px 16px">Show the detailed view</button>` : "");
+    document.querySelectorAll("#p-body .parts button").forEach((b) => b.addEventListener("click", () => {
+      if (!visible(b.dataset.k)) setMode("detail");
+      openPanel(b.dataset.k);
+    }));
+    const po = document.getElementById("p-open");
+    if (po) po.addEventListener("click", () => { setMode("detail"); openPanel(k); });
+    panel.classList.add("open"); panel.setAttribute("aria-hidden", "false");
+  }
+  function closePanel() {
+    panel.classList.remove("open"); panel.setAttribute("aria-hidden", "true");
+    if (picked) el[picked].classList.remove("picked");
+    picked = null;
+  }
+  document.getElementById("p-close").addEventListener("click", closePanel);
+  board.addEventListener("click", closePanel);
+
+  // ---------- the run ----------
+  let run = null; // { i, start, minutes }
+  const sayEl = document.getElementById("say"), clockEl = document.getElementById("clock");
+  const ticker = document.getElementById("ticker"), stepsEl = document.getElementById("steps");
+  const finale = document.getElementById("finale");
+  const playBtn = document.getElementById("play"), resetBtn = document.getElementById("reset");
+  stepsEl.innerHTML = STEPS.map(() => "<i></i>").join("");
+
+  function play() {
+    closePanel();
+    finale.classList.remove("show");
+    run = { i: -1, start: 0, minutes: 0, shown: 0 };
+    board.classList.add("running"); ticker.classList.add("on");
+    playBtn.hidden = true; resetBtn.hidden = false;
+    next(performance.now());
+  }
+  function next(now) {
+    run.i += 1;
+    keys.forEach((k) => el[k].classList.remove("hot"));
+    if (run.i >= STEPS.length) return finish();
+    const s = STEPS[run.i];
+    run.start = now; run.from = run.minutes; run.minutes += s.min;
+    s.hot.forEach((k) => { const r = resolve(k); if (r) el[r].classList.add("hot"); });
+    sayEl.innerHTML = s.say;
+    [...stepsEl.children].forEach((c, i) => c.classList.toggle("done", i <= run.i));
+    if (s.fly) flyDeck();
+  }
+  function finish() {
+    board.classList.remove("running"); ticker.classList.remove("on");
+    sayEl.innerHTML = "Done: a first draft from documents to deck, with one person in the loop.";
+    finale.classList.add("show");
+    run = null;
+    tokenLayer.innerHTML = "";
+  }
+  function reset() {
+    run = null;
+    keys.forEach((k) => el[k].classList.remove("hot"));
+    board.classList.remove("running"); ticker.classList.remove("on");
+    finale.classList.remove("show");
+    tokenLayer.innerHTML = "";
+    sayEl.innerHTML = "Press <b>Play a run</b> to watch a proposal move through the system.";
+    clockEl.textContent = "0";
+    [...stepsEl.children].forEach((c) => c.classList.remove("done"));
+    playBtn.hidden = false; resetBtn.hidden = true;
+  }
+  playBtn.addEventListener("click", play);
+  resetBtn.addEventListener("click", reset);
+  document.getElementById("again").addEventListener("click", (e) => { e.stopPropagation(); play(); });
+
+  function flyDeck() { // little slides pop out of Export
+    const r = home(resolve("exp"), mode);
+    for (let i = 0; i < 7; i++) {
+      const f = document.createElement("div");
+      f.className = "flying";
+      f.style.left = `${r[0] + r[2] / 2 - 23}px`; f.style.top = `${r[1] + r[3] / 2 - 14}px`;
+      stage.appendChild(f);
+      const dx = (Math.random() - .5) * 220, dy = -120 - Math.random() * 120, rot = (Math.random() - .5) * 60;
+      f.animate([{ transform: "translate(0,0) rotate(0) scale(.6)", opacity: 0 },
+                 { transform: `translate(${dx * .5}px, ${dy}px) rotate(${rot}deg) scale(1)`, opacity: 1, offset: .5 },
+                 { transform: `translate(${dx}px, ${dy * .4}px) rotate(${rot * 2}deg) scale(.9)`, opacity: 0 }],
+                { duration: 1700, delay: 400 + i * 120, easing: "cubic-bezier(.2,.7,.3,1)", fill: "both" })
+        .onfinish = () => f.remove();
+    }
+  }
+
+  function drawTokens(now) {
+    tokenLayer.innerHTML = "";
+    if (!run || run.i < 0) return;
+    const s = STEPS[run.i];
+    const el_ = now - run.start;
+    (s.go || []).forEach(([a, b, delay = 0]) => {
+      const A = resolve(a), B = resolve(b);
+      if (!A || !B || A === B) return;
+      const u = Math.min(1, Math.max(0, (el_ - delay) / 1100));
+      if (u <= 0 || u >= 1) return;
+      const P = bez(rectOf(A, now), rectOf(B, now));
+      const e = ease(u);
+      for (let j = 3; j >= 0; j--) { // a short comet tail
+        const [x, y] = at(P, Math.max(0, e - j * .035));
+        const c = document.createElementNS(NS, "circle");
+        c.setAttribute("cx", x); c.setAttribute("cy", y);
+        c.setAttribute("r", j === 0 ? 7 : 5 - j);
+        c.setAttribute("fill", j === 0 ? "var(--accent)" : "color-mix(in oklab, var(--accent) 35%, transparent)");
+        if (j === 0) { c.setAttribute("stroke", "var(--paper)"); c.setAttribute("stroke-width", "2.5"); }
+        tokenLayer.appendChild(c);
+      }
+    });
+    // the machine clock counts up through the step
+    const frac = Math.min(1, el_ / s.ms);
+    clockEl.textContent = String(Math.round(run.from + (run.minutes - run.from) * frac));
+    if (el_ >= s.ms) next(now);
+  }
+
+  // ---------- the frame loop ----------
+  function frame(now) {
+    keys.forEach((k) => {
+      const [x, y, w, h] = rectOf(k, now);
+      const a = alphaOf(k, now);
+      const d = el[k];
+      d.style.left = `${x}px`; d.style.top = `${y}px`; d.style.width = `${w}px`; d.style.height = `${h}px`;
+      d.style.opacity = a < .02 ? 0 : (board.classList.contains("running") && !d.classList.contains("hot") ? Math.min(a, .5) : a);
+      d.style.visibility = a < .02 ? "hidden" : "visible";
+      d.style.pointerEvents = a > .9 ? "auto" : "none";
+    });
+    const e = progress(now);
+    wires.forEach((w) => {
+      const inView = (m) => (!w.only || w.only === (m === "simple" ? "s" : "d")) && shown(w.a, m) && shown(w.b, m);
+      const a = (inView(from) ? 1 : 0) + ((inView(mode) ? 1 : 0) - (inView(from) ? 1 : 0)) * e;
+      if (a < .02) { w.g.style.display = "none"; return; }
+      w.g.style.display = ""; w.g.style.opacity = a;
+      const P = bez(rectOf(w.a, now), rectOf(w.b, now));
+      w.path.setAttribute("d", `M${P[0]} C${P[1]} ${P[2]} ${P[3]}`);
+      const lit = (hovered && (w.a === hovered || w.b === hovered)) || (picked && (w.a === picked || w.b === picked));
+      w.path.classList.toggle("lit", !!lit);
+      if (w.text) { const [x, y] = at(P, .5); w.text.setAttribute("x", x); w.text.setAttribute("y", y + 4); }
+    });
+    drawTokens(now);
+    requestAnimationFrame(frame);
+  }
+
+  // ---------- fit the board to the screen ----------
+  function fit() {
+    const W = board.clientWidth, s = Math.min(1, W / 1280);
+    stage.style.transform = `scale(${s})`;
+    board.style.height = `${730 * s}px`;
+  }
+  window.addEventListener("resize", fit);
+
+  // ---------- the view switch ----------
+  const knob = document.querySelector(".seg .knob");
+  function placeKnob() {
+    const b = document.querySelector(`.seg button[data-mode="${mode}"]`);
+    knob.style.left = `${b.offsetLeft}px`; knob.style.width = `${b.offsetWidth}px`;
+  }
+  document.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => setMode(b.dataset.mode)));
+  document.addEventListener("keydown", (e) => {
+    if (e.target.closest("input, textarea")) return;
+    if (e.key === "d" || e.key === "D") setMode(mode === "simple" ? "detail" : "simple");
+    else if (e.key === " ") { e.preventDefault(); run ? reset() : play(); }
+    else if (e.key === "Escape") closePanel();
+  });
+
+  fit(); placeKnob();
+  document.fonts && document.fonts.ready.then(placeKnob);
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+name = "demos-assets"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Serves the Proposal Foundry demo images from R2 at the same address the app expects.
+routes = [
+  { pattern = "cognitidata.com/demos/proposal-foundry/api/*", zone_name = "cognitidata.com" }
+]
+
+[[r2_buckets]]
+binding = "DEMOS"
+bucket_name = "cognitidata-demos"

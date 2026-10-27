@@ -1,0 +1,95 @@
+/* COGNITIDATA THEME: Montserrat only, ink on paper, one Frost accent.
+   THE LOOK OF THE DEMO — the only file you need to edit.
+   (The slide previews keep the brand's own look, on purpose.)
+
+   Fonts: self-hosted files only. The demo makes no outside calls, so no Google Fonts link. */
+
+
+/* ── 1. FONT FILES ── weights below 500 map to Medium (brand: never lighter than 500). */
+@font-face { font-family: "Montserrat"; src: url("fonts/Montserrat-Medium.woff2") format("woff2"); font-weight: 100 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("fonts/Montserrat-SemiBold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("fonts/Montserrat-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("fonts/Montserrat-ExtraBold.woff2") format("woff2"); font-weight: 800 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("fonts/Montserrat-BoldItalic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
+
+
+:root {
+
+  /* ── 2. FONTS ── one family: no serif or monospace anywhere */
+  --theme-font-sans:    "Montserrat", ui-sans-serif, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  --theme-font-display: "Montserrat", ui-sans-serif, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  --theme-font-mono:    "Montserrat", ui-sans-serif, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  --theme-font-serif:   "Montserrat", ui-sans-serif, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+
+
+  /* ── 3. COLOURS — the ones to change ─────────────────────────────────────── */
+
+  /* Backgrounds */
+  --theme-page:    #FAFAF9;   /* the page behind everything */
+  --theme-surface: #ffffff;            /* cards, panels, inputs */
+
+  /* Text, strongest to faintest */
+  --theme-ink:   #111111;       /* headings and body */
+  --theme-ink-2: #444444;      /* secondary text */
+  --theme-ink-3: #999999;      /* captions, hints */
+  --theme-ink-4: #BDBDBD;      /* placeholders, disabled */
+
+  /* Lines */
+  --theme-line: #DCDCDC;       /* borders and dividers */
+
+  /* The brand colour: main buttons, highlights, links */
+  --theme-accent:      #3F6C7A;
+  --theme-accent-text: #F0F0F0;                /* text that sits ON the accent (button labels) */
+
+  /* Status colours */
+  --theme-ok:     #2f7d52;     /* success, done, green */
+  --theme-warn:   #b7791f;       /* needs attention */
+  --theme-danger: #b3362f;       /* errors, delete */
+  --theme-info:   #7FA8B5;     /* "from the library", neutral blue */
+
+  /* The dark band on the draft screen (the divider slide look) */
+  --theme-band:     #111111;
+  --theme-band-ink: #F0F0F0;   /* text on the band */
+
+
+  /* ── 4. SOFT SHADES — worked out from the colours above ──────────────────────
+     You normally leave these alone: change a colour in section 3 and its tints,
+     darker text shades and borders follow. To take control of one, replace it
+     with a plain colour. */
+
+  /* accent */
+  --theme-accent-tint: oklch(from var(--theme-accent) 0.96 calc(c * 0.243) h);   /* pale wash behind accent things */
+  --theme-accent-ink:  oklch(from var(--theme-accent) 0.47 calc(c * 0.89) h);    /* accent-coloured text */
+  --theme-accent-deep: oklch(from var(--theme-accent) 0.62 calc(c * 1.05) calc(h - 11.5)); /* the loading card */
+
+  /* page and line steps */
+  --theme-page-2: color-mix(in oklab, var(--theme-page) 87%, var(--theme-line));
+  --theme-page-3: color-mix(in oklab, var(--theme-page) 73%, var(--theme-line));
+  --theme-line-2: color-mix(in oklab, var(--theme-line) 55%, var(--theme-page));
+  --theme-line-3: color-mix(in oklab, var(--theme-line) 93%, var(--theme-ink));
+
+  /* status tints (pale background) and inks (readable text) */
+  --theme-ok-tint:     oklch(from var(--theme-ok) 0.96 calc(c * 0.25) h);
+  --theme-ok-ink:      oklch(from var(--theme-ok) 0.42 calc(c * 1.083) h);
+  --theme-warn-tint:   oklch(from var(--theme-warn) 0.965 calc(c * 0.285) h);
+  --theme-warn-ink:    oklch(from var(--theme-warn) 0.44 calc(c * 0.857) h);
+  --theme-danger-tint: oklch(from var(--theme-danger) 0.97 calc(c * 0.167) h);
+  --theme-danger-ink:  oklch(from var(--theme-danger) 0.42 c h);
+  --theme-info-tint:   oklch(from var(--theme-info) 0.96 calc(c * 0.286) h);
+  --theme-info-ink:    oklch(from var(--theme-info) 0.4 calc(c * 1.143) h);
+
+  /* the band's other shades */
+  --theme-band-2:     color-mix(in oklab, var(--theme-band) 92%, white);
+  --theme-band-line:  color-mix(in oklab, var(--theme-band) 82%, white);
+  --theme-band-ink-2: color-mix(in oklab, var(--theme-band-ink) 66%, var(--theme-band));
+
+  /* the four pillar colours (the outline's themes) */
+  --theme-p1: #3F6C7A;
+  --theme-p2: #7FA8B5;
+  --theme-p3: #444444;
+  --theme-p4: #999999;
+  --theme-p1-tint: oklch(from var(--theme-p1) 0.96 calc(c * 0.2) h);  --theme-p1-ink: oklch(from var(--theme-p1) 0.36 c h);
+  --theme-p2-tint: oklch(from var(--theme-p2) 0.96 calc(c * 0.23) h); --theme-p2-ink: oklch(from var(--theme-p2) 0.38 calc(c * 0.92) h);
+  --theme-p3-tint: oklch(from var(--theme-p3) 0.96 calc(c * 0.2) h);  --theme-p3-ink: oklch(from var(--theme-p3) 0.38 calc(c * 0.93) h);
+  --theme-p4-tint: oklch(from var(--theme-p4) 0.95 calc(c * 0.21) h); --theme-p4-ink: oklch(from var(--theme-p4) 0.36 c h);
+}
