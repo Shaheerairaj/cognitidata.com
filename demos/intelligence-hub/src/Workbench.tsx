@@ -2025,6 +2025,13 @@ export default function Workbench() {
               screen (like New Session), not buried in the live-set toolbar. */}
           <button
             className="newsweep"
+            title="How it works"
+            onClick={() => window.open(`${import.meta.env.BASE_URL}architecture-diagram.html`, "_blank", "noopener")}
+          >
+            How it works
+          </button>
+          <button
+            className="newsweep"
             title="Clear every change made in this demo and start fresh"
             onClick={() => {
               if (window.confirm("Reset the demo? This clears your edits, decisions and searches.")) resetDemo();
