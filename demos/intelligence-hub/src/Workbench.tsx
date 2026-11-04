@@ -2026,7 +2026,7 @@ export default function Workbench() {
           <button
             className="newsweep"
             title="How it works"
-            onClick={() => window.open(`${import.meta.env.BASE_URL}architecture-diagram.html`, "_blank", "noopener")}
+            onClick={() => window.open(`${import.meta.env.BASE_URL}system-architecture.html`, "_blank", "noopener")}
           >
             How it works
           </button>
