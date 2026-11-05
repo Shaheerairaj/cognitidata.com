@@ -79,3 +79,13 @@ The accent is a signal, not decoration: emphasis words, buttons/links, and index
 - Heavy or prolonged animations
 
 **Reference:** `brand/brand-guidelines.html` — treat it as the living doc; update there first, then propagate here and to the site.
+## Deploying
+
+Production is the Cloudflare Pages project `cognitidata-com` (cognitidata.com). Pushing to `main` does NOT deploy it: the Git trigger is not firing (last auto-deploy was `af525d0`). Deploy by hand after every push:
+
+1. Commit and push first. Demos are served from `public/demos/<name>/` (tracked). `demos/proposal-foundry/` is a git-ignored local copy, so copy changed Foundry files into `public/demos/proposal-foundry/`, and the Intelligence Hub build output (`demos/intelligence-hub/dist`, via `scripts/build-demos.sh`) into `public/demos/intelligence-hub/`. Foundry `api/` images live in R2 and stay ignored.
+2. Build from a clean checkout of HEAD so untracked local files (e.g. `public/wavee/`) are not published: `git archive HEAD | tar -x -C <tmpdir>`, symlink `node_modules`, `npm run build` there.
+3. Deploy: `npx wrangler pages deploy dist --project-name cognitidata-com --branch main --commit-hash <sha> --commit-message "<msg>"` (wrangler is already logged in).
+4. Verify on the live site, e.g. `curl -s https://cognitidata.com/demos/intelligence-hub/ | grep -o 'index-[A-Za-z0-9_-]*\.js'` matches the new build.
+
+Check recent deployments with `npx wrangler pages deployment list --project-name cognitidata-com`.
