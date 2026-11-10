@@ -8,4 +8,6 @@ export const SITE = {
   // Web3Forms: Get your access key from https://web3forms.com
   // Leave empty to disable form submissions
   web3formsAccessKey: "c7932b7f-8b36-46c3-a17b-583358c5171f",
+  // n8n webhook: adds the lead to the Notion CRM and sends the auto-reply
+  leadWebhookUrl: "https://cognitidata.app.n8n.cloud/webhook/contact-form-lead",
 };

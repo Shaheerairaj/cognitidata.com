@@ -8,6 +8,7 @@ interface Props {
 
 const { subject = "New Contact Form Submission", submitLabel = "Send message" } = Astro.props;
 const web3formsAccessKey = SITE.web3formsAccessKey || "";
+const leadWebhookUrl = SITE.leadWebhookUrl || "";
 ---
 
 <form
@@ -15,6 +16,7 @@ const web3formsAccessKey = SITE.web3formsAccessKey || "";
   class="space-y-6"
   aria-label="Contact form"
   novalidate
+  data-lead-webhook={leadWebhookUrl}
   action="https://api.web3forms.com/submit"
   method="POST"
 >
@@ -321,6 +323,12 @@ const web3formsAccessKey = SITE.web3formsAccessKey || "";
       const data = await response.json();
 
       if (response.ok && data.success) {
+        const leadUrl = form.dataset.leadWebhook;
+        if (leadUrl) {
+          const leadData = new FormData(form);
+          ["access_key", "subject", "redirect"].forEach((k) => leadData.delete(k));
+          fetch(leadUrl, { method: "POST", body: leadData, keepalive: true }).catch(() => {});
+        }
         successMessage.classList.remove("hidden");
         form.reset();
         successMessage.scrollIntoView({ behavior: "smooth", block: "nearest" });
